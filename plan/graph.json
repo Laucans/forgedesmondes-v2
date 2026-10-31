@@ -1,5 +1,331 @@
 {
   "version": 1,
-  "milestones": [],
+  "milestones": [
+    {
+      "id": "M1",
+      "title": "Campaign home: list, create, export and import campaigns",
+      "produces": [
+        "shell",
+        "Campaign",
+        "campaign.listCampaigns",
+        "campaign.getCampaign",
+        "campaign.createCampaign",
+        "campaign.exportCampaign",
+        "campaign.importCampaign",
+        "campaign.CampaignList",
+        "campaign.CampaignOverview"
+      ],
+      "consumes": [],
+      "blockedBy": [],
+      "issue": 4
+    },
+    {
+      "id": "M2",
+      "title": "AI settings: choose the provider and test the connection",
+      "produces": [
+        "AiSettings",
+        "ai.getSettings",
+        "ai.saveSettings",
+        "ai.testConnection",
+        "ai.AiSettings"
+      ],
+      "consumes": [
+        "shell"
+      ],
+      "blockedBy": [
+        "M1"
+      ],
+      "issue": 5
+    },
+    {
+      "id": "M3",
+      "title": "Campaign elements and entity sheet: manual entry, AI proposal, D&D Beyond, versions",
+      "produces": [
+        "Player",
+        "Entity",
+        "campaign.listPlayers",
+        "campaign.listCharacters",
+        "campaign.listPlaces",
+        "campaign.listEvents",
+        "campaign.getEntity",
+        "campaign.saveEntity",
+        "campaign.listEntityVersions",
+        "campaign.restoreEntityVersion",
+        "media.listMedia",
+        "soundbox.listSounds",
+        "ai.proposeCharacter",
+        "dndbeyond.importCharacter",
+        "dndbeyond.resyncCharacter",
+        "campaign.CampaignElements",
+        "campaign.EntityEditor",
+        "campaign.VersionHistory"
+      ],
+      "consumes": [
+        "Campaign",
+        "AiSettings",
+        "campaign.getCampaign",
+        "shell"
+      ],
+      "blockedBy": [
+        "M1",
+        "M2"
+      ],
+      "issue": 6
+    },
+    {
+      "id": "M4",
+      "title": "Import notes: AI extraction, then batch validation",
+      "produces": [
+        "NoteImport",
+        "campaign.listImportedNotes",
+        "ai.extractFromNotes",
+        "campaign.createEntitiesFromNote",
+        "ai.NoteImport"
+      ],
+      "consumes": [
+        "Entity",
+        "AiSettings",
+        "campaign.listCharacters",
+        "campaign.listPlaces",
+        "campaign.listEvents"
+      ],
+      "blockedBy": [
+        "M2",
+        "M3"
+      ],
+      "issue": 7
+    },
+    {
+      "id": "M5",
+      "title": "Session preparation: sessions, present PCs, scenes, previous summary, battlemap instance per scene",
+      "produces": [
+        "Session",
+        "BattlemapInstance",
+        "session.listSessions",
+        "session.createSession",
+        "session.getSession",
+        "session.listScenes",
+        "session.addScene",
+        "session.reorderScenes",
+        "session.addPresentCharacter",
+        "session.removePresentCharacter",
+        "session.addPlaceToSession",
+        "session.getPreviousSessionSummary",
+        "session.getSessionJournal",
+        "table.getBattlemapInstance",
+        "table.createBattlemapInstance",
+        "session.SessionList",
+        "session.SceneBoard",
+        "session.PreviousSummary"
+      ],
+      "consumes": [
+        "Campaign",
+        "Entity",
+        "campaign.listCharacters",
+        "media.listMedia"
+      ],
+      "blockedBy": [
+        "M3"
+      ],
+      "issue": 8
+    },
+    {
+      "id": "M6",
+      "title": "Media library and hex grid settings",
+      "produces": [
+        "Media",
+        "media.uploadMedia",
+        "media.setMediaPlace",
+        "media.getBattlemap",
+        "media.saveGridSettings",
+        "media.MediaLibrary",
+        "media.GridSettings"
+      ],
+      "consumes": [
+        "Campaign",
+        "Session",
+        "media.listMedia",
+        "campaign.listPlaces",
+        "session.listScenes",
+        "session.addPlaceToSession"
+      ],
+      "blockedBy": [
+        "M3",
+        "M5"
+      ],
+      "issue": 9
+    },
+    {
+      "id": "M7",
+      "title": "Oral brief: scenes, detected entities with diff, list to create",
+      "produces": [
+        "session.getLastBrief",
+        "ai.analyzeBrief",
+        "campaign.listEntitiesToCreate",
+        "ai.createFromBrief",
+        "ai.OralBrief",
+        "ai.ToCreateList"
+      ],
+      "consumes": [
+        "Session",
+        "Entity",
+        "AiSettings",
+        "campaign.VersionHistory",
+        "campaign.listEntityVersions",
+        "session.listScenes"
+      ],
+      "blockedBy": [
+        "M2",
+        "M3",
+        "M5"
+      ],
+      "issue": 10
+    },
+    {
+      "id": "M8",
+      "title": "Soundbox library: upload, name, tags, volume",
+      "produces": [
+        "Sound",
+        "soundbox.addSound",
+        "soundbox.updateSound",
+        "soundbox.removeSound",
+        "soundbox.SoundLibrary"
+      ],
+      "consumes": [
+        "Campaign",
+        "soundbox.listSounds"
+      ],
+      "blockedBy": [
+        "M3"
+      ],
+      "issue": 11
+    },
+    {
+      "id": "M9",
+      "title": "Live soundbox: play several sounds, volumes, stop all",
+      "produces": [
+        "SoundPlayback",
+        "soundbox.playSound",
+        "soundbox.stopAll",
+        "soundbox.setSoundVolume",
+        "soundbox.setMasterVolume",
+        "soundbox.LiveSoundbox"
+      ],
+      "consumes": [
+        "Sound",
+        "Campaign",
+        "Session",
+        "soundbox.listSounds"
+      ],
+      "blockedBy": [
+        "M5",
+        "M8"
+      ],
+      "issue": 12
+    },
+    {
+      "id": "M10",
+      "title": "Live session: DM view panels, reading sheet, sending to the synchronised player view, closing with summary",
+      "produces": [
+        "Diffusion",
+        "session.getLiveSession",
+        "session.closeSession",
+        "live.getDiffusion",
+        "live.showOnPlayerView",
+        "live.showWindowOnPlayerView",
+        "live.showCover",
+        "live.closeWindow",
+        "live.moveWindow",
+        "live.resizeWindow",
+        "session.LiveSessionBar",
+        "live.ElementsPanel",
+        "live.TableSheet",
+        "live.PlayerStage"
+      ],
+      "consumes": [
+        "Session",
+        "Media",
+        "SoundPlayback",
+        "AiSettings",
+        "Campaign",
+        "campaign.getCampaign",
+        "campaign.getEntity",
+        "campaign.listCharacters",
+        "campaign.listPlaces",
+        "campaign.listEvents",
+        "media.listMedia",
+        "session.listScenes"
+      ],
+      "blockedBy": [
+        "M2",
+        "M3",
+        "M5",
+        "M6",
+        "M9"
+      ],
+      "issue": 13
+    },
+    {
+      "id": "M11",
+      "title": "Battlemap: tokens, measured drag, × N drop, visibility, HP, combat and initiative carousel",
+      "produces": [
+        "table.moveToken",
+        "table.placeTokens",
+        "table.removeToken",
+        "table.renameToken",
+        "table.setTokenVisibility",
+        "table.setTokenCondition",
+        "table.changeHitPoints",
+        "table.startCombat",
+        "table.nextTurn",
+        "table.reorderInitiative",
+        "table.addParticipant",
+        "table.removeParticipant",
+        "table.endCombat",
+        "table.resetBattlemap",
+        "table.Battlemap"
+      ],
+      "consumes": [
+        "BattlemapInstance",
+        "Media",
+        "Session",
+        "table.getBattlemapInstance",
+        "media.getBattlemap",
+        "campaign.listCharacters",
+        "live.showOnPlayerView",
+        "live.getDiffusion",
+        "live.PlayerStage"
+      ],
+      "blockedBy": [
+        "M5",
+        "M6",
+        "M10"
+      ],
+      "issue": 14
+    },
+    {
+      "id": "M12",
+      "title": "Live microphone: local transcription, suggestion pill and session journal",
+      "produces": [
+        "Suggestion",
+        "live.listSuggestions",
+        "live.setMicrophone",
+        "live.SuggestionPill"
+      ],
+      "consumes": [
+        "Session",
+        "Entity",
+        "Sound",
+        "soundbox.playSound",
+        "live.TableSheet",
+        "campaign.getEntity"
+      ],
+      "blockedBy": [
+        "M9",
+        "M10"
+      ],
+      "issue": 15
+    }
+  ],
   "tasks": []
 }
