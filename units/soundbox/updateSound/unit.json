@@ -1,0 +1,15 @@
+{
+  "id": "soundbox.updateSound",
+  "kind": "data-capability",
+  "title": "Modifier un son",
+  "aggregate": "Sound",
+  "touches": [
+    "sound.id",
+    "sound.campaign_id",
+    "sound.name",
+    "sound.file_path",
+    "sound.tags",
+    "sound.volume",
+    "sound.created_at"
+  ]
+}

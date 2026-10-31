@@ -1,0 +1,12 @@
+{
+  "id": "live.suggestionPill",
+  "kind": "micro-ui",
+  "title": "La pastille en bas à droite : les 5 dernières entités ou sons entendus au micro, leur historique, et le bouton marche/pause du micro",
+  "actions": [
+    "live.setMicrophone",
+    "soundbox.playSound"
+  ],
+  "screens": [
+    "dm-view"
+  ]
+}

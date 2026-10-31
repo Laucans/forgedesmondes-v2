@@ -1,0 +1,15 @@
+{
+  "id": "soundbox.setSoundVolume",
+  "kind": "data-capability",
+  "title": "Régler le volume d’un son",
+  "aggregate": "Sound",
+  "touches": [
+    "sound.id",
+    "sound.campaign_id",
+    "sound.name",
+    "sound.file_path",
+    "sound.tags",
+    "sound.volume",
+    "sound.created_at"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ai.extractFromNotes",
+  "kind": "data-capability",
+  "title": "Extraire des propositions de notes",
+  "aggregate": "NoteImport",
+  "touches": [
+    "imported_note.id",
+    "imported_note.campaign_id",
+    "imported_note.raw_text",
+    "imported_note.created_at",
+    "imported_note.analyzed_at",
+    "note_proposal.id",
+    "note_proposal.note_id",
+    "note_proposal.type",
+    "note_proposal.name",
+    "note_proposal.excerpt",
+    "note_proposal.existing_entity_id",
+    "note_proposal.checked",
+    "note_proposal.created_entity_id"
+  ]
+}

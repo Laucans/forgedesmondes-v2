@@ -1,0 +1,14 @@
+{
+  "id": "table.endCombat",
+  "kind": "data-capability",
+  "title": "Terminer le combat",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "combat.id",
+    "combat.instance_id",
+    "combat.round",
+    "combat.current_entry_id",
+    "combat.started_at",
+    "combat.ended_at"
+  ]
+}

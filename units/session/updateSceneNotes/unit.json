@@ -1,0 +1,13 @@
+{
+  "id": "session.updateSceneNotes",
+  "kind": "data-capability",
+  "title": "Modifier les notes de scène",
+  "aggregate": "Session",
+  "touches": [
+    "scene.id",
+    "scene.session_id",
+    "scene.position",
+    "scene.title",
+    "scene.notes"
+  ]
+}

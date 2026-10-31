@@ -1,0 +1,16 @@
+{
+  "id": "media.saveGridSettings",
+  "kind": "data-capability",
+  "title": "Enregistrer le réglage de grille",
+  "aggregate": "Media",
+  "touches": [
+    "battlemap_grid.media_id",
+    "battlemap_grid.hex_size_px",
+    "battlemap_grid.offset_x",
+    "battlemap_grid.offset_y",
+    "battlemap_grid.orientation",
+    "battlemap_grid.color",
+    "battlemap_grid.opacity",
+    "battlemap_grid.feet_per_hex"
+  ]
+}

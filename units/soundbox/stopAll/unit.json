@@ -1,0 +1,14 @@
+{
+  "id": "soundbox.stopAll",
+  "kind": "data-capability",
+  "title": "Arrêter tous les sons",
+  "aggregate": "SoundPlayback",
+  "touches": [
+    "sound_playback.id",
+    "sound_playback.session_id",
+    "sound_playback.sound_id",
+    "sound_playback.origin",
+    "sound_playback.started_at",
+    "sound_playback.stopped_at"
+  ]
+}

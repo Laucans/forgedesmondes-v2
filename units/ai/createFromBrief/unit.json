@@ -1,0 +1,19 @@
+{
+  "id": "ai.createFromBrief",
+  "kind": "data-capability",
+  "title": "Créer une entité depuis le brief",
+  "aggregate": "Entity",
+  "touches": [
+    "entity.id",
+    "entity.campaign_id",
+    "entity.type",
+    "entity.name",
+    "entity.description",
+    "entity.notes",
+    "entity.created_at",
+    "entity.updated_at",
+    "entity_alias.id",
+    "entity_alias.entity_id",
+    "entity_alias.alias"
+  ]
+}

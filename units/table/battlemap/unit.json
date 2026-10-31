@@ -1,0 +1,27 @@
+{
+  "id": "table.battlemap",
+  "kind": "micro-ui",
+  "title": "Une instance de battlemap : grille hexagonale, tokens glissés avec le compteur « hex · pi », personnages déposés × N, fiche du token (renommer, cacher, état, PV, retirer), combat avec son carrousel d’initiative (Suivant, réordonner, ajouter, retirer, terminer), réinitialisation de la carte et envoi aux joueurs ; en player view, seulement ce que les joueurs peuvent voir",
+  "actions": [
+    "table.moveToken",
+    "table.placeTokens",
+    "table.removeToken",
+    "table.renameToken",
+    "table.setTokenVisibility",
+    "table.setTokenCondition",
+    "live.showOnPlayerView",
+    "table.changeHitPoints",
+    "table.startCombat",
+    "table.nextTurn",
+    "table.reorderInitiative",
+    "table.addParticipant",
+    "table.removeParticipant",
+    "table.endCombat",
+    "table.resetBattlemap"
+  ],
+  "screens": [
+    "preparation-seance",
+    "dm-view",
+    "player-view"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "ai.oralBrief",
+  "kind": "micro-ui",
+  "title": "Le brief raconté au micro, transcrit en local, puis découpé en scènes avec les entités reconnues, mises à jour ou manquantes",
+  "actions": [
+    "ai.analyzeBrief"
+  ],
+  "screens": [
+    "preparation-seance"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "session.liveSessionBar",
+  "kind": "micro-ui",
+  "title": "La séance en direct : ses scènes, ce que voient les joueurs, l’ouverture de la player view et la clôture avec son bilan (lignes de journal, durée, modèle et résumé)",
+  "actions": [
+    "live.showCover",
+    "live.closeWindow",
+    "session.closeSession"
+  ],
+  "screens": [
+    "dm-view"
+  ]
+}

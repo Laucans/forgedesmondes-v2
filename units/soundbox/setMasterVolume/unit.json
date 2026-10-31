@@ -1,0 +1,20 @@
+{
+  "id": "soundbox.setMasterVolume",
+  "kind": "data-capability",
+  "title": "Régler le volume général",
+  "aggregate": "Campaign",
+  "touches": [
+    "campaign.id",
+    "campaign.name",
+    "campaign.kind",
+    "campaign.pitch",
+    "campaign.art",
+    "campaign.glyph",
+    "campaign.cover_media_id",
+    "campaign.created_at",
+    "campaign.last_exported_at",
+    "campaign.imported_at",
+    "campaign.origin_campaign_id",
+    "campaign.sound_master_volume"
+  ]
+}

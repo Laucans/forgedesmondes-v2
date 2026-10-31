@@ -1,0 +1,10 @@
+{
+  "id": "campaign.campaignElements",
+  "kind": "micro-ui",
+  "title": "Les éléments de la campagne : en grille à onglets (joueurs, personnages, lieux, événements, médias, sons) ou en rail collant à gauche d’une fiche (PJ, PNJ, lieux, événements ; recherche floue, repliable, tiroir sous 960 px)",
+  "actions": [],
+  "screens": [
+    "campagne",
+    "fiche-entite"
+  ]
+}

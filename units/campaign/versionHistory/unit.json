@@ -1,0 +1,12 @@
+{
+  "id": "campaign.versionHistory",
+  "kind": "micro-ui",
+  "title": "Le bouton « Mis à jour » d’une fiche modifiée par l’IA, son diff champ par champ et l’historique des versions avec retour à une version antérieure",
+  "actions": [
+    "campaign.restoreEntityVersion"
+  ],
+  "screens": [
+    "fiche-entite",
+    "preparation-seance"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "session.removePresentCharacter",
+  "kind": "data-capability",
+  "title": "Retirer un personnage présent",
+  "aggregate": "Session",
+  "touches": [
+    "session_present_character.session_id",
+    "session_present_character.character_id",
+    "session_present_character.added_at"
+  ]
+}

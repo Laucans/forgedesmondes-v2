@@ -1,0 +1,9 @@
+{
+  "id": "session.previousSummary",
+  "kind": "micro-ui",
+  "title": "Le résumé de la séance précédente, ses entités mentionnées, ses fils ouverts et son journal transcrit en panneau latéral",
+  "actions": [],
+  "screens": [
+    "preparation-seance"
+  ]
+}

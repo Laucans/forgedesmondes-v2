@@ -1,0 +1,13 @@
+{
+  "id": "session.reorderScenes",
+  "kind": "data-capability",
+  "title": "Réordonner les scènes",
+  "aggregate": "Session",
+  "touches": [
+    "scene.id",
+    "scene.session_id",
+    "scene.position",
+    "scene.title",
+    "scene.notes"
+  ]
+}

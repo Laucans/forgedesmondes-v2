@@ -1,0 +1,14 @@
+{
+  "id": "campaign.entityEditor",
+  "kind": "micro-ui",
+  "title": "La fiche d’un personnage, d’un lieu ou d’un événement : identité, alias, prompt initial dicté, fiche de stats, token, notes et D&D Beyond ; s’ouvre sur place depuis le rail, avec une barre de confirmation si la fiche est modifiée et non enregistrée",
+  "actions": [
+    "campaign.saveEntity",
+    "ai.proposeCharacter",
+    "dndbeyond.importCharacter",
+    "dndbeyond.resyncCharacter"
+  ],
+  "screens": [
+    "fiche-entite"
+  ]
+}

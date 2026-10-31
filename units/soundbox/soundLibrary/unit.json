@@ -1,0 +1,13 @@
+{
+  "id": "soundbox.soundLibrary",
+  "kind": "micro-ui",
+  "title": "La bibliothèque des effets sonores : téléversement, nom, tags et volume propre",
+  "actions": [
+    "soundbox.addSound",
+    "soundbox.updateSound",
+    "soundbox.removeSound"
+  ],
+  "screens": [
+    "soundbox"
+  ]
+}

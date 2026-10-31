@@ -1,0 +1,14 @@
+{
+  "id": "table.createBattlemapInstance",
+  "kind": "data-capability",
+  "title": "Créer une instance de battlemap",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "battlemap_instance.id",
+    "battlemap_instance.battlemap_media_id",
+    "battlemap_instance.session_id",
+    "battlemap_instance.scene_id",
+    "battlemap_instance.created_at",
+    "battlemap_instance.reset_at"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "ai.toCreateList",
+  "kind": "micro-ui",
+  "title": "Les PNJ, lieux et événements issus des briefs, à créer depuis le brief ou après une description affinée à l’oral ou à l’écrit ; la proposition de l’IA (background, comportement, fiche de stats) s’affiche une fois l’élément créé",
+  "actions": [
+    "ai.createFromBrief"
+  ],
+  "screens": [
+    "campagne",
+    "preparation-seance"
+  ]
+}

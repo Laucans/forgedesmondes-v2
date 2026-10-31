@@ -1,0 +1,12 @@
+{
+  "id": "live.elementsPanel",
+  "kind": "micro-ui",
+  "title": "Le panneau gauche de la DM view : la séance scène par scène, puis toute la campagne par type, avec une recherche approximative sur les noms et alias",
+  "actions": [
+    "live.showOnPlayerView",
+    "live.showWindowOnPlayerView"
+  ],
+  "screens": [
+    "dm-view"
+  ]
+}

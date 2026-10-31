@@ -1,0 +1,16 @@
+{
+  "id": "session.sceneBoard",
+  "kind": "micro-ui",
+  "title": "Les PJ présents et les scènes ordonnées de la séance, avec leurs lieux, PNJ, événements, médias, notes et instance de battlemap",
+  "actions": [
+    "session.addPresentCharacter",
+    "session.removePresentCharacter",
+    "session.addScene",
+    "session.reorderScenes",
+    "session.updateSceneNotes",
+    "table.createBattlemapInstance"
+  ],
+  "screens": [
+    "preparation-seance"
+  ]
+}

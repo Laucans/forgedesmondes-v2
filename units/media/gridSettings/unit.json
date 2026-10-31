@@ -1,0 +1,11 @@
+{
+  "id": "media.gridSettings",
+  "kind": "micro-ui",
+  "title": "Le réglage de la grille hexagonale d’une battlemap (taille, décalage, orientation, couleur, opacité) avec un aperçu en direct",
+  "actions": [
+    "media.saveGridSettings"
+  ],
+  "screens": [
+    "medias"
+  ]
+}

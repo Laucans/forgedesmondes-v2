@@ -1,0 +1,24 @@
+{
+  "id": "ai.saveSettings",
+  "kind": "data-capability",
+  "title": "Enregistrer les paramètres IA",
+  "aggregate": "AiSettings",
+  "touches": [
+    "ai_settings.id",
+    "ai_settings.active_provider_id",
+    "ai_settings.updated_at",
+    "ai_provider.id",
+    "ai_provider.mode",
+    "ai_provider.label",
+    "ai_provider.url",
+    "ai_provider.detected_api_type",
+    "ai_provider.api_key",
+    "ai_provider.binary",
+    "ai_provider.generation_model",
+    "ai_provider.summary_model",
+    "ai_provider.last_test_ok",
+    "ai_provider.last_test_at",
+    "ai_provider.last_test_message",
+    "ai_provider.last_test_latency_ms"
+  ]
+}

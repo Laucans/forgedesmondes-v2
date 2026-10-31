@@ -1,0 +1,26 @@
+{
+  "id": "ai.analyzeBrief",
+  "kind": "data-capability",
+  "title": "Analyser le brief oral",
+  "aggregate": "Session",
+  "touches": [
+    "oral_brief.id",
+    "oral_brief.session_id",
+    "oral_brief.transcript",
+    "oral_brief.duration_seconds",
+    "oral_brief.recorded_at",
+    "oral_brief.analyzed_at",
+    "entity_to_create.id",
+    "entity_to_create.campaign_id",
+    "entity_to_create.session_id",
+    "entity_to_create.brief_id",
+    "entity_to_create.scene_id",
+    "entity_to_create.type",
+    "entity_to_create.name",
+    "entity_to_create.excerpt",
+    "entity_to_create.refinement_text",
+    "entity_to_create.status",
+    "entity_to_create.created_entity_id",
+    "entity_to_create.created_at"
+  ]
+}

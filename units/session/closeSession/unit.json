@@ -1,0 +1,20 @@
+{
+  "id": "session.closeSession",
+  "kind": "data-capability",
+  "title": "Clore la séance",
+  "aggregate": "Session",
+  "touches": [
+    "session.id",
+    "session.campaign_id",
+    "session.position",
+    "session.title",
+    "session.planned_on",
+    "session.status",
+    "session.started_at",
+    "session.closed_at",
+    "session.microphone_on",
+    "session.summary",
+    "session.summary_model",
+    "session.summary_edited_at"
+  ]
+}

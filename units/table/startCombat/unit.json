@@ -1,0 +1,22 @@
+{
+  "id": "table.startCombat",
+  "kind": "data-capability",
+  "title": "Lancer le combat",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "combat.id",
+    "combat.instance_id",
+    "combat.round",
+    "combat.current_entry_id",
+    "combat.started_at",
+    "combat.ended_at",
+    "initiative_entry.id",
+    "initiative_entry.combat_id",
+    "initiative_entry.token_id",
+    "initiative_entry.roll",
+    "initiative_entry.initiative",
+    "initiative_entry.dex_score",
+    "initiative_entry.tiebreak",
+    "initiative_entry.rank"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "media.uploadMedia",
+  "kind": "data-capability",
+  "title": "Téléverser un média",
+  "aggregate": "Media",
+  "touches": [
+    "media.id",
+    "media.campaign_id",
+    "media.kind",
+    "media.title",
+    "media.file_path",
+    "media.width_px",
+    "media.height_px",
+    "media.place_id",
+    "media.uploaded_at"
+  ]
+}

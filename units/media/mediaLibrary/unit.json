@@ -1,0 +1,13 @@
+{
+  "id": "media.mediaLibrary",
+  "kind": "micro-ui",
+  "title": "Le téléversement et la liste des battlemaps et illustrations de la campagne, chacune rattachable à un lieu ; si le lieu est dans la séance, le média l’est aussi",
+  "actions": [
+    "media.uploadMedia",
+    "media.setMediaPlace",
+    "session.addPlaceToSession"
+  ],
+  "screens": [
+    "medias"
+  ]
+}

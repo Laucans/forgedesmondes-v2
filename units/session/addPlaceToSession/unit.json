@@ -1,0 +1,10 @@
+{
+  "id": "session.addPlaceToSession",
+  "kind": "data-capability",
+  "title": "Ajouter un lieu à la séance",
+  "aggregate": "Session",
+  "touches": [
+    "scene_media.scene_id",
+    "scene_media.media_id"
+  ]
+}

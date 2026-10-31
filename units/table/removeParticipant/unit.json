@@ -1,0 +1,16 @@
+{
+  "id": "table.removeParticipant",
+  "kind": "data-capability",
+  "title": "Retirer un participant du combat",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "initiative_entry.id",
+    "initiative_entry.combat_id",
+    "initiative_entry.token_id",
+    "initiative_entry.roll",
+    "initiative_entry.initiative",
+    "initiative_entry.dex_score",
+    "initiative_entry.tiebreak",
+    "initiative_entry.rank"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "ai.noteImport",
+  "kind": "micro-ui",
+  "title": "L’import de notes en texte libre, tapées, collées ou dictées ; extraction par l’IA puis validation en lot, la note brute conservée",
+  "actions": [
+    "ai.extractFromNotes",
+    "campaign.createEntitiesFromNote"
+  ],
+  "screens": [
+    "campagne"
+  ]
+}

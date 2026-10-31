@@ -1,0 +1,12 @@
+{
+  "id": "live.tableSheet",
+  "kind": "micro-ui",
+  "title": "La fiche d’un élément en lecture, optimisée pour la table, avec édition et envoi de l’illustration aux joueurs",
+  "actions": [
+    "live.showOnPlayerView",
+    "live.showWindowOnPlayerView"
+  ],
+  "screens": [
+    "dm-view"
+  ]
+}

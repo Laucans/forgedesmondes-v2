@@ -1,0 +1,22 @@
+{
+  "id": "table.moveToken",
+  "kind": "data-capability",
+  "title": "Déplacer un jeton",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "token.id",
+    "token.instance_id",
+    "token.character_id",
+    "token.number",
+    "token.name",
+    "token.q",
+    "token.r",
+    "token.visible",
+    "token.hp_current",
+    "token.hp_max",
+    "token.conditions",
+    "token.dead",
+    "token.health_band",
+    "token.label_initial"
+  ]
+}

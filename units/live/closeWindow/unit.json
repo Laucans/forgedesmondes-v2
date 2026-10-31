@@ -1,0 +1,20 @@
+{
+  "id": "live.closeWindow",
+  "kind": "data-capability",
+  "title": "Fermer la fenêtre",
+  "aggregate": "Diffusion",
+  "touches": [
+    "diffusion.session_id",
+    "diffusion.base_kind",
+    "diffusion.base_media_id",
+    "diffusion.base_instance_id",
+    "diffusion.window_media_id",
+    "diffusion.window_x",
+    "diffusion.window_y",
+    "diffusion.window_width",
+    "diffusion.view_zoom",
+    "diffusion.view_pan_x",
+    "diffusion.view_pan_y",
+    "diffusion.updated_at"
+  ]
+}

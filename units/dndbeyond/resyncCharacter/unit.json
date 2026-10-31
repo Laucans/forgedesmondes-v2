@@ -1,0 +1,29 @@
+{
+  "id": "dndbeyond.resyncCharacter",
+  "kind": "data-capability",
+  "title": "Resynchroniser un personnage D&D Beyond",
+  "aggregate": "Entity",
+  "touches": [
+    "character.entity_id",
+    "character.player_id",
+    "character.initial_prompt",
+    "character.background",
+    "character.behavior",
+    "character.strength",
+    "character.dexterity",
+    "character.constitution",
+    "character.intelligence",
+    "character.wisdom",
+    "character.charisma",
+    "character.armor_class",
+    "character.hp_max",
+    "character.spells",
+    "character.actions",
+    "character.portrait_media_id",
+    "character.token_media_id",
+    "character.token_crop",
+    "character.token_color",
+    "character.dndbeyond_id",
+    "character.dndbeyond_synced_at"
+  ]
+}

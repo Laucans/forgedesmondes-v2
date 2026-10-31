@@ -1,0 +1,11 @@
+{
+  "id": "session.sessionList",
+  "kind": "micro-ui",
+  "title": "Les séances dans l’ordre avec leur résumé et leurs PJ présents ; création d’une séance avec choix des PJ",
+  "actions": [
+    "session.createSession"
+  ],
+  "screens": [
+    "campagne"
+  ]
+}

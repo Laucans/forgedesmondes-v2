@@ -1,0 +1,12 @@
+{
+  "id": "live.playerStage",
+  "kind": "micro-ui",
+  "title": "L’écran des joueurs : couverture, battlemap ou illustration en scène, et fenêtre d’illustration flottante déplaçable et redimensionnable",
+  "actions": [
+    "live.moveWindow",
+    "live.resizeWindow"
+  ],
+  "screens": [
+    "player-view"
+  ]
+}
