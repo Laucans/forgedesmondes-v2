@@ -18,15 +18,8 @@
   <main data-page="preparation-seance">
     <nav class="kit-breadcrumb" data-kit="Breadcrumb" aria-label="Fil d’Ariane"><ol><li><a data-el="crumb-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a></li><li><a data-el="crumb-campagne" data-link="campagne" href="campagne.html">Campagne</a></li></ol></nav>
     <header class="kit-page-header" data-kit="PageHeader"><div class="titles"><h1>Préparation de séance</h1><p class="lead">Préparer les scènes de la prochaine séance.</p></div></header>
-    <div class="kit-stack loose" data-kit="Stack">
-    <section class="kit-section" data-kit="Section" data-el="previous-summary">
-      <div class="head"><h2>Séance précédente</h2><p class="hint">Le résumé de la séance précédente, ses entités mentionnées, ses fils ouverts et son journal transcrit en panneau latéral</p></div>
-      <div class="body">
-        <div class="kit-stack row" data-kit="Stack">
-          <a data-el="previous-summary-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>
-        </div>
-      </div>
-    </section>
+    <div class="kit-columns" data-kit="Columns">
+    <div class="pane main">
     <section class="kit-section" data-kit="Section" data-el="oral-brief">
       <div class="head"><h2>Brief oral</h2><p class="hint">Le brief raconté au micro, transcrit en local, puis découpé en scènes avec les entités reconnues, mises à jour ou manquantes</p></div>
       <div class="body">
@@ -55,25 +48,6 @@
         </div>
       </div>
     </section>
-    <section class="kit-section" data-kit="Section" data-el="version-history">
-      <div class="head"><h2>Historique des versions</h2><p class="hint">Le bouton « Mis à jour » d’une fiche modifiée par l’IA, son diff champ par champ et l’historique des versions avec retour à une version antérieure</p></div>
-      <div class="body">
-        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="version-history-restore-entity-version" data-action="campaign.restoreEntityVersion">restore entity version</button>
-        </div></div>
-      </div>
-    </section>
-    <section class="kit-section" data-kit="Section" data-el="to-create-list">
-      <div class="head"><h2>À créer</h2><p class="hint">Les PNJ, lieux et événements issus des briefs, à créer depuis le brief ou après une description affinée à l’oral ou à l’écrit ; la proposition de l’IA (background, comportement, fiche de stats) s’affiche une fois l’élément créé</p></div>
-      <div class="body">
-        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="to-create-list-create-from-brief" data-action="ai.createFromBrief">create from brief</button>
-        </div></div>
-        <div class="kit-stack row" data-kit="Stack">
-          <a data-el="to-create-list-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>
-        </div>
-      </div>
-    </section>
     <section class="kit-section" data-kit="Section" data-el="battlemap">
       <div class="head"><h2>Battlemap</h2><p class="hint">Une instance de battlemap : grille hexagonale, tokens glissés avec le compteur « hex · pi », personnages déposés × N, fiche du token (renommer, cacher, état, PV, retirer), combat avec son carrousel d’initiative (Suivant, réordonner, ajouter, retirer, terminer), réinitialisation de la carte et envoi aux joueurs ; en player view, seulement ce que les joueurs peuvent voir</p></div>
       <div class="body">
@@ -96,6 +70,36 @@
         </div></div>
       </div>
     </section>
+    </div>
+    <aside class="pane side">
+    <section class="kit-section" data-kit="Section" data-el="previous-summary">
+      <div class="head"><h2>Séance précédente</h2><p class="hint">Le résumé de la séance précédente, ses entités mentionnées, ses fils ouverts et son journal transcrit en panneau latéral</p></div>
+      <div class="body">
+        <div class="kit-stack row" data-kit="Stack">
+          <a data-el="previous-summary-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>
+        </div>
+      </div>
+    </section>
+    <section class="kit-section" data-kit="Section" data-el="version-history">
+      <div class="head"><h2>Historique des versions</h2><p class="hint">Le bouton « Mis à jour » d’une fiche modifiée par l’IA, son diff champ par champ et l’historique des versions avec retour à une version antérieure</p></div>
+      <div class="body">
+        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
+          <button type="button" class="primary" data-el="version-history-restore-entity-version" data-action="campaign.restoreEntityVersion">restore entity version</button>
+        </div></div>
+      </div>
+    </section>
+    <section class="kit-section" data-kit="Section" data-el="to-create-list">
+      <div class="head"><h2>À créer</h2><p class="hint">Les PNJ, lieux et événements issus des briefs, à créer depuis le brief ou après une description affinée à l’oral ou à l’écrit ; la proposition de l’IA (background, comportement, fiche de stats) s’affiche une fois l’élément créé</p></div>
+      <div class="body">
+        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
+          <button type="button" class="primary" data-el="to-create-list-create-from-brief" data-action="ai.createFromBrief">create from brief</button>
+        </div></div>
+        <div class="kit-stack row" data-kit="Stack">
+          <a data-el="to-create-list-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>
+        </div>
+      </div>
+    </section>
+    </aside>
     </div>
   </main>
 </body>

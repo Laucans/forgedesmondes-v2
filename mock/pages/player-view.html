@@ -12,16 +12,8 @@
   <header data-el="site-menu" aria-label="Bandeau des joueurs"></header>
   <main data-page="player-view">
     <header class="kit-page-header" data-kit="PageHeader"><div class="titles"><h1>Player view</h1><p class="lead">Ce que voient les joueurs.</p></div></header>
-    <div class="kit-stack loose" data-kit="Stack">
-    <section class="kit-section" data-kit="Section" data-el="player-stage">
-      <div class="head"><h2>Écran des joueurs</h2><p class="hint">L’écran des joueurs : couverture, battlemap ou illustration en scène, et fenêtre d’illustration flottante déplaçable et redimensionnable</p></div>
-      <div class="body">
-        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="player-stage-move-window" data-action="live.moveWindow">move window</button>
-          <button type="button" class="secondary" data-el="player-stage-resize-window" data-action="live.resizeWindow">resize window</button>
-        </div></div>
-      </div>
-    </section>
+    <div class="kit-columns" data-kit="Columns">
+    <div class="pane main">
     <section class="kit-section" data-kit="Section" data-el="battlemap">
       <div class="head"><h2>Battlemap</h2><p class="hint">Une instance de battlemap : grille hexagonale, tokens glissés avec le compteur « hex · pi », personnages déposés × N, fiche du token (renommer, cacher, état, PV, retirer), combat avec son carrousel d’initiative (Suivant, réordonner, ajouter, retirer, terminer), réinitialisation de la carte et envoi aux joueurs ; en player view, seulement ce que les joueurs peuvent voir</p></div>
       <div class="body">
@@ -44,6 +36,18 @@
         </div></div>
       </div>
     </section>
+    </div>
+    <aside class="pane side">
+    <section class="kit-section" data-kit="Section" data-el="player-stage">
+      <div class="head"><h2>Écran des joueurs</h2><p class="hint">L’écran des joueurs : couverture, battlemap ou illustration en scène, et fenêtre d’illustration flottante déplaçable et redimensionnable</p></div>
+      <div class="body">
+        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
+          <button type="button" class="primary" data-el="player-stage-move-window" data-action="live.moveWindow">move window</button>
+          <button type="button" class="secondary" data-el="player-stage-resize-window" data-action="live.resizeWindow">resize window</button>
+        </div></div>
+      </div>
+    </section>
+    </aside>
     </div>
   </main>
 </body>

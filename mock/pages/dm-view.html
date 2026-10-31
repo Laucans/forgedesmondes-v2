@@ -17,30 +17,8 @@
   </nav>
   <main data-page="dm-view">
     <header class="kit-page-header" data-kit="PageHeader"><div class="titles"><h1>DM view</h1><p class="lead">Le poste de pilotage du MJ.</p></div></header>
-    <div class="kit-stack loose" data-kit="Stack">
-    <section class="kit-section" data-kit="Section" data-el="live-session-bar">
-      <div class="head"><h2>Séance en direct</h2><p class="hint">La séance en direct : ses scènes, ce que voient les joueurs, l’ouverture de la player view et la clôture avec son bilan (lignes de journal, durée, modèle et résumé)</p></div>
-      <div class="body">
-        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="live-session-bar-show-cover" data-action="live.showCover">show cover</button>
-          <button type="button" class="secondary" data-el="live-session-bar-close-window" data-action="live.closeWindow">close window</button>
-          <button type="button" class="secondary" data-el="live-session-bar-close-session" data-action="session.closeSession">close session</button>
-        </div></div>
-        <div class="kit-stack row" data-kit="Stack">
-          <a data-el="live-session-bar-to-player-view" data-link="player-view" href="player-view.html">Vers Player view</a>
-          <a data-el="live-session-bar-to-campagne" data-link="campagne" href="campagne.html">Vers Campagne</a>
-        </div>
-      </div>
-    </section>
-    <section class="kit-section" data-kit="Section" data-el="elements-panel">
-      <div class="head"><h2>Éléments</h2><p class="hint">Le panneau gauche de la DM view : la séance scène par scène, puis toute la campagne par type, avec une recherche approximative sur les noms et alias</p></div>
-      <div class="body">
-        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="elements-panel-show-on-player-view" data-action="live.showOnPlayerView">show on player view</button>
-          <button type="button" class="secondary" data-el="elements-panel-show-window-on-player-view" data-action="live.showWindowOnPlayerView">show window on player view</button>
-        </div></div>
-      </div>
-    </section>
+    <div class="kit-columns" data-kit="Columns">
+    <div class="pane main">
     <section class="kit-section" data-kit="Section" data-el="table-sheet">
       <div class="head"><h2>Fiche de table</h2><p class="hint">La fiche d’un élément en lecture, optimisée pour la table, avec édition et envoi de l’illustration aux joueurs</p></div>
       <div class="body">
@@ -75,6 +53,31 @@
         </div></div>
       </div>
     </section>
+    </div>
+    <aside class="pane side">
+    <section class="kit-section" data-kit="Section" data-el="live-session-bar">
+      <div class="head"><h2>Séance en direct</h2><p class="hint">La séance en direct : ses scènes, ce que voient les joueurs, l’ouverture de la player view et la clôture avec son bilan (lignes de journal, durée, modèle et résumé)</p></div>
+      <div class="body">
+        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
+          <button type="button" class="primary" data-el="live-session-bar-show-cover" data-action="live.showCover">show cover</button>
+          <button type="button" class="secondary" data-el="live-session-bar-close-window" data-action="live.closeWindow">close window</button>
+          <button type="button" class="secondary" data-el="live-session-bar-close-session" data-action="session.closeSession">close session</button>
+        </div></div>
+        <div class="kit-stack row" data-kit="Stack">
+          <a data-el="live-session-bar-to-player-view" data-link="player-view" href="player-view.html">Vers Player view</a>
+          <a data-el="live-session-bar-to-campagne" data-link="campagne" href="campagne.html">Vers Campagne</a>
+        </div>
+      </div>
+    </section>
+    <section class="kit-section" data-kit="Section" data-el="elements-panel">
+      <div class="head"><h2>Éléments</h2><p class="hint">Le panneau gauche de la DM view : la séance scène par scène, puis toute la campagne par type, avec une recherche approximative sur les noms et alias</p></div>
+      <div class="body">
+        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
+          <button type="button" class="primary" data-el="elements-panel-show-on-player-view" data-action="live.showOnPlayerView">show on player view</button>
+          <button type="button" class="secondary" data-el="elements-panel-show-window-on-player-view" data-action="live.showWindowOnPlayerView">show window on player view</button>
+        </div></div>
+      </div>
+    </section>
     <section class="kit-section" data-kit="Section" data-el="live-soundbox">
       <div class="head"><h2>Soundbox en direct</h2><p class="hint">L’onglet Soundbox de la DM view : cases de sons, recherche, filtre par tags, volume global et par son, « Tout arrêter »</p></div>
       <div class="body">
@@ -95,6 +98,7 @@
         </div></div>
       </div>
     </section>
+    </aside>
     </div>
   </main>
 </body>

@@ -18,7 +18,24 @@
   <main data-page="fiche-entite">
     <nav class="kit-breadcrumb" data-kit="Breadcrumb" aria-label="Fil d’Ariane"><ol><li><a data-el="crumb-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a></li><li><a data-el="crumb-campagne" data-link="campagne" href="campagne.html">Campagne</a></li></ol></nav>
     <header class="kit-page-header" data-kit="PageHeader"><div class="titles"><h1>Fiche d’entité</h1><p class="lead">Lire et modifier une fiche.</p></div></header>
-    <div class="kit-stack loose" data-kit="Stack">
+    <div class="kit-columns" data-kit="Columns">
+    <div class="pane main">
+    <section class="kit-section" data-kit="Section" data-el="entity-editor">
+      <div class="head"><h2>Fiche</h2><p class="hint">La fiche d’un personnage, d’un lieu ou d’un événement : identité, alias, prompt initial dicté, fiche de stats, token, notes et D&amp;D Beyond ; s’ouvre sur place depuis le rail, avec une barre de confirmation si la fiche est modifiée et non enregistrée</p></div>
+      <div class="body">
+        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
+          <button type="button" class="primary" data-el="entity-editor-save-entity" data-action="campaign.saveEntity">save entity</button>
+          <button type="button" class="secondary" data-el="entity-editor-propose-character" data-action="ai.proposeCharacter">propose character</button>
+          <button type="button" class="secondary" data-el="entity-editor-import-character" data-action="dndbeyond.importCharacter">import character</button>
+          <button type="button" class="secondary" data-el="entity-editor-resync-character" data-action="dndbeyond.resyncCharacter">resync character</button>
+        </div></div>
+        <div class="kit-stack row" data-kit="Stack">
+          <a data-el="entity-editor-to-campagne" data-link="campagne" href="campagne.html">Vers Campagne</a>
+        </div>
+      </div>
+    </section>
+    </div>
+    <aside class="pane side">
     <section class="kit-section" data-kit="Section" data-el="campaign-elements">
       <div class="head"><h2>Éléments de la campagne</h2><p class="hint">Les éléments de la campagne : en grille à onglets (joueurs, personnages, lieux, événements, médias, sons) ou en rail collant à gauche d’une fiche (PJ, PNJ, lieux, événements ; recherche floue, repliable, tiroir sous 960 px)</p></div>
       <div class="body">
@@ -36,20 +53,7 @@
         </div></div>
       </div>
     </section>
-    <section class="kit-section" data-kit="Section" data-el="entity-editor">
-      <div class="head"><h2>Fiche</h2><p class="hint">La fiche d’un personnage, d’un lieu ou d’un événement : identité, alias, prompt initial dicté, fiche de stats, token, notes et D&amp;D Beyond ; s’ouvre sur place depuis le rail, avec une barre de confirmation si la fiche est modifiée et non enregistrée</p></div>
-      <div class="body">
-        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="entity-editor-save-entity" data-action="campaign.saveEntity">save entity</button>
-          <button type="button" class="secondary" data-el="entity-editor-propose-character" data-action="ai.proposeCharacter">propose character</button>
-          <button type="button" class="secondary" data-el="entity-editor-import-character" data-action="dndbeyond.importCharacter">import character</button>
-          <button type="button" class="secondary" data-el="entity-editor-resync-character" data-action="dndbeyond.resyncCharacter">resync character</button>
-        </div></div>
-        <div class="kit-stack row" data-kit="Stack">
-          <a data-el="entity-editor-to-campagne" data-link="campagne" href="campagne.html">Vers Campagne</a>
-        </div>
-      </div>
-    </section>
+    </aside>
     </div>
   </main>
 </body>
