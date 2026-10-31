@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "state": "validated",
+  "state": "candidate",
   "source": "generated",
   "brief": "",
   "moodboard": [
@@ -10,6 +10,5 @@
     "moodboard/screenshot-2026-09-30-at-23-56-25.png"
   ],
   "logo": "peluchekoby.png",
-  "candidate": false,
-  "validatedAt": "2026-10-13T17:38:34Z"
+  "candidate": true
 }

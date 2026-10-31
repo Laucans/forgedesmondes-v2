@@ -5,7 +5,7 @@
     .kit-token .kit-token__disc { position: relative; width: 64px; height: 64px; border-radius: var(--radius-pill, 999px); border: calc(var(--border-width, 1px) * 2) solid var(--color-border, #3d2b57); background: var(--kit-token-bg, var(--color-secondary, #8b3fd9)); box-shadow: var(--shadow-low, 0 2px 6px rgba(0,0,0,.5)); display: flex; align-items: center; justify-content: center; overflow: visible; }
     .kit-token .kit-token__clip { position: absolute; inset: 0; border-radius: var(--radius-pill, 999px); overflow: hidden; display: flex; align-items: center; justify-content: center; }
     .kit-token .kit-token__portrait { width: 100%; height: 100%; display: block; }
-    .kit-token .kit-token__initials { font-family: var(--font-family-heading, Impact, Arial, sans-serif); font-weight: var(--font-weight-heading, 700); font-size: var(--font-size-large, 1.25rem); letter-spacing: 1px; color: var(--color-text, #f5ecf7); }
+    .kit-token .kit-token__initials { font-family: var(--font-family, system-ui, sans-serif); font-weight: var(--font-weight-heading, 700); font-size: var(--font-size-large, 1.25rem); color: var(--color-text, #f5ecf7); }
     .kit-token .kit-token__num { position: absolute; left: -2px; bottom: -2px; min-width: 20px; height: 20px; padding: 0 var(--space-1, 4px); box-sizing: border-box; border-radius: var(--radius-pill, 999px); background: var(--color-surface, #120a1c); border: var(--border-width, 1px) solid var(--color-border, #3d2b57); color: var(--color-accent, #f5b83d); font-size: 0.7rem; font-weight: 700; line-height: 18px; text-align: center; }
     .kit-token .kit-token__badge { position: absolute; width: 20px; height: 20px; border-radius: var(--radius-pill, 999px); background: var(--color-surface-2, #1f1331); border: var(--border-width, 1px) solid var(--color-border, #3d2b57); font-size: 0.7rem; font-weight: 700; line-height: 18px; text-align: center; box-sizing: border-box; }
     .kit-token .kit-token__badge--tl { top: -6px; left: -6px; color: var(--color-danger, #ff5a5f); border-color: var(--color-danger, #ff5a5f); }
@@ -29,7 +29,7 @@
     .kit-token .kit-token__item--dead .kit-token__name { color: var(--color-text-muted, #b9a6c9); text-decoration: line-through; }
     .kit-token .kit-token__item--dead .kit-token__strike { display: block; }
     .kit-token .kit-token__item--carried { transform: scale(1.18) translateY(-4px); z-index: 2; cursor: grabbing; }
-    .kit-token .kit-token__item--carried .kit-token__disc { box-shadow: var(--shadow-high, 0 12px 32px rgba(139,63,217,.35)); border-color: var(--color-primary, #e8702a); }
+    .kit-token .kit-token__item--carried .kit-token__disc { box-shadow: var(--shadow-low, 0 1px 3px rgba(0, 0, 0, 0.4)); border-color: var(--color-primary, #e8702a); }
   </style>
 
   <div class="kit-token__item kit-token__item--current">

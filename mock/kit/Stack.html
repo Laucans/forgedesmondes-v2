@@ -1,0 +1,12 @@
+<!-- Stack: blocks one under the other with one gap; "tight" or "loose" for another gap, "row" for a wrapping row (a toolbar, a set of badges). -->
+<style>
+.kit-stack { display: flex; flex-direction: column; gap: var(--space-3, 16px); min-width: 0; font-family: var(--font-family, system-ui, sans-serif); color: var(--color-text, #f5ecf7); }
+.kit-stack.tight { gap: var(--space-2, 8px); }
+.kit-stack.loose { gap: var(--space-5, 40px); }
+.kit-stack.row { flex-direction: row; flex-wrap: wrap; align-items: center; }
+</style>
+<div class="kit-stack">
+  <div>First block</div>
+  <div>Second block</div>
+  <div>Third block</div>
+</div>
