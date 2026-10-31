@@ -1,0 +1,1892 @@
+{
+  "sources": [
+    {
+      "id": "postgres",
+      "kind": "postgres",
+      "title": "Database"
+    }
+  ],
+  "entities": [
+    {
+      "name": "ai_provider",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "mode",
+          "type": "text",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "label",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "url",
+          "type": "text",
+          "nullable": true,
+          "critical": true
+        },
+        {
+          "name": "detected_api_type",
+          "type": "text",
+          "nullable": true,
+          "critical": true
+        },
+        {
+          "name": "api_key",
+          "type": "text",
+          "nullable": true,
+          "critical": true
+        },
+        {
+          "name": "binary",
+          "type": "text",
+          "nullable": true,
+          "critical": true
+        },
+        {
+          "name": "generation_model",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "summary_model",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "last_test_ok",
+          "type": "bool",
+          "nullable": true
+        },
+        {
+          "name": "last_test_at",
+          "type": "datetime",
+          "nullable": true
+        },
+        {
+          "name": "last_test_message",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "last_test_latency_ms",
+          "type": "int",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "ai_settings",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "active_provider_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "ai_provider",
+          "critical": true
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "campaign",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "kind",
+          "type": "text",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "pitch",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "art",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "glyph",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "cover_media_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "media"
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false
+        },
+        {
+          "name": "last_exported_at",
+          "type": "datetime",
+          "nullable": true
+        },
+        {
+          "name": "imported_at",
+          "type": "datetime",
+          "nullable": true
+        },
+        {
+          "name": "origin_campaign_id",
+          "type": "uuid",
+          "nullable": true
+        },
+        {
+          "name": "sound_master_volume",
+          "type": "number",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "player",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "campaign_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "campaign",
+          "critical": true
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "notes",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "entity",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "campaign_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "campaign",
+          "critical": true
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "notes",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "character",
+      "source": "postgres",
+      "key": "entity_id",
+      "fields": [
+        {
+          "name": "entity_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "entity",
+          "critical": true
+        },
+        {
+          "name": "player_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "player"
+        },
+        {
+          "name": "initial_prompt",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "background",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "behavior",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "strength",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "dexterity",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "constitution",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "intelligence",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "wisdom",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "charisma",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "armor_class",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "hp_max",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "spells",
+          "type": "json",
+          "nullable": false
+        },
+        {
+          "name": "actions",
+          "type": "json",
+          "nullable": false
+        },
+        {
+          "name": "portrait_media_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "media"
+        },
+        {
+          "name": "token_media_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "media"
+        },
+        {
+          "name": "token_crop",
+          "type": "json",
+          "nullable": true
+        },
+        {
+          "name": "token_color",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "dndbeyond_id",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "dndbeyond_synced_at",
+          "type": "datetime",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "entity_alias",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "entity_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "entity",
+          "critical": true
+        },
+        {
+          "name": "alias",
+          "type": "text",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "entity_version",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "entity_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "entity",
+          "critical": true
+        },
+        {
+          "name": "version_number",
+          "type": "int",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "source",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "snapshot",
+          "type": "json",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "diff",
+          "type": "json",
+          "nullable": false
+        },
+        {
+          "name": "restored_from_version_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "entity_version"
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "campaign_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "campaign",
+          "critical": true
+        },
+        {
+          "name": "kind",
+          "type": "text",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "file_path",
+          "type": "text",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "width_px",
+          "type": "int",
+          "nullable": false
+        },
+        {
+          "name": "height_px",
+          "type": "int",
+          "nullable": false
+        },
+        {
+          "name": "place_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "entity"
+        },
+        {
+          "name": "uploaded_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "battlemap_grid",
+      "source": "postgres",
+      "key": "media_id",
+      "fields": [
+        {
+          "name": "media_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "media"
+        },
+        {
+          "name": "hex_size_px",
+          "type": "number",
+          "nullable": false
+        },
+        {
+          "name": "offset_x",
+          "type": "number",
+          "nullable": false
+        },
+        {
+          "name": "offset_y",
+          "type": "number",
+          "nullable": false
+        },
+        {
+          "name": "orientation",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "color",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "nullable": false
+        },
+        {
+          "name": "feet_per_hex",
+          "type": "int",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "detection_vocabulary_view",
+      "source": "postgres",
+      "key": "campaign_id",
+      "fields": [
+        {
+          "name": "campaign_id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "entity_id",
+          "type": "uuid",
+          "nullable": true
+        },
+        {
+          "name": "sound_id",
+          "type": "uuid",
+          "nullable": true
+        },
+        {
+          "name": "term",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "normalized_term",
+          "type": "text",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "campaign_overview_view",
+      "source": "postgres",
+      "key": "campaign_id",
+      "fields": [
+        {
+          "name": "campaign_id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "entity_counts",
+          "type": "json",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "session",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "campaign_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "campaign",
+          "critical": true
+        },
+        {
+          "name": "position",
+          "type": "int",
+          "nullable": false
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "planned_on",
+          "type": "date",
+          "nullable": true
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "started_at",
+          "type": "datetime",
+          "nullable": true
+        },
+        {
+          "name": "closed_at",
+          "type": "datetime",
+          "nullable": true
+        },
+        {
+          "name": "microphone_on",
+          "type": "bool",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "summary",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "summary_model",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "summary_edited_at",
+          "type": "datetime",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "session_present_character",
+      "source": "postgres",
+      "key": "session_id",
+      "fields": [
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "session",
+          "critical": true
+        },
+        {
+          "name": "character_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "character",
+          "critical": true
+        },
+        {
+          "name": "added_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "session_roster_view",
+      "source": "postgres",
+      "key": "session_id",
+      "fields": [
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "character_id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "via",
+          "type": "text",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "scene",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "session",
+          "critical": true
+        },
+        {
+          "name": "position",
+          "type": "int",
+          "nullable": false
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "notes",
+          "type": "text",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "scene_entity",
+      "source": "postgres",
+      "key": "scene_id",
+      "fields": [
+        {
+          "name": "scene_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "scene",
+          "critical": true
+        },
+        {
+          "name": "entity_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "entity",
+          "critical": true
+        },
+        {
+          "name": "position",
+          "type": "int",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "scene_media",
+      "source": "postgres",
+      "key": "scene_id",
+      "fields": [
+        {
+          "name": "scene_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "scene",
+          "critical": true
+        },
+        {
+          "name": "media_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "media"
+        }
+      ]
+    },
+    {
+      "name": "session_media_view",
+      "source": "postgres",
+      "key": "session_id",
+      "fields": [
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "media_id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "via_place_id",
+          "type": "uuid",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "oral_brief",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "session",
+          "critical": true
+        },
+        {
+          "name": "transcript",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "duration_seconds",
+          "type": "int",
+          "nullable": false
+        },
+        {
+          "name": "recorded_at",
+          "type": "datetime",
+          "nullable": false
+        },
+        {
+          "name": "analyzed_at",
+          "type": "datetime",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "entity_to_create",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "campaign_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "campaign",
+          "critical": true
+        },
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "session"
+        },
+        {
+          "name": "brief_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "oral_brief"
+        },
+        {
+          "name": "scene_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "scene"
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "excerpt",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "refinement_text",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "created_entity_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "entity"
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "session_journal_line",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "session",
+          "critical": true
+        },
+        {
+          "name": "scene_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "scene"
+        },
+        {
+          "name": "spoken_at",
+          "type": "datetime",
+          "nullable": false
+        },
+        {
+          "name": "text",
+          "type": "text",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "sound",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "campaign_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "campaign",
+          "critical": true
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "file_path",
+          "type": "text",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "tags",
+          "type": "json",
+          "nullable": false
+        },
+        {
+          "name": "volume",
+          "type": "number",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "imported_note",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "campaign_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "campaign",
+          "critical": true
+        },
+        {
+          "name": "raw_text",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false
+        },
+        {
+          "name": "analyzed_at",
+          "type": "datetime",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "note_proposal",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "note_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "imported_note",
+          "critical": true
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "excerpt",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "existing_entity_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "entity"
+        },
+        {
+          "name": "checked",
+          "type": "bool",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "created_entity_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "entity"
+        }
+      ]
+    },
+    {
+      "name": "sound_playback",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "session",
+          "critical": true
+        },
+        {
+          "name": "sound_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "sound",
+          "critical": true
+        },
+        {
+          "name": "origin",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "started_at",
+          "type": "datetime",
+          "nullable": false
+        },
+        {
+          "name": "stopped_at",
+          "type": "datetime",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "battlemap_instance",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "battlemap_media_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "media",
+          "critical": true
+        },
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "session",
+          "critical": true
+        },
+        {
+          "name": "scene_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "scene",
+          "critical": true
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false
+        },
+        {
+          "name": "reset_at",
+          "type": "datetime",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "token",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "instance_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "battlemap_instance",
+          "critical": true
+        },
+        {
+          "name": "character_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "character",
+          "critical": true
+        },
+        {
+          "name": "number",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "q",
+          "type": "int",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "r",
+          "type": "int",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "visible",
+          "type": "bool",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "hp_current",
+          "type": "int",
+          "nullable": true,
+          "critical": true
+        },
+        {
+          "name": "hp_max",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "conditions",
+          "type": "json",
+          "nullable": false
+        },
+        {
+          "name": "dead",
+          "type": "bool",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "health_band",
+          "type": "text",
+          "nullable": true,
+          "critical": true
+        },
+        {
+          "name": "label_initial",
+          "type": "text",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "combat",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "instance_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "battlemap_instance",
+          "critical": true
+        },
+        {
+          "name": "round",
+          "type": "int",
+          "nullable": false
+        },
+        {
+          "name": "current_entry_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "initiative_entry"
+        },
+        {
+          "name": "started_at",
+          "type": "datetime",
+          "nullable": false
+        },
+        {
+          "name": "ended_at",
+          "type": "datetime",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "initiative_entry",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "combat_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "combat",
+          "critical": true
+        },
+        {
+          "name": "token_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "token",
+          "critical": true
+        },
+        {
+          "name": "roll",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "initiative",
+          "type": "int",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "dex_score",
+          "type": "int",
+          "nullable": true
+        },
+        {
+          "name": "tiebreak",
+          "type": "number",
+          "nullable": false
+        },
+        {
+          "name": "rank",
+          "type": "int",
+          "nullable": false,
+          "critical": true
+        }
+      ]
+    },
+    {
+      "name": "initiative_order_view",
+      "source": "postgres",
+      "key": "combat_id",
+      "fields": [
+        {
+          "name": "combat_id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "entry_id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "order_index",
+          "type": "int",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "shown_to_players",
+          "type": "bool",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "skipped",
+          "type": "bool",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "live_suggestion",
+      "source": "postgres",
+      "key": "id",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "session",
+          "critical": true
+        },
+        {
+          "name": "entity_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "entity"
+        },
+        {
+          "name": "sound_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "sound"
+        },
+        {
+          "name": "matched_text",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "detected_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "name": "diffusion",
+      "source": "postgres",
+      "key": "session_id",
+      "fields": [
+        {
+          "name": "session_id",
+          "type": "uuid",
+          "nullable": false,
+          "references": "session",
+          "critical": true
+        },
+        {
+          "name": "base_kind",
+          "type": "text",
+          "nullable": false,
+          "critical": true
+        },
+        {
+          "name": "base_media_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "media"
+        },
+        {
+          "name": "base_instance_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "battlemap_instance"
+        },
+        {
+          "name": "window_media_id",
+          "type": "uuid",
+          "nullable": true,
+          "references": "media"
+        },
+        {
+          "name": "window_x",
+          "type": "number",
+          "nullable": true
+        },
+        {
+          "name": "window_y",
+          "type": "number",
+          "nullable": true
+        },
+        {
+          "name": "window_width",
+          "type": "number",
+          "nullable": true
+        },
+        {
+          "name": "view_zoom",
+          "type": "number",
+          "nullable": false
+        },
+        {
+          "name": "view_pan_x",
+          "type": "number",
+          "nullable": false
+        },
+        {
+          "name": "view_pan_y",
+          "type": "number",
+          "nullable": false
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false
+        }
+      ]
+    }
+  ],
+  "aggregates": [
+    {
+      "name": "AiSettings",
+      "root": "ai_settings",
+      "entities": ["ai_provider"],
+      "invariants": [
+        {
+          "id": "mode-fields",
+          "description": "En mode « api », url et detected_api_type sont renseignés et binary est vide. En mode « binaire », binary vaut exactement « opencode » ou « claude-code » et url est vide."
+        },
+        {
+          "id": "api-type-recognized",
+          "description": "Une URL dont le type d'API n'est pas reconnu ne peut pas être enregistrée. Le test la refuse avec le message « type d'API non reconnu »."
+        },
+        {
+          "id": "test-does-not-save",
+          "description": "« Tester la connexion » n'écrit que les champs last_test_*. Il n'enregistre jamais URL, modèles ni mode, donc aucun réglage invalide n'est enregistré à l'insu du DM."
+        },
+        {
+          "id": "single-settings-row",
+          "description": "Il existe une seule ligne ai_settings (id = 1), et elle pointe vers un fournisseur existant."
+        },
+        {
+          "id": "text-only-payload",
+          "description": "Toute requête vers le fournisseur actif, API ou binaire, ne porte que du texte : prompts transcrits, briefs, notes, journal. Jamais d'audio."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "BattlemapInstance",
+      "root": "battlemap_instance",
+      "entities": ["token", "combat", "initiative_entry", "initiative_order_view"],
+      "invariants": [
+        {
+          "id": "instance-isolated",
+          "description": "Les tokens, PV, états et le combat appartiennent à l'instance. La battlemap d'origine et sa grille ne sont jamais modifiées par une instance."
+        },
+        {
+          "id": "one-instance-per-scene",
+          "description": "Une scène a au plus une instance de battlemap. La battlemap d'origine est liée à la scène et appartient à la campagne de la séance."
+        },
+        {
+          "id": "token-roster",
+          "description": "Un PJ ne peut être posé que s'il est présent à la séance, et un PJ n'a qu'un token par instance."
+        },
+        {
+          "id": "multi-drop-numbering",
+          "description": "Déposer un personnage « × n » crée n tokens numérotés à la suite des numéros déjà pris pour ce personnage (1 à n la première fois). Les numéros sont uniques par instance et par personnage. Renommer un token ne touche que lui."
+        },
+        {
+          "id": "pj-hp-not-tracked",
+          "description": "hp_current et hp_max restent vides pour un token de PJ. Pour un PNJ, hp_max est copié de la fiche à la pose et 0 ≤ hp_current ≤ hp_max."
+        },
+        {
+          "id": "hp-change-one-token",
+          "description": "Un changement de PV ne touche que le token visé, jamais les autres instances du même personnage."
+        },
+        {
+          "id": "dead-derived",
+          "description": "Un PNJ est mort si et seulement si ses PV courants valent 0. Il est alors grisé et sauté par « Suivant »."
+        },
+        {
+          "id": "players-see-band-only",
+          "description": "La player view ne reçoit que health_band : jamais de chiffre de PV, jamais de notes, jamais de token caché."
+        },
+        {
+          "id": "npc-initiative-bounds",
+          "description": "Pour un PNJ, roll est entre 1 et 20 et initiative = roll + modificateur de DEX. Pour un PJ, roll est vide et initiative est saisie par le DM."
+        },
+        {
+          "id": "initiative-tiebreak",
+          "description": "Au lancement, rank suit l'initiative décroissante, puis la DEX décroissante, puis le tirage aléatoire."
+        },
+        {
+          "id": "hidden-keeps-rank",
+          "description": "Un token caché garde son rank. Le révéler ne change ni son rang ni celui des autres participants."
+        },
+        {
+          "id": "next-turn",
+          "description": "« Suivant » passe au prochain participant vivant dans l'ordre des rangs. Il incrémente le round quand il revient au premier."
+        },
+        {
+          "id": "one-active-combat",
+          "description": "Une instance a au plus un combat sans ended_at."
+        },
+        {
+          "id": "state-persisted-reset",
+          "description": "Positions, PV, états et initiative sont persistés à chaque action et identiques après réouverture. « Réinitialiser la carte » supprime tokens, combat et initiative de l'instance."
+        },
+        {
+          "id": "single-position-source",
+          "description": "La position (q, r) d'un token est la seule source pour la DM view et la player view. Le dépôt est diffusé aux onglets en moins d'une seconde, et la distance affichée pendant le glisser vaut la distance hex entre l'origine et le curseur, multipliée par 5 pieds."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "Campaign",
+      "root": "campaign",
+      "entities": [],
+      "invariants": [
+        {
+          "id": "oneshot-single-session",
+          "description": "Un oneshot a exactement une séance : sa création crée cette séance, et on ne peut pas en ajouter une autre."
+        },
+        {
+          "id": "import-creates-copy",
+          "description": "Un import crée toujours une nouvelle campagne avec de nouveaux identifiants, même si origin_campaign_id correspond à une campagne existante. L'originale n'est jamais modifiée."
+        },
+        {
+          "id": "export-stamps-date",
+          "description": "Un export réussi met à jour last_exported_at et ne modifie rien d'autre."
+        },
+        {
+          "id": "master-volume-range",
+          "description": "Le volume global reste entre 0 et 1, et il multiplie le volume propre de chaque son."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "Diffusion",
+      "root": "diffusion",
+      "entities": [],
+      "invariants": [
+        {
+          "id": "base-coherent",
+          "description": "« cover » n'a ni média ni instance en fond. « illustration » a une illustration en base_media_id. « battlemap » a une instance de la séance en base_instance_id."
+        },
+        {
+          "id": "window-proportional",
+          "description": "La fenêtre flottante montre une illustration. Sa hauteur n'est pas stockée : elle vaut window_width × height_px / width_px, ce qui garde les proportions du média (2/3 pour 800 × 1200)."
+        },
+        {
+          "id": "window-fields-together",
+          "description": "window_x, window_y et window_width sont tous renseignés si une fenêtre est ouverte, et tous vides sinon."
+        },
+        {
+          "id": "single-diffusion-source",
+          "description": "La player view projetée et l'onglet player view du DM lisent la même ligne. Position, taille, zoom et cadrage y sont donc identiques."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "Entity",
+      "root": "entity",
+      "entities": ["character", "entity_alias", "entity_version", "detection_vocabulary_view"],
+      "invariants": [
+        {
+          "id": "character-is-pj-or-pnj",
+          "description": "Une fiche de personnage n'existe que pour un élément de type « pj » ou « pnj ». player_id n'est renseigné que pour un PJ, et le joueur appartient à la même campagne."
+        },
+        {
+          "id": "alias-unique-in-campaign",
+          "description": "Un alias, une fois normalisé, ne désigne qu'un seul élément d'une campagne et ne double pas le nom d'un autre élément."
+        },
+        {
+          "id": "every-change-versioned",
+          "description": "Tout enregistrement de l'élément ou de sa fiche, quelle que soit sa source (DM, IA, D&D Beyond, brief, restauration), ajoute une version avec son instantané complet et son diff. Les versions ne sont jamais modifiées."
+        },
+        {
+          "id": "restore-exact",
+          "description": "Revenir à une version, ou annuler un changement, réécrit l'élément, sa fiche et ses alias exactement comme dans l'instantané visé, et ajoute une version de source « restauration »."
+        },
+        {
+          "id": "dndbeyond-resync-scope",
+          "description": "Une resynchronisation D&D Beyond ne change que les caractéristiques, la CA, les PV max, les sorts et les actions. Les alias, les notes, le token et le portrait restent inchangés."
+        },
+        {
+          "id": "proposal-fills-sheet-fields",
+          "description": "Une proposition IA remplit background, comportement, caractéristiques, CA, PV max et actions dans les mêmes champs, quel que soit le fournisseur. Elle n'est construite qu'à partir de texte."
+        },
+        {
+          "id": "explicit-save-only",
+          "description": "Seul un enregistrement explicite du DM écrit la fiche. Une modification non enregistrée n'est jamais écrite, et « Enregistrer et continuer » écrit avant la navigation."
+        },
+        {
+          "id": "default-token",
+          "description": "Sans image de token ni portrait, le token s'affiche comme une pastille de token_color portant l'initiale du nom. Avec un portrait recadré, il affiche ce recadrage."
+        },
+        {
+          "id": "dex-modifier-derived",
+          "description": "Le modificateur de DEX vaut toujours floor((DEX - 10) / 2) et n'est jamais saisi."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "Media",
+      "root": "media",
+      "entities": [],
+      "invariants": [
+        {
+          "id": "grid-only-for-battlemap",
+          "description": "Seule une battlemap a un réglage de grille, et elle en a toujours un dès son téléversement."
+        },
+        {
+          "id": "hex-is-five-feet",
+          "description": "Un hex vaut toujours 5 pieds, quels que soient sa taille, son décalage ou son orientation."
+        },
+        {
+          "id": "grid-values-range",
+          "description": "La taille d'un hex est strictement positive et l'opacité reste entre 0 et 1."
+        },
+        {
+          "id": "media-place-is-lieu",
+          "description": "Le lieu d'un média, s'il est renseigné, est un élément de type « lieu » de la même campagne."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "NoteImport",
+      "root": "note_proposal",
+      "entities": ["imported_note"],
+      "invariants": [
+        {
+          "id": "no-creation-before-validation",
+          "description": "L'analyse des notes ne crée aucun élément. Seule la validation crée des éléments, et seulement pour les propositions cochées qui n'ont pas encore de created_entity_id."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "Player",
+      "root": "player",
+      "entities": [],
+      "invariants": [
+        {
+          "id": "player-not-character",
+          "description": "Un joueur n'est pas un élément de campagne : il n'a ni fiche ni token. Il est relié à ses PJ par character.player_id."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "Session",
+      "root": "session",
+      "entities": [
+        "session_present_character",
+        "session_roster_view",
+        "scene",
+        "scene_entity",
+        "scene_media",
+        "session_media_view",
+        "oral_brief",
+        "entity_to_create",
+        "session_journal_line"
+      ],
+      "invariants": [
+        {
+          "id": "present-only-pj",
+          "description": "Seuls des PJ de la même campagne peuvent être cochés présents. Les PJ proposés en DM view et sur les battlemaps sont exactement les présents, y compris ceux ajoutés plus tard."
+        },
+        {
+          "id": "scene-order-contiguous",
+          "description": "Les rangs des scènes d'une séance vont de 1 à n, sans trou ni doublon. Un réordonnancement réécrit tous les rangs d'un coup."
+        },
+        {
+          "id": "scene-links-same-campaign",
+          "description": "Les éléments et médias liés à une scène appartiennent à la campagne de la séance."
+        },
+        {
+          "id": "session-media-by-place",
+          "description": "Un média est associé à une séance s'il est lié à une de ses scènes ou si son lieu figure dans une de ses scènes. Cette association n'est jamais stockée, elle suit donc tout changement de lieu. Un média sans lieu reste valide."
+        },
+        {
+          "id": "brief-no-auto-creation",
+          "description": "L'analyse d'un brief lie les éléments existants à leurs scènes et met à jour les PNJ existants avec une version et son diff. Tout élément inconnu va dans la liste « à créer » avec son type et son extrait. Aucun élément n'est créé automatiquement."
+        },
+        {
+          "id": "to-create-leaves-once-created",
+          "description": "Une entrée « à créer » passe à « creee » si et seulement si created_entity_id est renseigné. La proposition affinée tient compte de l'extrait et des phrases ajoutées."
+        },
+        {
+          "id": "status-lifecycle",
+          "description": "Une séance passe de « prep » à « live » puis à « closed », sans retour en arrière. Une séance close n'accepte plus de lignes de journal."
+        },
+        {
+          "id": "close-session",
+          "description": "Clore une séance éteint le micro, arrête les sons, conserve le journal horodaté en local et enregistre le résumé avec le modèle de résumé configuré."
+        },
+        {
+          "id": "text-only-no-audio",
+          "description": "Aucune colonne ne contient d'audio. Les briefs et le journal ne sont conservés qu'en texte transcrit en local, et seul ce texte part vers le fournisseur."
+        },
+        {
+          "id": "previous-summary-visible",
+          "description": "Le résumé et le journal de la séance close qui précède sont lisibles depuis la séance suivante, et le résumé figure dans la liste des séances."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "Sound",
+      "root": "sound",
+      "entities": [],
+      "invariants": [
+        {
+          "id": "sound-volume-range",
+          "description": "Le volume propre reste entre 0 et 1. Le volume effectif vaut volume × volume global, ce qui garde le rapport entre deux sons."
+        },
+        {
+          "id": "tags-normalized",
+          "description": "Les tags sont en minuscules, sans doublon. Le filtre par tag et la recherche sur le nom ne lisent que ces champs."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "SoundPlayback",
+      "root": "sound_playback",
+      "entities": [],
+      "invariants": [
+        {
+          "id": "simultaneous-playback",
+          "description": "Plusieurs lectures sans stopped_at peuvent coexister. Un son déclenché depuis la pastille ajoute une lecture sans arrêter les autres."
+        },
+        {
+          "id": "stop-all",
+          "description": "« Tout arrêter » renseigne stopped_at sur toutes les lectures en cours de la séance."
+        },
+        {
+          "id": "dm-side-only",
+          "description": "Une lecture n'est jouée que par la DM view. La player view ne reçoit aucune lecture."
+        }
+      ],
+      "criticality": "high"
+    },
+    {
+      "name": "Suggestion",
+      "root": "live_suggestion",
+      "entities": [],
+      "invariants": [
+        {
+          "id": "suggestion-target",
+          "description": "Une suggestion vise exactement un élément ou un son de la campagne de la séance. La détection ne lit que le vocabulaire de la campagne."
+        },
+        {
+          "id": "pile-and-history-derived",
+          "description": "La pile de la pastille est formée des 5 suggestions les plus récentes, et l'historique les liste toutes par detected_at décroissant. Rien n'est stocké en plus des suggestions."
+        },
+        {
+          "id": "live-only-local-audio",
+          "description": "Une suggestion n'est produite que pendant une séance « live » avec le micro allumé. Elle vient d'une transcription locale, et aucun audio ne quitte la machine."
+        }
+      ],
+      "criticality": "high"
+    }
+  ]
+}

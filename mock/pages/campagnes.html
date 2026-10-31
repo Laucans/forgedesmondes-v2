@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil des campagnes</title>
+  <link rel="stylesheet" href="../mock.css">
+</head>
+<body>
+  <nav data-el="site-menu" aria-label="Sections">
+    <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
+    <a data-el="menu-medias" data-link="medias" href="medias.html">Médias</a>
+    <a data-el="menu-soundbox" data-link="soundbox" href="soundbox.html">Soundbox</a>
+    <a data-el="menu-parametres-ia" data-link="parametres-ia" href="parametres-ia.html">Paramètres IA</a>
+  </nav>
+  <main data-page="campagnes">
+    <h1>Accueil des campagnes</h1>
+    <section data-el="campaign-list"><h2>Les campagnes et oneshots avec leur couverture ; création, export et import d’archive</h2>
+      <button type="button" data-el="campaign-list-create-campaign" data-action="campaign.createCampaign">create campaign</button>
+      <button type="button" data-el="campaign-list-export-campaign" data-action="campaign.exportCampaign">export campaign</button>
+      <button type="button" data-el="campaign-list-import-campaign" data-action="campaign.importCampaign">import campaign</button>
+      <a data-el="campaign-list-to-campagne" data-link="campagne" href="campagne.html">Vers Campagne</a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soundbox</title>
+  <link rel="stylesheet" href="../mock.css">
+</head>
+<body>
+  <nav data-el="site-menu" aria-label="Sections">
+    <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
+    <a data-el="menu-medias" data-link="medias" href="medias.html">Médias</a>
+    <a data-el="menu-soundbox" data-link="soundbox" href="soundbox.html">Soundbox</a>
+    <a data-el="menu-parametres-ia" data-link="parametres-ia" href="parametres-ia.html">Paramètres IA</a>
+  </nav>
+  <main data-page="soundbox">
+    <h1>Soundbox</h1>
+    <section data-el="sound-library"><h2>La bibliothèque des effets sonores : téléversement, nom, tags et volume propre</h2>
+      <button type="button" data-el="sound-library-add-sound" data-action="soundbox.addSound">add sound</button>
+      <button type="button" data-el="sound-library-update-sound" data-action="soundbox.updateSound">update sound</button>
+      <button type="button" data-el="sound-library-remove-sound" data-action="soundbox.removeSound">remove sound</button>
+    </section>
+    <section data-el="live-soundbox"><h2>L’onglet Soundbox de la DM view : cases de sons, recherche, filtre par tags, volume global et par son, « Tout arrêter »</h2>
+      <button type="button" data-el="live-soundbox-play-sound" data-action="soundbox.playSound">play sound</button>
+      <button type="button" data-el="live-soundbox-stop-all" data-action="soundbox.stopAll">stop all</button>
+      <button type="button" data-el="live-soundbox-set-sound-volume" data-action="soundbox.setSoundVolume">set sound volume</button>
+      <button type="button" data-el="live-soundbox-set-master-volume" data-action="soundbox.setMasterVolume">set master volume</button>
+    </section>
+  </main>
+</body>
+</html>

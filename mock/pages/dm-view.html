@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DM view</title>
+  <link rel="stylesheet" href="../mock.css">
+</head>
+<body>
+  <nav data-el="site-menu" aria-label="Sections">
+    <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
+    <a data-el="menu-medias" data-link="medias" href="medias.html">Médias</a>
+    <a data-el="menu-soundbox" data-link="soundbox" href="soundbox.html">Soundbox</a>
+    <a data-el="menu-parametres-ia" data-link="parametres-ia" href="parametres-ia.html">Paramètres IA</a>
+  </nav>
+  <main data-page="dm-view">
+    <h1>DM view</h1>
+    <section data-el="live-session-bar"><h2>La séance en direct : ses scènes, ce que voient les joueurs, l’ouverture de la player view et la clôture avec son bilan (lignes de journal, durée, modèle et résumé)</h2>
+      <button type="button" data-el="live-session-bar-show-cover" data-action="live.showCover">show cover</button>
+      <button type="button" data-el="live-session-bar-close-window" data-action="live.closeWindow">close window</button>
+      <button type="button" data-el="live-session-bar-close-session" data-action="session.closeSession">close session</button>
+      <a data-el="live-session-bar-to-player-view" data-link="player-view" href="player-view.html">Vers Player view</a>
+      <a data-el="live-session-bar-to-campagne" data-link="campagne" href="campagne.html">Vers Campagne</a>
+    </section>
+    <section data-el="elements-panel"><h2>Le panneau gauche de la DM view : la séance scène par scène, puis toute la campagne par type, avec une recherche approximative sur les noms et alias</h2>
+      <button type="button" data-el="elements-panel-show-on-player-view" data-action="live.showOnPlayerView">show on player view</button>
+      <button type="button" data-el="elements-panel-show-window-on-player-view" data-action="live.showWindowOnPlayerView">show window on player view</button>
+    </section>
+    <section data-el="table-sheet"><h2>La fiche d’un élément en lecture, optimisée pour la table, avec édition et envoi de l’illustration aux joueurs</h2>
+      <button type="button" data-el="table-sheet-show-on-player-view" data-action="live.showOnPlayerView">show on player view</button>
+      <button type="button" data-el="table-sheet-show-window-on-player-view" data-action="live.showWindowOnPlayerView">show window on player view</button>
+      <a data-el="table-sheet-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>
+    </section>
+    <section data-el="battlemap"><h2>Une instance de battlemap : grille hexagonale, tokens glissés avec le compteur « hex · pi », personnages déposés × N, fiche du token (renommer, cacher, état, PV, retirer), combat avec son carrousel d’initiative (Suivant, réordonner, ajouter, retirer, terminer), réinitialisation de la carte et envoi aux joueurs ; en player view, seulement ce que les joueurs peuvent voir</h2>
+      <button type="button" data-el="battlemap-move-token" data-action="table.moveToken">move token</button>
+      <button type="button" data-el="battlemap-place-tokens" data-action="table.placeTokens">place tokens</button>
+      <button type="button" data-el="battlemap-remove-token" data-action="table.removeToken">remove token</button>
+      <button type="button" data-el="battlemap-rename-token" data-action="table.renameToken">rename token</button>
+      <button type="button" data-el="battlemap-set-token-visibility" data-action="table.setTokenVisibility">set token visibility</button>
+      <button type="button" data-el="battlemap-set-token-condition" data-action="table.setTokenCondition">set token condition</button>
+      <button type="button" data-el="battlemap-show-on-player-view" data-action="live.showOnPlayerView">show on player view</button>
+      <button type="button" data-el="battlemap-change-hit-points" data-action="table.changeHitPoints">change hit points</button>
+      <button type="button" data-el="battlemap-start-combat" data-action="table.startCombat">start combat</button>
+      <button type="button" data-el="battlemap-next-turn" data-action="table.nextTurn">next turn</button>
+      <button type="button" data-el="battlemap-reorder-initiative" data-action="table.reorderInitiative">reorder initiative</button>
+      <button type="button" data-el="battlemap-add-participant" data-action="table.addParticipant">add participant</button>
+      <button type="button" data-el="battlemap-remove-participant" data-action="table.removeParticipant">remove participant</button>
+      <button type="button" data-el="battlemap-end-combat" data-action="table.endCombat">end combat</button>
+      <button type="button" data-el="battlemap-reset-battlemap" data-action="table.resetBattlemap">reset battlemap</button>
+    </section>
+    <section data-el="live-soundbox"><h2>L’onglet Soundbox de la DM view : cases de sons, recherche, filtre par tags, volume global et par son, « Tout arrêter »</h2>
+      <button type="button" data-el="live-soundbox-play-sound" data-action="soundbox.playSound">play sound</button>
+      <button type="button" data-el="live-soundbox-stop-all" data-action="soundbox.stopAll">stop all</button>
+      <button type="button" data-el="live-soundbox-set-sound-volume" data-action="soundbox.setSoundVolume">set sound volume</button>
+      <button type="button" data-el="live-soundbox-set-master-volume" data-action="soundbox.setMasterVolume">set master volume</button>
+    </section>
+    <section data-el="suggestion-pill"><h2>La pastille en bas à droite : les 5 dernières entités ou sons entendus au micro, leur historique, et le bouton marche/pause du micro</h2>
+      <button type="button" data-el="suggestion-pill-set-microphone" data-action="live.setMicrophone">set microphone</button>
+      <button type="button" data-el="suggestion-pill-play-sound" data-action="soundbox.playSound">play sound</button>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,1557 @@
+{
+  "version": 1,
+  "home": "campagnes",
+  "pages": [
+    {
+      "id": "campagnes",
+      "title": "Accueil des campagnes",
+      "file": "pages/campagnes.html",
+      "path": ["Campagnes"],
+      "screen": "campagnes",
+      "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Sections",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-medias",
+          "kind": "link",
+          "label": "Médias",
+          "to": "medias",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-soundbox",
+          "kind": "link",
+          "label": "Soundbox",
+          "to": "soundbox",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-parametres-ia",
+          "kind": "link",
+          "label": "Paramètres IA",
+          "to": "parametres-ia",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "campaign-list",
+          "kind": "component",
+          "label": "Les campagnes et oneshots avec leur couverture ; création, export et import d’archive",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-list-create-campaign",
+          "kind": "action",
+          "label": "create campaign",
+          "action": "campaign.createCampaign",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-list-export-campaign",
+          "kind": "action",
+          "label": "export campaign",
+          "action": "campaign.exportCampaign",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-list-import-campaign",
+          "kind": "action",
+          "label": "import campaign",
+          "action": "campaign.importCampaign",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-list-to-campagne",
+          "kind": "link",
+          "label": "Vers Campagne",
+          "to": "campagne",
+          "component": "campaign.campaignList",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "parametres-ia",
+      "title": "Paramètres IA",
+      "file": "pages/parametres-ia.html",
+      "path": ["Paramètres IA"],
+      "screen": "parametres-ia",
+      "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Sections",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-medias",
+          "kind": "link",
+          "label": "Médias",
+          "to": "medias",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-soundbox",
+          "kind": "link",
+          "label": "Soundbox",
+          "to": "soundbox",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-parametres-ia",
+          "kind": "link",
+          "label": "Paramètres IA",
+          "to": "parametres-ia",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "ai-settings",
+          "kind": "component",
+          "label": "Le fournisseur de génération (API cloud ou opencode maison), ses modèles et sa clé, le test de connexion et ce qui sort de la machine",
+          "component": "ai.aiSettings",
+          "roles": []
+        },
+        {
+          "id": "ai-settings-save-settings",
+          "kind": "action",
+          "label": "save settings",
+          "action": "ai.saveSettings",
+          "component": "ai.aiSettings",
+          "roles": []
+        },
+        {
+          "id": "ai-settings-test-connection",
+          "kind": "action",
+          "label": "test connection",
+          "action": "ai.testConnection",
+          "component": "ai.aiSettings",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "campagne",
+      "title": "Campagne",
+      "file": "pages/campagne.html",
+      "path": ["Campagnes", "Campagne"],
+      "screen": "campagne",
+      "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Sections",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-medias",
+          "kind": "link",
+          "label": "Médias",
+          "to": "medias",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-soundbox",
+          "kind": "link",
+          "label": "Soundbox",
+          "to": "soundbox",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-parametres-ia",
+          "kind": "link",
+          "label": "Paramètres IA",
+          "to": "parametres-ia",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "crumb-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "campaign-overview",
+          "kind": "component",
+          "label": "La couverture, le résumé chiffré de la campagne, l’accès à la prochaine séance et l’export en archive",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "campaign-overview-export-campaign",
+          "kind": "action",
+          "label": "export campaign",
+          "action": "campaign.exportCampaign",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "campaign-overview-to-dm-view",
+          "kind": "link",
+          "label": "Vers DM view",
+          "to": "dm-view",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "campaign-overview-to-preparation-seance",
+          "kind": "link",
+          "label": "Vers Préparation de séance",
+          "to": "preparation-seance",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "session-list",
+          "kind": "component",
+          "label": "Les séances dans l’ordre avec leur résumé et leurs PJ présents ; création d’une séance avec choix des PJ",
+          "component": "session.sessionList",
+          "roles": []
+        },
+        {
+          "id": "session-list-create-session",
+          "kind": "action",
+          "label": "create session",
+          "action": "session.createSession",
+          "component": "session.sessionList",
+          "roles": []
+        },
+        {
+          "id": "session-list-to-dm-view",
+          "kind": "link",
+          "label": "Vers DM view",
+          "to": "dm-view",
+          "component": "session.sessionList",
+          "roles": []
+        },
+        {
+          "id": "session-list-to-preparation-seance",
+          "kind": "link",
+          "label": "Vers Préparation de séance",
+          "to": "preparation-seance",
+          "component": "session.sessionList",
+          "roles": []
+        },
+        {
+          "id": "campaign-elements",
+          "kind": "component",
+          "label": "Les éléments de la campagne : en grille à onglets (joueurs, personnages, lieux, événements, médias, sons) ou en rail collant à gauche d’une fiche (PJ, PNJ, lieux, événements ; recherche floue, repliable, tiroir sous 960 px)",
+          "component": "campaign.campaignElements",
+          "roles": []
+        },
+        {
+          "id": "campaign-elements-to-fiche-entite",
+          "kind": "link",
+          "label": "Vers Fiche d’entité",
+          "to": "fiche-entite",
+          "component": "campaign.campaignElements",
+          "roles": []
+        },
+        {
+          "id": "campaign-elements-to-medias",
+          "kind": "link",
+          "label": "Vers Médias et réglage de battlemap",
+          "to": "medias",
+          "component": "campaign.campaignElements",
+          "roles": []
+        },
+        {
+          "id": "campaign-elements-to-soundbox",
+          "kind": "link",
+          "label": "Vers Soundbox",
+          "to": "soundbox",
+          "component": "campaign.campaignElements",
+          "roles": []
+        },
+        {
+          "id": "to-create-list",
+          "kind": "component",
+          "label": "Les PNJ, lieux et événements issus des briefs, à créer depuis le brief ou après une description affinée à l’oral ou à l’écrit ; la proposition de l’IA (background, comportement, fiche de stats) s’affiche une fois l’élément créé",
+          "component": "ai.toCreateList",
+          "roles": []
+        },
+        {
+          "id": "to-create-list-create-from-brief",
+          "kind": "action",
+          "label": "create from brief",
+          "action": "ai.createFromBrief",
+          "component": "ai.toCreateList",
+          "roles": []
+        },
+        {
+          "id": "to-create-list-to-fiche-entite",
+          "kind": "link",
+          "label": "Vers Fiche d’entité",
+          "to": "fiche-entite",
+          "component": "ai.toCreateList",
+          "roles": []
+        },
+        {
+          "id": "note-import",
+          "kind": "component",
+          "label": "L’import de notes en texte libre, tapées, collées ou dictées ; extraction par l’IA puis validation en lot, la note brute conservée",
+          "component": "ai.noteImport",
+          "roles": []
+        },
+        {
+          "id": "note-import-extract-from-notes",
+          "kind": "action",
+          "label": "extract from notes",
+          "action": "ai.extractFromNotes",
+          "component": "ai.noteImport",
+          "roles": []
+        },
+        {
+          "id": "note-import-create-entities-from-note",
+          "kind": "action",
+          "label": "create entities from note",
+          "action": "campaign.createEntitiesFromNote",
+          "component": "ai.noteImport",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "fiche-entite",
+      "title": "Fiche d’entité",
+      "file": "pages/fiche-entite.html",
+      "path": ["Campagnes", "Campagne", "Fiche d’entité"],
+      "screen": "fiche-entite",
+      "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Sections",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-medias",
+          "kind": "link",
+          "label": "Médias",
+          "to": "medias",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-soundbox",
+          "kind": "link",
+          "label": "Soundbox",
+          "to": "soundbox",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-parametres-ia",
+          "kind": "link",
+          "label": "Paramètres IA",
+          "to": "parametres-ia",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "crumb-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "crumb-campagne",
+          "kind": "link",
+          "label": "Campagne",
+          "to": "campagne",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "campaign-elements",
+          "kind": "component",
+          "label": "Les éléments de la campagne : en grille à onglets (joueurs, personnages, lieux, événements, médias, sons) ou en rail collant à gauche d’une fiche (PJ, PNJ, lieux, événements ; recherche floue, repliable, tiroir sous 960 px)",
+          "component": "campaign.campaignElements",
+          "roles": []
+        },
+        {
+          "id": "campaign-elements-to-medias",
+          "kind": "link",
+          "label": "Vers Médias et réglage de battlemap",
+          "to": "medias",
+          "component": "campaign.campaignElements",
+          "roles": []
+        },
+        {
+          "id": "campaign-elements-to-soundbox",
+          "kind": "link",
+          "label": "Vers Soundbox",
+          "to": "soundbox",
+          "component": "campaign.campaignElements",
+          "roles": []
+        },
+        {
+          "id": "version-history",
+          "kind": "component",
+          "label": "Le bouton « Mis à jour » d’une fiche modifiée par l’IA, son diff champ par champ et l’historique des versions avec retour à une version antérieure",
+          "component": "campaign.versionHistory",
+          "roles": []
+        },
+        {
+          "id": "version-history-restore-entity-version",
+          "kind": "action",
+          "label": "restore entity version",
+          "action": "campaign.restoreEntityVersion",
+          "component": "campaign.versionHistory",
+          "roles": []
+        },
+        {
+          "id": "entity-editor",
+          "kind": "component",
+          "label": "La fiche d’un personnage, d’un lieu ou d’un événement : identité, alias, prompt initial dicté, fiche de stats, token, notes et D&D Beyond ; s’ouvre sur place depuis le rail, avec une barre de confirmation si la fiche est modifiée et non enregistrée",
+          "component": "campaign.entityEditor",
+          "roles": []
+        },
+        {
+          "id": "entity-editor-save-entity",
+          "kind": "action",
+          "label": "save entity",
+          "action": "campaign.saveEntity",
+          "component": "campaign.entityEditor",
+          "roles": []
+        },
+        {
+          "id": "entity-editor-propose-character",
+          "kind": "action",
+          "label": "propose character",
+          "action": "ai.proposeCharacter",
+          "component": "campaign.entityEditor",
+          "roles": []
+        },
+        {
+          "id": "entity-editor-import-character",
+          "kind": "action",
+          "label": "import character",
+          "action": "dndbeyond.importCharacter",
+          "component": "campaign.entityEditor",
+          "roles": []
+        },
+        {
+          "id": "entity-editor-resync-character",
+          "kind": "action",
+          "label": "resync character",
+          "action": "dndbeyond.resyncCharacter",
+          "component": "campaign.entityEditor",
+          "roles": []
+        },
+        {
+          "id": "entity-editor-to-campagne",
+          "kind": "link",
+          "label": "Vers Campagne",
+          "to": "campagne",
+          "component": "campaign.entityEditor",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "preparation-seance",
+      "title": "Préparation de séance",
+      "file": "pages/preparation-seance.html",
+      "path": ["Campagnes", "Campagne", "Préparation de séance"],
+      "screen": "preparation-seance",
+      "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Sections",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-medias",
+          "kind": "link",
+          "label": "Médias",
+          "to": "medias",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-soundbox",
+          "kind": "link",
+          "label": "Soundbox",
+          "to": "soundbox",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-parametres-ia",
+          "kind": "link",
+          "label": "Paramètres IA",
+          "to": "parametres-ia",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "crumb-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "crumb-campagne",
+          "kind": "link",
+          "label": "Campagne",
+          "to": "campagne",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "previous-summary",
+          "kind": "component",
+          "label": "Le résumé de la séance précédente, ses entités mentionnées, ses fils ouverts et son journal transcrit en panneau latéral",
+          "component": "session.previousSummary",
+          "roles": []
+        },
+        {
+          "id": "previous-summary-to-fiche-entite",
+          "kind": "link",
+          "label": "Vers Fiche d’entité",
+          "to": "fiche-entite",
+          "component": "session.previousSummary",
+          "roles": []
+        },
+        {
+          "id": "oral-brief",
+          "kind": "component",
+          "label": "Le brief raconté au micro, transcrit en local, puis découpé en scènes avec les entités reconnues, mises à jour ou manquantes",
+          "component": "ai.oralBrief",
+          "roles": []
+        },
+        {
+          "id": "oral-brief-analyze-brief",
+          "kind": "action",
+          "label": "analyze brief",
+          "action": "ai.analyzeBrief",
+          "component": "ai.oralBrief",
+          "roles": []
+        },
+        {
+          "id": "oral-brief-to-fiche-entite",
+          "kind": "link",
+          "label": "Vers Fiche d’entité",
+          "to": "fiche-entite",
+          "component": "ai.oralBrief",
+          "roles": []
+        },
+        {
+          "id": "scene-board",
+          "kind": "component",
+          "label": "Les PJ présents et les scènes ordonnées de la séance, avec leurs lieux, PNJ, événements, médias, notes et instance de battlemap",
+          "component": "session.sceneBoard",
+          "roles": []
+        },
+        {
+          "id": "scene-board-add-present-character",
+          "kind": "action",
+          "label": "add present character",
+          "action": "session.addPresentCharacter",
+          "component": "session.sceneBoard",
+          "roles": []
+        },
+        {
+          "id": "scene-board-remove-present-character",
+          "kind": "action",
+          "label": "remove present character",
+          "action": "session.removePresentCharacter",
+          "component": "session.sceneBoard",
+          "roles": []
+        },
+        {
+          "id": "scene-board-add-scene",
+          "kind": "action",
+          "label": "add scene",
+          "action": "session.addScene",
+          "component": "session.sceneBoard",
+          "roles": []
+        },
+        {
+          "id": "scene-board-reorder-scenes",
+          "kind": "action",
+          "label": "reorder scenes",
+          "action": "session.reorderScenes",
+          "component": "session.sceneBoard",
+          "roles": []
+        },
+        {
+          "id": "scene-board-update-scene-notes",
+          "kind": "action",
+          "label": "update scene notes",
+          "action": "session.updateSceneNotes",
+          "component": "session.sceneBoard",
+          "roles": []
+        },
+        {
+          "id": "scene-board-create-battlemap-instance",
+          "kind": "action",
+          "label": "create battlemap instance",
+          "action": "table.createBattlemapInstance",
+          "component": "session.sceneBoard",
+          "roles": []
+        },
+        {
+          "id": "scene-board-to-fiche-entite",
+          "kind": "link",
+          "label": "Vers Fiche d’entité",
+          "to": "fiche-entite",
+          "component": "session.sceneBoard",
+          "roles": []
+        },
+        {
+          "id": "scene-board-to-medias",
+          "kind": "link",
+          "label": "Vers Médias et réglage de battlemap",
+          "to": "medias",
+          "component": "session.sceneBoard",
+          "roles": []
+        },
+        {
+          "id": "version-history",
+          "kind": "component",
+          "label": "Le bouton « Mis à jour » d’une fiche modifiée par l’IA, son diff champ par champ et l’historique des versions avec retour à une version antérieure",
+          "component": "campaign.versionHistory",
+          "roles": []
+        },
+        {
+          "id": "version-history-restore-entity-version",
+          "kind": "action",
+          "label": "restore entity version",
+          "action": "campaign.restoreEntityVersion",
+          "component": "campaign.versionHistory",
+          "roles": []
+        },
+        {
+          "id": "to-create-list",
+          "kind": "component",
+          "label": "Les PNJ, lieux et événements issus des briefs, à créer depuis le brief ou après une description affinée à l’oral ou à l’écrit ; la proposition de l’IA (background, comportement, fiche de stats) s’affiche une fois l’élément créé",
+          "component": "ai.toCreateList",
+          "roles": []
+        },
+        {
+          "id": "to-create-list-create-from-brief",
+          "kind": "action",
+          "label": "create from brief",
+          "action": "ai.createFromBrief",
+          "component": "ai.toCreateList",
+          "roles": []
+        },
+        {
+          "id": "to-create-list-to-fiche-entite",
+          "kind": "link",
+          "label": "Vers Fiche d’entité",
+          "to": "fiche-entite",
+          "component": "ai.toCreateList",
+          "roles": []
+        },
+        {
+          "id": "battlemap",
+          "kind": "component",
+          "label": "Une instance de battlemap : grille hexagonale, tokens glissés avec le compteur « hex · pi », personnages déposés × N, fiche du token (renommer, cacher, état, PV, retirer), combat avec son carrousel d’initiative (Suivant, réordonner, ajouter, retirer, terminer), réinitialisation de la carte et envoi aux joueurs ; en player view, seulement ce que les joueurs peuvent voir",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-move-token",
+          "kind": "action",
+          "label": "move token",
+          "action": "table.moveToken",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-place-tokens",
+          "kind": "action",
+          "label": "place tokens",
+          "action": "table.placeTokens",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-remove-token",
+          "kind": "action",
+          "label": "remove token",
+          "action": "table.removeToken",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-rename-token",
+          "kind": "action",
+          "label": "rename token",
+          "action": "table.renameToken",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-set-token-visibility",
+          "kind": "action",
+          "label": "set token visibility",
+          "action": "table.setTokenVisibility",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-set-token-condition",
+          "kind": "action",
+          "label": "set token condition",
+          "action": "table.setTokenCondition",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-show-on-player-view",
+          "kind": "action",
+          "label": "show on player view",
+          "action": "live.showOnPlayerView",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-change-hit-points",
+          "kind": "action",
+          "label": "change hit points",
+          "action": "table.changeHitPoints",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-start-combat",
+          "kind": "action",
+          "label": "start combat",
+          "action": "table.startCombat",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-next-turn",
+          "kind": "action",
+          "label": "next turn",
+          "action": "table.nextTurn",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-reorder-initiative",
+          "kind": "action",
+          "label": "reorder initiative",
+          "action": "table.reorderInitiative",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-add-participant",
+          "kind": "action",
+          "label": "add participant",
+          "action": "table.addParticipant",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-remove-participant",
+          "kind": "action",
+          "label": "remove participant",
+          "action": "table.removeParticipant",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-end-combat",
+          "kind": "action",
+          "label": "end combat",
+          "action": "table.endCombat",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-reset-battlemap",
+          "kind": "action",
+          "label": "reset battlemap",
+          "action": "table.resetBattlemap",
+          "component": "table.battlemap",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "medias",
+      "title": "Médias et réglage de battlemap",
+      "file": "pages/medias.html",
+      "path": ["Médias"],
+      "screen": "medias",
+      "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Sections",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-medias",
+          "kind": "link",
+          "label": "Médias",
+          "to": "medias",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-soundbox",
+          "kind": "link",
+          "label": "Soundbox",
+          "to": "soundbox",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-parametres-ia",
+          "kind": "link",
+          "label": "Paramètres IA",
+          "to": "parametres-ia",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "media-library",
+          "kind": "component",
+          "label": "Le téléversement et la liste des battlemaps et illustrations de la campagne, chacune rattachable à un lieu ; si le lieu est dans la séance, le média l’est aussi",
+          "component": "media.mediaLibrary",
+          "roles": []
+        },
+        {
+          "id": "media-library-upload-media",
+          "kind": "action",
+          "label": "upload media",
+          "action": "media.uploadMedia",
+          "component": "media.mediaLibrary",
+          "roles": []
+        },
+        {
+          "id": "media-library-set-media-place",
+          "kind": "action",
+          "label": "set media place",
+          "action": "media.setMediaPlace",
+          "component": "media.mediaLibrary",
+          "roles": []
+        },
+        {
+          "id": "media-library-add-place-to-session",
+          "kind": "action",
+          "label": "add place to session",
+          "action": "session.addPlaceToSession",
+          "component": "media.mediaLibrary",
+          "roles": []
+        },
+        {
+          "id": "grid-settings",
+          "kind": "component",
+          "label": "Le réglage de la grille hexagonale d’une battlemap (taille, décalage, orientation, couleur, opacité) avec un aperçu en direct",
+          "component": "media.gridSettings",
+          "roles": []
+        },
+        {
+          "id": "grid-settings-save-grid-settings",
+          "kind": "action",
+          "label": "save grid settings",
+          "action": "media.saveGridSettings",
+          "component": "media.gridSettings",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "soundbox",
+      "title": "Soundbox",
+      "file": "pages/soundbox.html",
+      "path": ["Soundbox"],
+      "screen": "soundbox",
+      "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Sections",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-medias",
+          "kind": "link",
+          "label": "Médias",
+          "to": "medias",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-soundbox",
+          "kind": "link",
+          "label": "Soundbox",
+          "to": "soundbox",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-parametres-ia",
+          "kind": "link",
+          "label": "Paramètres IA",
+          "to": "parametres-ia",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "sound-library",
+          "kind": "component",
+          "label": "La bibliothèque des effets sonores : téléversement, nom, tags et volume propre",
+          "component": "soundbox.soundLibrary",
+          "roles": []
+        },
+        {
+          "id": "sound-library-add-sound",
+          "kind": "action",
+          "label": "add sound",
+          "action": "soundbox.addSound",
+          "component": "soundbox.soundLibrary",
+          "roles": []
+        },
+        {
+          "id": "sound-library-update-sound",
+          "kind": "action",
+          "label": "update sound",
+          "action": "soundbox.updateSound",
+          "component": "soundbox.soundLibrary",
+          "roles": []
+        },
+        {
+          "id": "sound-library-remove-sound",
+          "kind": "action",
+          "label": "remove sound",
+          "action": "soundbox.removeSound",
+          "component": "soundbox.soundLibrary",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox",
+          "kind": "component",
+          "label": "L’onglet Soundbox de la DM view : cases de sons, recherche, filtre par tags, volume global et par son, « Tout arrêter »",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox-play-sound",
+          "kind": "action",
+          "label": "play sound",
+          "action": "soundbox.playSound",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox-stop-all",
+          "kind": "action",
+          "label": "stop all",
+          "action": "soundbox.stopAll",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox-set-sound-volume",
+          "kind": "action",
+          "label": "set sound volume",
+          "action": "soundbox.setSoundVolume",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox-set-master-volume",
+          "kind": "action",
+          "label": "set master volume",
+          "action": "soundbox.setMasterVolume",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "dm-view",
+      "title": "DM view",
+      "file": "pages/dm-view.html",
+      "path": [],
+      "screen": "dm-view",
+      "surface": "dm",
+      "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Sections",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-medias",
+          "kind": "link",
+          "label": "Médias",
+          "to": "medias",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-soundbox",
+          "kind": "link",
+          "label": "Soundbox",
+          "to": "soundbox",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "menu-parametres-ia",
+          "kind": "link",
+          "label": "Paramètres IA",
+          "to": "parametres-ia",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "live-session-bar",
+          "kind": "component",
+          "label": "La séance en direct : ses scènes, ce que voient les joueurs, l’ouverture de la player view et la clôture avec son bilan (lignes de journal, durée, modèle et résumé)",
+          "component": "session.liveSessionBar",
+          "roles": []
+        },
+        {
+          "id": "live-session-bar-show-cover",
+          "kind": "action",
+          "label": "show cover",
+          "action": "live.showCover",
+          "component": "session.liveSessionBar",
+          "roles": []
+        },
+        {
+          "id": "live-session-bar-close-window",
+          "kind": "action",
+          "label": "close window",
+          "action": "live.closeWindow",
+          "component": "session.liveSessionBar",
+          "roles": []
+        },
+        {
+          "id": "live-session-bar-close-session",
+          "kind": "action",
+          "label": "close session",
+          "action": "session.closeSession",
+          "component": "session.liveSessionBar",
+          "roles": []
+        },
+        {
+          "id": "live-session-bar-to-player-view",
+          "kind": "link",
+          "label": "Vers Player view",
+          "to": "player-view",
+          "component": "session.liveSessionBar",
+          "roles": []
+        },
+        {
+          "id": "live-session-bar-to-campagne",
+          "kind": "link",
+          "label": "Vers Campagne",
+          "to": "campagne",
+          "component": "session.liveSessionBar",
+          "roles": []
+        },
+        {
+          "id": "elements-panel",
+          "kind": "component",
+          "label": "Le panneau gauche de la DM view : la séance scène par scène, puis toute la campagne par type, avec une recherche approximative sur les noms et alias",
+          "component": "live.elementsPanel",
+          "roles": []
+        },
+        {
+          "id": "elements-panel-show-on-player-view",
+          "kind": "action",
+          "label": "show on player view",
+          "action": "live.showOnPlayerView",
+          "component": "live.elementsPanel",
+          "roles": []
+        },
+        {
+          "id": "elements-panel-show-window-on-player-view",
+          "kind": "action",
+          "label": "show window on player view",
+          "action": "live.showWindowOnPlayerView",
+          "component": "live.elementsPanel",
+          "roles": []
+        },
+        {
+          "id": "table-sheet",
+          "kind": "component",
+          "label": "La fiche d’un élément en lecture, optimisée pour la table, avec édition et envoi de l’illustration aux joueurs",
+          "component": "live.tableSheet",
+          "roles": []
+        },
+        {
+          "id": "table-sheet-show-on-player-view",
+          "kind": "action",
+          "label": "show on player view",
+          "action": "live.showOnPlayerView",
+          "component": "live.tableSheet",
+          "roles": []
+        },
+        {
+          "id": "table-sheet-show-window-on-player-view",
+          "kind": "action",
+          "label": "show window on player view",
+          "action": "live.showWindowOnPlayerView",
+          "component": "live.tableSheet",
+          "roles": []
+        },
+        {
+          "id": "table-sheet-to-fiche-entite",
+          "kind": "link",
+          "label": "Vers Fiche d’entité",
+          "to": "fiche-entite",
+          "component": "live.tableSheet",
+          "roles": []
+        },
+        {
+          "id": "battlemap",
+          "kind": "component",
+          "label": "Une instance de battlemap : grille hexagonale, tokens glissés avec le compteur « hex · pi », personnages déposés × N, fiche du token (renommer, cacher, état, PV, retirer), combat avec son carrousel d’initiative (Suivant, réordonner, ajouter, retirer, terminer), réinitialisation de la carte et envoi aux joueurs ; en player view, seulement ce que les joueurs peuvent voir",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-move-token",
+          "kind": "action",
+          "label": "move token",
+          "action": "table.moveToken",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-place-tokens",
+          "kind": "action",
+          "label": "place tokens",
+          "action": "table.placeTokens",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-remove-token",
+          "kind": "action",
+          "label": "remove token",
+          "action": "table.removeToken",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-rename-token",
+          "kind": "action",
+          "label": "rename token",
+          "action": "table.renameToken",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-set-token-visibility",
+          "kind": "action",
+          "label": "set token visibility",
+          "action": "table.setTokenVisibility",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-set-token-condition",
+          "kind": "action",
+          "label": "set token condition",
+          "action": "table.setTokenCondition",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-show-on-player-view",
+          "kind": "action",
+          "label": "show on player view",
+          "action": "live.showOnPlayerView",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-change-hit-points",
+          "kind": "action",
+          "label": "change hit points",
+          "action": "table.changeHitPoints",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-start-combat",
+          "kind": "action",
+          "label": "start combat",
+          "action": "table.startCombat",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-next-turn",
+          "kind": "action",
+          "label": "next turn",
+          "action": "table.nextTurn",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-reorder-initiative",
+          "kind": "action",
+          "label": "reorder initiative",
+          "action": "table.reorderInitiative",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-add-participant",
+          "kind": "action",
+          "label": "add participant",
+          "action": "table.addParticipant",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-remove-participant",
+          "kind": "action",
+          "label": "remove participant",
+          "action": "table.removeParticipant",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-end-combat",
+          "kind": "action",
+          "label": "end combat",
+          "action": "table.endCombat",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-reset-battlemap",
+          "kind": "action",
+          "label": "reset battlemap",
+          "action": "table.resetBattlemap",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox",
+          "kind": "component",
+          "label": "L’onglet Soundbox de la DM view : cases de sons, recherche, filtre par tags, volume global et par son, « Tout arrêter »",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox-play-sound",
+          "kind": "action",
+          "label": "play sound",
+          "action": "soundbox.playSound",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox-stop-all",
+          "kind": "action",
+          "label": "stop all",
+          "action": "soundbox.stopAll",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox-set-sound-volume",
+          "kind": "action",
+          "label": "set sound volume",
+          "action": "soundbox.setSoundVolume",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        },
+        {
+          "id": "live-soundbox-set-master-volume",
+          "kind": "action",
+          "label": "set master volume",
+          "action": "soundbox.setMasterVolume",
+          "component": "soundbox.liveSoundbox",
+          "roles": []
+        },
+        {
+          "id": "suggestion-pill",
+          "kind": "component",
+          "label": "La pastille en bas à droite : les 5 dernières entités ou sons entendus au micro, leur historique, et le bouton marche/pause du micro",
+          "component": "live.suggestionPill",
+          "roles": []
+        },
+        {
+          "id": "suggestion-pill-set-microphone",
+          "kind": "action",
+          "label": "set microphone",
+          "action": "live.setMicrophone",
+          "component": "live.suggestionPill",
+          "roles": []
+        },
+        {
+          "id": "suggestion-pill-play-sound",
+          "kind": "action",
+          "label": "play sound",
+          "action": "soundbox.playSound",
+          "component": "live.suggestionPill",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "player-view",
+      "title": "Player view",
+      "file": "pages/player-view.html",
+      "path": [],
+      "screen": "player-view",
+      "elements": [
+        {
+          "id": "player-stage",
+          "kind": "component",
+          "label": "L’écran des joueurs : couverture, battlemap ou illustration en scène, et fenêtre d’illustration flottante déplaçable et redimensionnable",
+          "component": "live.playerStage",
+          "roles": []
+        },
+        {
+          "id": "player-stage-move-window",
+          "kind": "action",
+          "label": "move window",
+          "action": "live.moveWindow",
+          "component": "live.playerStage",
+          "roles": []
+        },
+        {
+          "id": "player-stage-resize-window",
+          "kind": "action",
+          "label": "resize window",
+          "action": "live.resizeWindow",
+          "component": "live.playerStage",
+          "roles": []
+        },
+        {
+          "id": "battlemap",
+          "kind": "component",
+          "label": "Une instance de battlemap : grille hexagonale, tokens glissés avec le compteur « hex · pi », personnages déposés × N, fiche du token (renommer, cacher, état, PV, retirer), combat avec son carrousel d’initiative (Suivant, réordonner, ajouter, retirer, terminer), réinitialisation de la carte et envoi aux joueurs ; en player view, seulement ce que les joueurs peuvent voir",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-move-token",
+          "kind": "action",
+          "label": "move token",
+          "action": "table.moveToken",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-place-tokens",
+          "kind": "action",
+          "label": "place tokens",
+          "action": "table.placeTokens",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-remove-token",
+          "kind": "action",
+          "label": "remove token",
+          "action": "table.removeToken",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-rename-token",
+          "kind": "action",
+          "label": "rename token",
+          "action": "table.renameToken",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-set-token-visibility",
+          "kind": "action",
+          "label": "set token visibility",
+          "action": "table.setTokenVisibility",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-set-token-condition",
+          "kind": "action",
+          "label": "set token condition",
+          "action": "table.setTokenCondition",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-show-on-player-view",
+          "kind": "action",
+          "label": "show on player view",
+          "action": "live.showOnPlayerView",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-change-hit-points",
+          "kind": "action",
+          "label": "change hit points",
+          "action": "table.changeHitPoints",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-start-combat",
+          "kind": "action",
+          "label": "start combat",
+          "action": "table.startCombat",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-next-turn",
+          "kind": "action",
+          "label": "next turn",
+          "action": "table.nextTurn",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-reorder-initiative",
+          "kind": "action",
+          "label": "reorder initiative",
+          "action": "table.reorderInitiative",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-add-participant",
+          "kind": "action",
+          "label": "add participant",
+          "action": "table.addParticipant",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-remove-participant",
+          "kind": "action",
+          "label": "remove participant",
+          "action": "table.removeParticipant",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-end-combat",
+          "kind": "action",
+          "label": "end combat",
+          "action": "table.endCombat",
+          "component": "table.battlemap",
+          "roles": []
+        },
+        {
+          "id": "battlemap-reset-battlemap",
+          "kind": "action",
+          "label": "reset battlemap",
+          "action": "table.resetBattlemap",
+          "component": "table.battlemap",
+          "roles": []
+        }
+      ]
+    }
+  ],
+  "fixtures": []
+}

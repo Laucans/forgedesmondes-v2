@@ -1,0 +1,16 @@
+# The product's PostgreSQL, for `DATABASE_URL=postgres://app:app@127.0.0.1:${APP_PG_PORT:-55440}/app npm start`.
+name: forgedesmondes-db
+services:
+  postgres:
+    image: postgres:17
+    ports:
+      - "127.0.0.1:${APP_PG_PORT:-55440}:5432"
+    environment:
+      POSTGRES_USER: app
+      # Local only, never exposed beyond this machine.
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

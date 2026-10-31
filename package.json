@@ -1,0 +1,35 @@
+{
+  "name": "forgedesmondes",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#kit/*": "./kit/*",
+    "#dataguard": "./vendor/dataguard/index.ts",
+    "#architecture": "./vendor/architecture/index.ts"
+  },
+  "scripts": {
+    "start": "node app/server/main.ts",
+    "build": "node app/shell/build.ts",
+    "rules": "node app/shell/build.ts && node tests/rules/run.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --test \"units/**/*.test.ts\" \"shell/**/*.test.ts\"",
+    "lint": "biome check .",
+    "gates": "npm run typecheck && npm run test && npm run lint"
+  },
+  "dependencies": {
+    "pg": "8.23.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "@types/node": "26.6.6",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "esbuild": "0.28.2",
+    "playwright": "1.64.1",
+    "typescript": "7.0.2"
+  }
+}

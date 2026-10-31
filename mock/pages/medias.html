@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Médias et réglage de battlemap</title>
+  <link rel="stylesheet" href="../mock.css">
+</head>
+<body>
+  <nav data-el="site-menu" aria-label="Sections">
+    <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
+    <a data-el="menu-medias" data-link="medias" href="medias.html">Médias</a>
+    <a data-el="menu-soundbox" data-link="soundbox" href="soundbox.html">Soundbox</a>
+    <a data-el="menu-parametres-ia" data-link="parametres-ia" href="parametres-ia.html">Paramètres IA</a>
+  </nav>
+  <main data-page="medias">
+    <h1>Médias et réglage de battlemap</h1>
+    <section data-el="media-library"><h2>Le téléversement et la liste des battlemaps et illustrations de la campagne, chacune rattachable à un lieu ; si le lieu est dans la séance, le média l’est aussi</h2>
+      <button type="button" data-el="media-library-upload-media" data-action="media.uploadMedia">upload media</button>
+      <button type="button" data-el="media-library-set-media-place" data-action="media.setMediaPlace">set media place</button>
+      <button type="button" data-el="media-library-add-place-to-session" data-action="session.addPlaceToSession">add place to session</button>
+    </section>
+    <section data-el="grid-settings"><h2>Le réglage de la grille hexagonale d’une battlemap (taille, décalage, orientation, couleur, opacité) avec un aperçu en direct</h2>
+      <button type="button" data-el="grid-settings-save-grid-settings" data-action="media.saveGridSettings">save grid settings</button>
+    </section>
+  </main>
+</body>
+</html>

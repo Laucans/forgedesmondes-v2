@@ -1,0 +1,32 @@
+{
+  "ports": [
+    {
+      "id": "database",
+      "kind": "storage",
+      "provider": "PostgreSQL 16",
+      "approved": false,
+      "note": "The product's store: the Data layer reads it, the DataGuard writes it — listed, not abstracted. Tech: sql postgres 16. Cost: the host's. Secrets: DATABASE_URL. Stateful."
+    },
+    {
+      "id": "llm",
+      "kind": "llm",
+      "provider": "Claude Code (claude -p, claude-haiku-5-5, effort medium) under the DM's subscription",
+      "approved": false,
+      "note": "Text generation from text only: extract entities from imported notes, turn an oral brief into scenes and detect existing or missing NPCs, places and events, propose backgrounds, behaviour and credible NPC statblocks, generate the end-of-session summary, and test the connection. It is reached either by an API URL whose type is auto-detected (cloud API or the home opencode server endpoint) or by a local binary (opencode or Claude Code). Tech: other claude CLI (claude -p --model claude-haiku-5-5 --effort medium). Cost: the DM's existing Claude subscription."
+    },
+    {
+      "id": "speech-to-text",
+      "kind": "speech",
+      "provider": "Phonon (local, to be evaluated as the decision requests)",
+      "approved": false,
+      "note": "Local French transcription of the microphone, with vocabulary injected from campaign names, aliases and sound names. It feeds live suggestions, the timestamped session journal, the oral brief, dictated character prompts, refinements and dictated notes. No audio leaves the machine. Tech: other Local Phonon runtime as a sidecar process, streaming transcription to evaluate. Cost: Free: runs on the DM's machine."
+    },
+    {
+      "id": "character-sheets",
+      "kind": "other",
+      "provider": "D&D Beyond (public character JSON service)",
+      "approved": false,
+      "note": "Import a player character by its D&D Beyond URL, and resynchronise stats, HP and spells after a level-up. Local aliases, notes and the token are kept, and every change is versioned locally. Tech: rest character-service.dndbeyond.com/character/v5/character/{id} (unofficial, public sharing required) v5. Cost: Free; requires characters shared as public; unofficial endpoint that may change without notice. Stateful."
+    }
+  ]
+}

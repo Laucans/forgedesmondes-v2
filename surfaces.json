@@ -1,0 +1,38 @@
+{
+  "roles": [
+    {
+      "id": "dm",
+      "title": "dm",
+      "permissions": ["*"]
+    },
+    {
+      "id": "player",
+      "title": "player",
+      "permissions": ["*"]
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "dm",
+      "title": "The DM's screens: every gesture is the DM's, who approves a critical field's change.",
+      "roles": ["dm"],
+      "screens": [
+        "campagnes",
+        "parametres-ia",
+        "campagne",
+        "fiche-entite",
+        "preparation-seance",
+        "medias",
+        "soundbox",
+        "dm-view",
+        "player-view"
+      ]
+    },
+    {
+      "id": "player",
+      "title": "The players' view: no role, no permission; a critical field's change waits for a review.",
+      "roles": ["player"],
+      "screens": []
+    }
+  ]
+}

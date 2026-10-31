@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campagne</title>
+  <link rel="stylesheet" href="../mock.css">
+</head>
+<body>
+  <nav data-el="site-menu" aria-label="Sections">
+    <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
+    <a data-el="menu-medias" data-link="medias" href="medias.html">Médias</a>
+    <a data-el="menu-soundbox" data-link="soundbox" href="soundbox.html">Soundbox</a>
+    <a data-el="menu-parametres-ia" data-link="parametres-ia" href="parametres-ia.html">Paramètres IA</a>
+    <a data-el="crumb-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
+  </nav>
+  <main data-page="campagne">
+    <h1>Campagne</h1>
+    <section data-el="campaign-overview"><h2>La couverture, le résumé chiffré de la campagne, l’accès à la prochaine séance et l’export en archive</h2>
+      <button type="button" data-el="campaign-overview-export-campaign" data-action="campaign.exportCampaign">export campaign</button>
+      <a data-el="campaign-overview-to-dm-view" data-link="dm-view" href="dm-view.html">Vers DM view</a>
+      <a data-el="campaign-overview-to-preparation-seance" data-link="preparation-seance" href="preparation-seance.html">Vers Préparation de séance</a>
+    </section>
+    <section data-el="session-list"><h2>Les séances dans l’ordre avec leur résumé et leurs PJ présents ; création d’une séance avec choix des PJ</h2>
+      <button type="button" data-el="session-list-create-session" data-action="session.createSession">create session</button>
+      <a data-el="session-list-to-dm-view" data-link="dm-view" href="dm-view.html">Vers DM view</a>
+      <a data-el="session-list-to-preparation-seance" data-link="preparation-seance" href="preparation-seance.html">Vers Préparation de séance</a>
+    </section>
+    <section data-el="campaign-elements"><h2>Les éléments de la campagne : en grille à onglets (joueurs, personnages, lieux, événements, médias, sons) ou en rail collant à gauche d’une fiche (PJ, PNJ, lieux, événements ; recherche floue, repliable, tiroir sous 960 px)</h2>
+      <a data-el="campaign-elements-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>
+      <a data-el="campaign-elements-to-medias" data-link="medias" href="medias.html">Vers Médias et réglage de battlemap</a>
+      <a data-el="campaign-elements-to-soundbox" data-link="soundbox" href="soundbox.html">Vers Soundbox</a>
+    </section>
+    <section data-el="to-create-list"><h2>Les PNJ, lieux et événements issus des briefs, à créer depuis le brief ou après une description affinée à l’oral ou à l’écrit ; la proposition de l’IA (background, comportement, fiche de stats) s’affiche une fois l’élément créé</h2>
+      <button type="button" data-el="to-create-list-create-from-brief" data-action="ai.createFromBrief">create from brief</button>
+      <a data-el="to-create-list-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>
+    </section>
+    <section data-el="note-import"><h2>L’import de notes en texte libre, tapées, collées ou dictées ; extraction par l’IA puis validation en lot, la note brute conservée</h2>
+      <button type="button" data-el="note-import-extract-from-notes" data-action="ai.extractFromNotes">extract from notes</button>
+      <button type="button" data-el="note-import-create-entities-from-note" data-action="campaign.createEntitiesFromNote">create entities from note</button>
+    </section>
+  </main>
+</body>
+</html>
