@@ -6,7 +6,9 @@
       "id": "campagnes",
       "title": "Accueil des campagnes",
       "file": "pages/campagnes.html",
-      "path": ["Campagnes"],
+      "path": [
+        "Campagnes"
+      ],
       "screen": "campagnes",
       "elements": [
         {
@@ -93,7 +95,9 @@
       "id": "parametres-ia",
       "title": "Paramètres IA",
       "file": "pages/parametres-ia.html",
-      "path": ["Paramètres IA"],
+      "path": [
+        "Paramètres IA"
+      ],
       "screen": "parametres-ia",
       "elements": [
         {
@@ -164,7 +168,10 @@
       "id": "campagne",
       "title": "Campagne",
       "file": "pages/campagne.html",
-      "path": ["Campagnes", "Campagne"],
+      "path": [
+        "Campagnes",
+        "Campagne"
+      ],
       "screen": "campagne",
       "elements": [
         {
@@ -359,7 +366,11 @@
       "id": "fiche-entite",
       "title": "Fiche d’entité",
       "file": "pages/fiche-entite.html",
-      "path": ["Campagnes", "Campagne", "Fiche d’entité"],
+      "path": [
+        "Campagnes",
+        "Campagne",
+        "Fiche d’entité"
+      ],
       "screen": "fiche-entite",
       "elements": [
         {
@@ -508,7 +519,11 @@
       "id": "preparation-seance",
       "title": "Préparation de séance",
       "file": "pages/preparation-seance.html",
-      "path": ["Campagnes", "Campagne", "Préparation de séance"],
+      "path": [
+        "Campagnes",
+        "Campagne",
+        "Préparation de séance"
+      ],
       "screen": "preparation-seance",
       "elements": [
         {
@@ -846,7 +861,9 @@
       "id": "medias",
       "title": "Médias et réglage de battlemap",
       "file": "pages/medias.html",
-      "path": ["Médias"],
+      "path": [
+        "Médias"
+      ],
       "screen": "medias",
       "elements": [
         {
@@ -940,7 +957,9 @@
       "id": "soundbox",
       "title": "Soundbox",
       "file": "pages/soundbox.html",
-      "path": ["Soundbox"],
+      "path": [
+        "Soundbox"
+      ],
       "screen": "soundbox",
       "elements": [
         {
@@ -1058,7 +1077,10 @@
       "id": "dm-view",
       "title": "DM view",
       "file": "pages/dm-view.html",
-      "path": [],
+      "path": [
+        "Séance",
+        "Vue MJ"
+      ],
       "screen": "dm-view",
       "surface": "dm",
       "elements": [
@@ -1397,9 +1419,19 @@
       "id": "player-view",
       "title": "Player view",
       "file": "pages/player-view.html",
-      "path": [],
+      "path": [
+        "Séance",
+        "Vue joueurs"
+      ],
       "screen": "player-view",
       "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Bandeau des joueurs",
+          "component": "shell",
+          "roles": []
+        },
         {
           "id": "player-stage",
           "kind": "component",
@@ -1548,6 +1580,31 @@
           "label": "reset battlemap",
           "action": "table.resetBattlemap",
           "component": "table.battlemap",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "error",
+      "title": "Page introuvable",
+      "file": "pages/error.html",
+      "path": [
+        "Page introuvable"
+      ],
+      "elements": [
+        {
+          "id": "site-menu",
+          "kind": "component",
+          "label": "Sections",
+          "component": "shell",
+          "roles": []
+        },
+        {
+          "id": "error-back",
+          "kind": "link",
+          "label": "Retour aux campagnes",
+          "to": "campagnes",
+          "component": "shell",
           "roles": []
         }
       ]

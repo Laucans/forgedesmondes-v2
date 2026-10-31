@@ -54,22 +54,6 @@ Feature: Base pack
     Then I see the page "soundbox"
     And I see "site-menu"
 
-  @B-dm-menu-dm-view
-  Scenario: Le menu mène dm à DM view
-    Given I am a "dm"
-    And I am on "campagnes"
-    When I click "menu-dm-view"
-    Then I see the page "dm-view"
-    And I see "site-menu"
-
-  @B-dm-menu-player-view
-  Scenario: Le menu mène dm à Player view
-    Given I am a "dm"
-    And I am on "campagnes"
-    When I click "menu-player-view"
-    Then I see the page "player-view"
-    And I see "site-menu"
-
   @B-dm-error
   Scenario: Une adresse inconnue montre la page d'erreur à dm
     Given I am a "dm"
