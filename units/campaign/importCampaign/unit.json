@@ -1,0 +1,22 @@
+{
+  "id": "campaign.importCampaign",
+  "kind": "data-capability",
+  "title": "Importer une campagne",
+  "description": "Crée toujours une nouvelle copie depuis une archive, avec de nouveaux identifiants ; l’originale n’est jamais modifiée.",
+  "aggregate": "Campaign",
+  "touches": [
+    "campaign.id",
+    "campaign.name",
+    "campaign.kind",
+    "campaign.pitch",
+    "campaign.art",
+    "campaign.glyph",
+    "campaign.created_at",
+    "campaign.sound_master_volume",
+    "campaign.imported_at",
+    "campaign.origin_campaign_id"
+  ],
+  "input": {
+    "archive": "string"
+  }
+}

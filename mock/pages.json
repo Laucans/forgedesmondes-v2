@@ -15,7 +15,7 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Sections",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -23,7 +23,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -31,7 +31,7 @@
           "kind": "link",
           "label": "Médias",
           "to": "medias",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -39,7 +39,7 @@
           "kind": "link",
           "label": "Soundbox",
           "to": "soundbox",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -47,45 +47,128 @@
           "kind": "link",
           "label": "Paramètres IA",
           "to": "parametres-ia",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
           "id": "campaign-list",
           "kind": "component",
-          "label": "Les campagnes et oneshots avec leur couverture ; création, export et import d’archive",
+          "label": "Mes campagnes et oneshots : couvertures, création et import d’archive",
           "component": "campaign.campaignList",
           "roles": []
         },
         {
-          "id": "campaign-list-create-campaign",
-          "kind": "action",
-          "label": "create campaign",
-          "action": "campaign.createCampaign",
+          "id": "campagnes-title",
+          "kind": "text",
+          "label": "Mes campagnes",
           "component": "campaign.campaignList",
           "roles": []
         },
         {
-          "id": "campaign-list-export-campaign",
-          "kind": "action",
-          "label": "export campaign",
-          "action": "campaign.exportCampaign",
+          "id": "campaign-cards",
+          "kind": "list",
+          "label": "Les campagnes et oneshots",
           "component": "campaign.campaignList",
           "roles": []
         },
         {
-          "id": "campaign-list-import-campaign",
-          "kind": "action",
-          "label": "import campaign",
-          "action": "campaign.importCampaign",
+          "id": "campaign-cover",
+          "kind": "text",
+          "label": "Couverture",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-name",
+          "kind": "text",
+          "label": "Nom de la campagne",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-kind",
+          "kind": "text",
+          "label": "Type (campagne ou oneshot)",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-pitch",
+          "kind": "text",
+          "label": "Pitch",
           "component": "campaign.campaignList",
           "roles": []
         },
         {
           "id": "campaign-list-to-campagne",
           "kind": "link",
-          "label": "Vers Campagne",
+          "label": "Ouvrir",
           "to": "campagne",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "create-campaign-form",
+          "kind": "component",
+          "label": "Nouvelle campagne",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-name-input",
+          "kind": "field",
+          "label": "Nom",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-kind-select",
+          "kind": "field",
+          "label": "Type",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-pitch-input",
+          "kind": "field",
+          "label": "Pitch",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-list-create-campaign",
+          "kind": "action",
+          "label": "Créer",
+          "action": "campaign.createCampaign",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "import-campaign-form",
+          "kind": "component",
+          "label": "Importer une archive",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "import-campaign-hint",
+          "kind": "text",
+          "label": "L’import crée toujours une nouvelle copie",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "import-archive-input",
+          "kind": "field",
+          "label": "Archive (JSON)",
+          "component": "campaign.campaignList",
+          "roles": []
+        },
+        {
+          "id": "campaign-list-import-campaign",
+          "kind": "action",
+          "label": "Importer",
+          "action": "campaign.importCampaign",
           "component": "campaign.campaignList",
           "roles": []
         }
@@ -104,7 +187,7 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Sections",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -112,7 +195,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -120,7 +203,7 @@
           "kind": "link",
           "label": "Médias",
           "to": "medias",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -128,7 +211,7 @@
           "kind": "link",
           "label": "Soundbox",
           "to": "soundbox",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -136,7 +219,7 @@
           "kind": "link",
           "label": "Paramètres IA",
           "to": "parametres-ia",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -178,7 +261,7 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Sections",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -186,7 +269,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -194,7 +277,7 @@
           "kind": "link",
           "label": "Médias",
           "to": "medias",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -202,7 +285,7 @@
           "kind": "link",
           "label": "Soundbox",
           "to": "soundbox",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -210,15 +293,15 @@
           "kind": "link",
           "label": "Paramètres IA",
           "to": "parametres-ia",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
           "id": "crumb-campagnes",
           "kind": "link",
-          "label": "Campagnes",
+          "label": "← Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -229,26 +312,75 @@
           "roles": []
         },
         {
-          "id": "campaign-overview-export-campaign",
-          "kind": "action",
-          "label": "export campaign",
-          "action": "campaign.exportCampaign",
+          "id": "overview-card",
+          "kind": "list",
+          "label": "La campagne ouverte",
           "component": "campaign.campaignOverview",
           "roles": []
         },
         {
-          "id": "campaign-overview-to-dm-view",
-          "kind": "link",
-          "label": "Vers DM view",
-          "to": "dm-view",
+          "id": "overview-cover",
+          "kind": "text",
+          "label": "Couverture",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "overview-name",
+          "kind": "text",
+          "label": "Nom de la campagne",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "overview-kind",
+          "kind": "text",
+          "label": "Type (campagne ou oneshot)",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "overview-pitch",
+          "kind": "text",
+          "label": "Pitch",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "overview-last-export",
+          "kind": "text",
+          "label": "Dernier export",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "overview-counts",
+          "kind": "list",
+          "label": "Résumé chiffré des éléments",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "campaign-overview-export-campaign",
+          "kind": "action",
+          "label": "Exporter l’archive",
+          "action": "campaign.exportCampaign",
           "component": "campaign.campaignOverview",
           "roles": []
         },
         {
           "id": "campaign-overview-to-preparation-seance",
           "kind": "link",
-          "label": "Vers Préparation de séance",
+          "label": "Préparer la prochaine séance",
           "to": "preparation-seance",
+          "component": "campaign.campaignOverview",
+          "roles": []
+        },
+        {
+          "id": "campaign-overview-to-dm-view",
+          "kind": "link",
+          "label": "Lancer la DM view",
+          "to": "dm-view",
           "component": "campaign.campaignOverview",
           "roles": []
         },
@@ -377,7 +509,7 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Sections",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -385,7 +517,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -393,7 +525,7 @@
           "kind": "link",
           "label": "Médias",
           "to": "medias",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -401,7 +533,7 @@
           "kind": "link",
           "label": "Soundbox",
           "to": "soundbox",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -409,7 +541,7 @@
           "kind": "link",
           "label": "Paramètres IA",
           "to": "parametres-ia",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -417,7 +549,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -425,7 +557,7 @@
           "kind": "link",
           "label": "Campagne",
           "to": "campagne",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -530,7 +662,7 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Sections",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -538,7 +670,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -546,7 +678,7 @@
           "kind": "link",
           "label": "Médias",
           "to": "medias",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -554,7 +686,7 @@
           "kind": "link",
           "label": "Soundbox",
           "to": "soundbox",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -562,7 +694,7 @@
           "kind": "link",
           "label": "Paramètres IA",
           "to": "parametres-ia",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -570,7 +702,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -578,7 +710,7 @@
           "kind": "link",
           "label": "Campagne",
           "to": "campagne",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -870,7 +1002,7 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Sections",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -878,7 +1010,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -886,7 +1018,7 @@
           "kind": "link",
           "label": "Médias",
           "to": "medias",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -894,7 +1026,7 @@
           "kind": "link",
           "label": "Soundbox",
           "to": "soundbox",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -902,7 +1034,7 @@
           "kind": "link",
           "label": "Paramètres IA",
           "to": "parametres-ia",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -966,7 +1098,7 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Sections",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -974,7 +1106,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -982,7 +1114,7 @@
           "kind": "link",
           "label": "Médias",
           "to": "medias",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -990,7 +1122,7 @@
           "kind": "link",
           "label": "Soundbox",
           "to": "soundbox",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -998,7 +1130,7 @@
           "kind": "link",
           "label": "Paramètres IA",
           "to": "parametres-ia",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -1088,7 +1220,7 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Sections",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -1096,7 +1228,7 @@
           "kind": "link",
           "label": "Campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -1104,7 +1236,7 @@
           "kind": "link",
           "label": "Médias",
           "to": "medias",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -1112,7 +1244,7 @@
           "kind": "link",
           "label": "Soundbox",
           "to": "soundbox",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -1120,7 +1252,7 @@
           "kind": "link",
           "label": "Paramètres IA",
           "to": "parametres-ia",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -1429,7 +1561,7 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Bandeau des joueurs",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -1596,7 +1728,29 @@
           "id": "site-menu",
           "kind": "component",
           "label": "Sections",
-          "component": "shell",
+          "component": "shell.frame",
+          "roles": []
+        },
+        {
+          "id": "menu-campagnes",
+          "kind": "link",
+          "label": "Campagnes",
+          "to": "campagnes",
+          "component": "shell.frame",
+          "roles": []
+        },
+        {
+          "id": "error-title",
+          "kind": "text",
+          "label": "Page introuvable",
+          "component": "shell.frame",
+          "roles": []
+        },
+        {
+          "id": "error-message",
+          "kind": "text",
+          "label": "Cette adresse ne mène à aucune page.",
+          "component": "shell.frame",
           "roles": []
         },
         {
@@ -1604,11 +1758,15 @@
           "kind": "link",
           "label": "Retour aux campagnes",
           "to": "campagnes",
-          "component": "shell",
+          "component": "shell.frame",
           "roles": []
         }
       ]
     }
   ],
-  "fixtures": []
+  "fixtures": [
+    "mock/fixtures/campaign.json",
+    "mock/fixtures/campaign_overview_view.json"
+  ],
+  "handlers": "mock/handlers.js"
 }

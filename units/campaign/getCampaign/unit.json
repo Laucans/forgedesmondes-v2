@@ -1,0 +1,15 @@
+{
+  "id": "campaign.getCampaign",
+  "kind": "capability",
+  "title": "Lire une campagne",
+  "description": "Une campagne et son résumé chiffré ; avec archive, la campagne et toutes les lignes qu’elle possède (l’archive grandit avec les jalons suivants).",
+  "reads": [
+    "campaign",
+    "campaign_overview_view",
+    "session"
+  ],
+  "input": {
+    "id": "string",
+    "archive": "boolean"
+  }
+}

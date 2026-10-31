@@ -1,0 +1,13 @@
+{
+  "id": "campaign.exportCampaign",
+  "kind": "data-capability",
+  "title": "Exporter une campagne",
+  "description": "Horodate l’export (last_exported_at) et rien d’autre ; le fichier est lu par campaign.getCampaign.",
+  "aggregate": "Campaign",
+  "touches": [
+    "campaign.last_exported_at"
+  ],
+  "input": {
+    "id": "string"
+  }
+}

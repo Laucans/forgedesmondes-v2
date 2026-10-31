@@ -8,18 +8,55 @@
 </head>
 <body>
   <nav data-el="site-menu" aria-label="Sections">
-    <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
+    <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html" aria-current="page">Campagnes</a>
     <a data-el="menu-medias" data-link="medias" href="medias.html">Médias</a>
     <a data-el="menu-soundbox" data-link="soundbox" href="soundbox.html">Soundbox</a>
     <a data-el="menu-parametres-ia" data-link="parametres-ia" href="parametres-ia.html">Paramètres IA</a>
   </nav>
   <main data-page="campagnes">
-    <h1>Accueil des campagnes</h1>
-    <section data-el="campaign-list"><h2>Les campagnes et oneshots avec leur couverture ; création, export et import d’archive</h2>
-      <button type="button" data-el="campaign-list-create-campaign" data-action="campaign.createCampaign">create campaign</button>
-      <button type="button" data-el="campaign-list-export-campaign" data-action="campaign.exportCampaign">export campaign</button>
-      <button type="button" data-el="campaign-list-import-campaign" data-action="campaign.importCampaign">import campaign</button>
-      <a data-el="campaign-list-to-campagne" data-link="campagne" href="campagne.html">Vers Campagne</a>
+    <section data-el="campaign-list" class="stack">
+      <h1 data-el="campagnes-title">Mes campagnes</h1>
+      <ul data-el="campaign-cards" data-list="campaign" data-empty="Aucune campagne pour l’instant : créez-en une ou importez une archive.">
+        <template>
+          <li>
+            <span class="cover" data-el="campaign-cover">{{glyph}}</span>
+            <div class="grow">
+              <strong data-el="campaign-name">{{name}}</strong>
+              <span class="badge" data-el="campaign-kind">{{kind}}</span>
+              <p class="muted" data-el="campaign-pitch">{{pitch}}</p>
+            </div>
+            <a class="button" data-el="campaign-list-to-campagne" data-link="campagne" href="campagne.html">Ouvrir</a>
+          </li>
+        </template>
+      </ul>
+      <form class="card" data-el="create-campaign-form">
+        <h2>Nouvelle campagne</h2>
+        <label>Nom
+          <input data-el="campaign-name-input" name="name" placeholder="La Couronne de Cendres">
+        </label>
+        <label>Type
+          <select data-el="campaign-kind-select" name="kind">
+            <option value="campagne">Campagne (plusieurs séances)</option>
+            <option value="oneshot">Oneshot (une seule séance)</option>
+          </select>
+        </label>
+        <label>Pitch
+          <textarea data-el="campaign-pitch-input" name="pitch" rows="2" placeholder="En une phrase, de quoi parle l’histoire ?"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit" class="button primary" data-el="campaign-list-create-campaign" data-action="campaign.createCampaign">Créer</button>
+        </div>
+      </form>
+      <form class="card" data-el="import-campaign-form">
+        <h2>Importer une archive</h2>
+        <p class="muted" data-el="import-campaign-hint">L’import crée toujours une nouvelle copie ; la campagne d’origine n’est jamais modifiée.</p>
+        <label>Archive (JSON)
+          <textarea data-el="import-archive-input" name="archive" rows="4" placeholder="Collez ici le contenu du fichier exporté"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit" class="button" data-el="campaign-list-import-campaign" data-action="campaign.importCampaign">Importer</button>
+        </div>
+      </form>
     </section>
   </main>
 </body>

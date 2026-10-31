@@ -8,18 +8,37 @@
 </head>
 <body>
   <nav data-el="site-menu" aria-label="Sections">
-    <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
+    <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html" aria-current="page">Campagnes</a>
     <a data-el="menu-medias" data-link="medias" href="medias.html">Médias</a>
     <a data-el="menu-soundbox" data-link="soundbox" href="soundbox.html">Soundbox</a>
     <a data-el="menu-parametres-ia" data-link="parametres-ia" href="parametres-ia.html">Paramètres IA</a>
-    <a data-el="crumb-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
   </nav>
   <main data-page="campagne">
-    <h1>Campagne</h1>
-    <section data-el="campaign-overview"><h2>La couverture, le résumé chiffré de la campagne, l’accès à la prochaine séance et l’export en archive</h2>
-      <button type="button" data-el="campaign-overview-export-campaign" data-action="campaign.exportCampaign">export campaign</button>
-      <a data-el="campaign-overview-to-dm-view" data-link="dm-view" href="dm-view.html">Vers DM view</a>
-      <a data-el="campaign-overview-to-preparation-seance" data-link="preparation-seance" href="preparation-seance.html">Vers Préparation de séance</a>
+    <p class="crumbs"><a data-el="crumb-campagnes" data-link="campagnes" href="campagnes.html">← Campagnes</a></p>
+    <section data-el="campaign-overview" class="stack">
+      <div class="card" data-el="overview-card" data-list="campaign" data-where="id={{selected.campaign}}" data-empty="Campagne introuvable.">
+        <template>
+          <div class="hero">
+            <span class="cover" data-el="overview-cover">{{glyph}}</span>
+            <div class="grow">
+              <h1 data-el="overview-name">{{name}}</h1>
+              <span class="badge" data-el="overview-kind">{{kind}}</span>
+              <p data-el="overview-pitch">{{pitch}}</p>
+              <p class="muted" data-el="overview-last-export">Dernier export : {{last_exported_at}}</p>
+            </div>
+          </div>
+        </template>
+      </div>
+      <ul class="counts" data-el="overview-counts" data-list="campaign_overview_view" data-where="campaign_id={{selected.campaign}}" data-empty="Rien encore dans cette campagne.">
+        <template>
+          <li>{{entity_counts}}</li>
+        </template>
+      </ul>
+      <div class="actions">
+        <button type="button" class="button primary" data-el="campaign-overview-export-campaign" data-action="campaign.exportCampaign">Exporter l’archive</button>
+        <a class="button" data-el="campaign-overview-to-preparation-seance" data-link="preparation-seance" href="preparation-seance.html">Préparer la prochaine séance</a>
+        <a class="button" data-el="campaign-overview-to-dm-view" data-link="dm-view" href="dm-view.html">Lancer la DM view</a>
+      </div>
     </section>
     <section data-el="session-list"><h2>Les séances dans l’ordre avec leur résumé et leurs PJ présents ; création d’une séance avec choix des PJ</h2>
       <button type="button" data-el="session-list-create-session" data-action="session.createSession">create session</button>

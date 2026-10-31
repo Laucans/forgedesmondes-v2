@@ -1,0 +1,16 @@
+{
+  "id": "campaign.campaignList",
+  "kind": "micro-ui",
+  "title": "Accueil des campagnes",
+  "description": "Les campagnes et oneshots avec leur couverture, la création et l’import d’archive.",
+  "needs": [
+    "campaign.listCampaigns"
+  ],
+  "actions": [
+    "campaign.createCampaign",
+    "campaign.importCampaign"
+  ],
+  "screens": [
+    "campagnes"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "campaign.campaignOverview",
+  "kind": "micro-ui",
+  "title": "Vue d’ensemble de la campagne",
+  "description": "La couverture, le résumé chiffré, l’accès à la prochaine séance et l’export en archive.",
+  "needs": [
+    "campaign.getCampaign"
+  ],
+  "actions": [
+    "campaign.exportCampaign"
+  ],
+  "screens": [
+    "campagne"
+  ]
+}

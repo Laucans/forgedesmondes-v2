@@ -1,0 +1,22 @@
+{
+  "id": "campaign.createCampaign",
+  "kind": "data-capability",
+  "title": "Créer une campagne",
+  "description": "Crée une campagne ou un oneshot ; un oneshot a exactement une séance.",
+  "aggregate": "Campaign",
+  "touches": [
+    "campaign.id",
+    "campaign.name",
+    "campaign.kind",
+    "campaign.pitch",
+    "campaign.art",
+    "campaign.glyph",
+    "campaign.created_at",
+    "campaign.sound_master_volume"
+  ],
+  "input": {
+    "name": "string",
+    "kind": "string",
+    "pitch": "string"
+  }
+}

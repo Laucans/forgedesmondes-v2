@@ -1,0 +1,18 @@
+{
+  "id": "shell.frame",
+  "kind": "shell",
+  "title": "Cadre de l’application",
+  "description": "Le menu du site sur chaque écran, la mise en page, le fil d’Ariane et la page d’erreur.",
+  "screens": [
+    "campagnes",
+    "parametres-ia",
+    "campagne",
+    "fiche-entite",
+    "preparation-seance",
+    "medias",
+    "soundbox",
+    "dm-view",
+    "player-view",
+    "error"
+  ]
+}

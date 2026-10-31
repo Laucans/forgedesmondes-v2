@@ -16,3 +16,15 @@ input, select, textarea { font: inherit; padding: 8px 10px; border: 1px solid va
 button, .button { font: inherit; padding: 8px 14px; border-radius: 6px; border: 1px solid var(--line); background: #fff; cursor: pointer; color: var(--ink); text-decoration: none; }
 button.primary, .button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .empty { color: var(--muted); padding: 16px; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.grow { flex: 1; min-width: 0; }
+.muted { color: var(--muted); }
+.crumbs { margin: 0 0 8px; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.badge { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 999px; background: var(--line); font-size: 13px; }
+.cover { display: flex; align-items: center; justify-content: center; flex: none; width: 56px; height: 56px; border-radius: 8px; background: #3b2f25; color: #f6eee2; font-size: 26px; }
+.hero { display: flex; gap: 16px; align-items: flex-start; }
+.hero .cover { width: 96px; height: 96px; font-size: 44px; }
+.hero h1 { margin: 0 0 4px; display: inline; }
+ul.counts { list-style: none; margin: 0; padding: 0; color: var(--muted); }
