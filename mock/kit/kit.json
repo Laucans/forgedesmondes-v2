@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "components": [
+    {
+      "name": "Button",
+      "base": "button",
+      "title": "Button",
+      "what": "Primary, secondary and ghost buttons, with a disabled state.",
+      "state": "generated"
+    },
+    {
+      "name": "Input",
+      "base": "input",
+      "title": "Text input",
+      "what": "A labelled text field with a hint, an error state and a disabled state.",
+      "state": "generated"
+    },
+    {
+      "name": "Select",
+      "base": "select",
+      "title": "Drop list",
+      "what": "A labelled list to pick one option from, opened by a click.",
+      "state": "generated"
+    },
+    {
+      "name": "Checkbox",
+      "base": "checkbox",
+      "title": "Checkbox",
+      "what": "A group of options to tick, several at once.",
+      "state": "generated"
+    },
+    {
+      "name": "Radio",
+      "base": "radio",
+      "title": "Radio group",
+      "what": "A group of options to pick one from.",
+      "state": "generated"
+    },
+    {
+      "name": "Toggle",
+      "base": "toggle",
+      "title": "Toggle switch",
+      "what": "An on/off switch with its label.",
+      "state": "generated"
+    },
+    {
+      "name": "Menu",
+      "base": "menu",
+      "title": "Navigation menu",
+      "what": "A horizontal navigation bar with a brand, links and the current one marked.",
+      "state": "generated"
+    },
+    {
+      "name": "Tabs",
+      "base": "tabs",
+      "title": "Tabs",
+      "what": "A row of tabs that switch the panel shown below.",
+      "state": "generated"
+    },
+    {
+      "name": "Card",
+      "base": "card",
+      "title": "Card",
+      "what": "A surface with a title, a body and actions.",
+      "state": "generated"
+    },
+    {
+      "name": "Table",
+      "base": "table",
+      "title": "Data table",
+      "what": "A table with a header row, striped rows and a numeric column.",
+      "state": "generated"
+    },
+    {
+      "name": "Badge",
+      "base": "badge",
+      "title": "Badge",
+      "what": "Small labels: neutral, success, danger, accent.",
+      "state": "generated"
+    },
+    {
+      "name": "Breadcrumb",
+      "base": "breadcrumb",
+      "title": "Breadcrumb",
+      "what": "The path to the current page, each step a link.",
+      "state": "generated"
+    },
+    {
+      "name": "HexMap",
+      "base": "",
+      "title": "Carte hexagonale",
+      "what": "Une image de carte avec une grille d'hexagones superposée. La taille d'hex, le décalage, l'orientation (pointe ou côté plat en haut), la couleur et l'opacité de la grille se règlent. Elle accueille des éléments posés sur des coordonnées d'hex, peut surligner un trajet entre deux hex et afficher une étiquette verte (« 4 hex · 20 pi ») près du curseur. Elle se zoome et se déplace comme un canevas.",
+      "state": "generated"
+    },
+    {
+      "name": "Token",
+      "base": "",
+      "title": "Token",
+      "what": "Une pastille ronde avec un portrait recadré ou, à défaut, une couleur, des initiales et un numéro d'instance. Elle porte un nom sous elle, des badges d'état autour du cercle et une petite jauge ou un libellé de PV. Elle a des états visuels : courant (anneau lumineux), caché (semi-transparent, icône d'œil barré), mort (grisé et barré), et porté (agrandi, avec une ombre, pendant un glisser).",
+      "state": "generated"
+    },
+    {
+      "name": "MicButton",
+      "base": "",
+      "title": "Bouton micro",
+      "what": "Un bouton rond avec une icône de micro, dans trois états : arrêt, enregistrement (rouge, pulsation selon le niveau sonore, minuteur) et pause. Un libellé l'accompagne, par exemple « Brief oral » ou « Dicter ».",
+      "state": "generated"
+    },
+    {
+      "name": "DiffView",
+      "base": "",
+      "title": "Diff de version",
+      "what": "Une comparaison avant/après, champ par champ : le nom du champ, l'ancienne valeur barrée sur fond rouge pâle, la nouvelle sur fond vert pâle, et une case d'action par changement (par exemple « Annuler ce changement »).",
+      "state": "generated"
+    },
+    {
+      "name": "Slider",
+      "base": "",
+      "title": "Curseur",
+      "what": "Un curseur horizontal avec son libellé, sa valeur affichée et son unité (px, %), bornes min et max, et un état désactivé.",
+      "state": "generated"
+    },
+    {
+      "name": "Dialog",
+      "base": "",
+      "title": "Fenêtre de dialogue",
+      "what": "Une fenêtre modale centrée sur un voile sombre, avec un titre, un bouton de fermeture, un corps défilant et une rangée d'actions en pied.",
+      "state": "requested"
+    },
+    {
+      "name": "TextArea",
+      "base": "",
+      "title": "Zone de texte",
+      "what": "Un champ de texte multiligne libellé, extensible en hauteur, avec un indice, un compteur de caractères, et des états erreur et désactivé.",
+      "state": "generated"
+    },
+    {
+      "name": "FileDrop",
+      "base": "",
+      "title": "Zone de dépôt de fichier",
+      "what": "Une zone pointillée où déposer un fichier ou cliquer pour le choisir, avec les types acceptés. Une fois le fichier déposé, elle affiche son nom, sa taille, une vignette s'il s'agit d'une image et une barre de progression.",
+      "state": "generated"
+    },
+    {
+      "name": "StatBlock",
+      "base": "",
+      "title": "Bloc de stats",
+      "what": "Un bloc de statistiques à la manière de D&D 5e : nom et type en titre, puis CA, PV et vitesse sur une ligne. Les six caractéristiques suivent en grille, chacune avec son modificateur, puis la liste des capacités et actions (nom en gras, description). Il a un filet coloré en tête.",
+      "state": "generated"
+    }
+  ]
+}
