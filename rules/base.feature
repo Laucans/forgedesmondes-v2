@@ -67,3 +67,55 @@ Feature: Base pack
     And I am on "no-such-page"
     Then I see the page "error"
     And I see "site-menu"
+
+  @B-dm-on-dm-view
+  Scenario: DM view montre le menu à Maître du jeu
+    Given I am a "dm"
+    And I am on "dm-view"
+    Then I see "site-menu"
+
+  @B-dm-on-player-view
+  Scenario: Player view montre le menu à Maître du jeu
+    Given I am a "dm"
+    And I am on "player-view"
+    Then I see "site-menu"
+
+  @B-dm-on-error
+  Scenario: Page introuvable montre le menu à Maître du jeu
+    Given I am a "dm"
+    And I am on "error"
+    Then I see "site-menu"
+
+  @B-empty-campagnes.campaign-cards
+  Scenario: Les campagnes et oneshots vide sur Accueil des campagnes le dit
+    Given I am a "dm"
+    And there is no "campaign" with kind "campagne"
+    And there is no "campaign" with kind "oneshot"
+    And I am on "campagnes"
+    Then I see "campaign-cards"
+    And I see the text "Aucune campagne pour l’instant : créez-en une ou importez une archive."
+
+  @B-empty-campagne.overview-card
+  Scenario: La campagne ouverte vide sur Campagne le dit
+    Given I am a "dm"
+    And there is no "campaign" with kind "campagne"
+    And there is no "campaign" with kind "oneshot"
+    And I am on "campagne"
+    Then I see "overview-card"
+    And I see the text "Campagne introuvable."
+
+  @B-empty-campagne.overview-counts
+  Scenario: Résumé chiffré des éléments vide sur Campagne le dit
+    Given I am a "dm"
+    And there is no "campaign_overview_view" with campaign_id "6f1c2a3e-8b4d-4c1e-9a7f-1d2e3f4a5b6c"
+    And there is no "campaign_overview_view" with campaign_id "a2b7d9e0-3c4f-4e8a-b1d2-7c8e9f0a1b2c"
+    And there is no "campaign_overview_view" with campaign_id "d4e5f6a7-b8c9-4d0e-8f1a-2b3c4d5e6f70"
+    And I am on "campagne"
+    Then I see "overview-counts"
+    And I see the text "Rien encore dans cette campagne."
+
+  @B-player-on-error
+  Scenario: Page introuvable montre le menu à Joueur
+    Given I am a "player"
+    And I am on "error"
+    Then I see "site-menu"

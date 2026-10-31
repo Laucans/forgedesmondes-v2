@@ -31,7 +31,7 @@ Feature: Navigation of the mock-up
     Then I see the page "parametres-ia"
 
   @G-campagnes.campaign-list-to-campagne @generated @journey
-  Scenario: Depuis Accueil des campagnes, « Vers Campagne » mène à Campagne
+  Scenario: Depuis Accueil des campagnes, « Ouvrir » mène à Campagne
     Given I am on "campagnes"
     When I click "campaign-list-to-campagne"
     Then I see the page "campagne"
@@ -95,22 +95,22 @@ Feature: Navigation of the mock-up
     Then I see the page "parametres-ia"
 
   @G-campagne.crumb-campagnes @generated @journey
-  Scenario: Depuis Campagne, « Campagnes » mène à Accueil des campagnes
+  Scenario: Depuis Campagne, « ← Campagnes » mène à Accueil des campagnes
     Given I am on "campagne"
     When I click "crumb-campagnes"
     Then I see the page "campagnes"
 
-  @G-campagne.campaign-overview-to-dm-view @generated @journey
-  Scenario: Depuis Campagne, « Vers DM view » mène à DM view
-    Given I am on "campagne"
-    When I click "campaign-overview-to-dm-view"
-    Then I see the page "dm-view"
-
   @G-campagne.campaign-overview-to-preparation-seance @generated @journey
-  Scenario: Depuis Campagne, « Vers Préparation de séance » mène à Préparation de séance
+  Scenario: Depuis Campagne, « Préparer la prochaine séance » mène à Préparation de séance
     Given I am on "campagne"
     When I click "campaign-overview-to-preparation-seance"
     Then I see the page "preparation-seance"
+
+  @G-campagne.campaign-overview-to-dm-view @generated @journey
+  Scenario: Depuis Campagne, « Lancer la DM view » mène à DM view
+    Given I am on "campagne"
+    When I click "campaign-overview-to-dm-view"
+    Then I see the page "dm-view"
 
   @G-campagne.session-list-to-dm-view @generated @journey
   Scenario: Depuis Campagne, « Vers DM view » mène à DM view
@@ -382,3 +382,25 @@ Feature: Navigation of the mock-up
     Given I am on "dm-view"
     When I click "table-sheet-to-fiche-entite"
     Then I see the page "fiche-entite"
+
+  @G-player-view.site-menu @generated @journey @page:player-view @el:site-menu
+  Scenario: Player view montre le menu du site
+    Given I am on "player-view"
+    Then I see "site-menu"
+
+  @G-error.site-menu @generated @journey @page:error @el:site-menu
+  Scenario: Page introuvable montre le menu du site
+    Given I am on "error"
+    Then I see "site-menu"
+
+  @G-error.menu-campagnes @generated @journey
+  Scenario: Depuis Page introuvable, « Campagnes » mène à Accueil des campagnes
+    Given I am on "error"
+    When I click "menu-campagnes"
+    Then I see the page "campagnes"
+
+  @G-error.error-back @generated @journey
+  Scenario: Depuis Page introuvable, « Retour aux campagnes » mène à Accueil des campagnes
+    Given I am on "error"
+    When I click "error-back"
+    Then I see the page "campagnes"
