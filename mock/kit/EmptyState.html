@@ -1,0 +1,15 @@
+<!-- EmptyState: a list with no rows, a first-use message and its action. -->
+<style>
+.kit-emptystate { display: grid; justify-items: center; gap: var(--space-2, 8px); padding: var(--space-5, 40px) var(--space-4, 24px); text-align: center; background: var(--color-surface, #120a1c); border: var(--border-width, 1px) dashed var(--color-border, #3d2b57); border-radius: var(--radius-large, 20px); font-family: var(--font-family, system-ui, sans-serif); color: var(--color-text, #f5ecf7); }
+.kit-emptystate .icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: var(--radius-pill, 999px); background: var(--color-surface-2, #1f1331); color: var(--color-primary, #e8702a); font-size: var(--font-size-large, 1.25rem); }
+.kit-emptystate h3 { margin: 0; font-size: var(--font-size-large, 1.25rem); font-weight: var(--font-weight-heading, 700); }
+.kit-emptystate p { margin: 0; max-width: 40ch; color: var(--color-text-muted, #b9a6c9); }
+.kit-emptystate button { margin-top: var(--space-3, 16px); font: inherit; font-weight: 600; padding: var(--space-2, 8px) var(--space-4, 24px); border-radius: var(--radius-pill, 999px); border: var(--border-width, 1px) solid var(--color-primary, #e8702a); background: var(--color-primary, #e8702a); color: var(--color-primary-contrast, #14081f); cursor: pointer; }
+.kit-emptystate button:focus-visible { outline: 2px solid var(--color-accent, #f5b83d); outline-offset: 2px; }
+</style>
+<div class="kit-emptystate">
+  <div class="icon" aria-hidden="true">+</div>
+  <h3>Aucune campagne pour l’instant</h3>
+  <p>Créez votre première campagne pour y placer vos cartes, vos personnages et vos séances.</p>
+  <button type="button">Nouvelle campagne</button>
+</div>

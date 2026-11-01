@@ -1,0 +1,12 @@
+<!-- Section: a titled part of a page: its heading in the body face, a hint, then its content. -->
+<style>
+.kit-section { display: flex; flex-direction: column; gap: var(--space-3, 16px); min-width: 0; font-family: var(--font-family, system-ui, sans-serif); color: var(--color-text, #f5ecf7); }
+.kit-section > .head { display: flex; flex-direction: column; gap: var(--space-1, 4px); }
+.kit-section h2 { margin: 0; font-family: var(--font-family, system-ui, sans-serif); font-size: var(--font-size-large, 1.25rem); font-weight: var(--font-weight-heading, 700); line-height: 1.25; }
+.kit-section .hint { margin: 0; color: var(--color-text-muted, #b9a6c9); font-size: var(--font-size-small, 0.875rem); }
+.kit-section > .body { display: flex; flex-direction: column; gap: var(--space-3, 16px); min-width: 0; }
+</style>
+<section class="kit-section">
+  <div class="head"><h2>Section title</h2><p class="hint">What this part of the page holds.</p></div>
+  <div class="body">The section's content.</div>
+</section>

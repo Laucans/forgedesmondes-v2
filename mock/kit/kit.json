@@ -125,7 +125,7 @@
       "base": "",
       "title": "Fenêtre de dialogue",
       "what": "Une fenêtre modale centrée sur un voile sombre, avec un titre, un bouton de fermeture, un corps défilant et une rangée d'actions en pied.",
-      "state": "requested"
+      "state": "generated"
     },
     {
       "name": "TextArea",
@@ -146,6 +146,62 @@
       "base": "",
       "title": "Bloc de stats",
       "what": "Un bloc de statistiques à la manière de D&D 5e : nom et type en titre, puis CA, PV et vitesse sur une ligne. Les six caractéristiques suivent en grille, chacune avec son modificateur, puis la liste des capacités et actions (nom en gras, description). Il a un filet coloré en tête.",
+      "state": "generated"
+    },
+    {
+      "name": "CardGrid",
+      "base": "card-grid",
+      "title": "Card grid",
+      "what": "A responsive grid of cards or tiles: as many columns as the width holds, one on a phone. On a list (ul data-list) or a div; each child is a cell.",
+      "state": "generated"
+    },
+    {
+      "name": "Columns",
+      "base": "columns",
+      "title": "Columns",
+      "what": "Two panes side by side, the main one wider (or even, or the aside first), stacked on a phone.",
+      "state": "generated"
+    },
+    {
+      "name": "Stack",
+      "base": "stack",
+      "title": "Stack",
+      "what": "Blocks one under the other with the same gap (tight, normal, loose), or in a wrapping row.",
+      "state": "generated"
+    },
+    {
+      "name": "PageHeader",
+      "base": "page-header",
+      "title": "Page header",
+      "what": "The top of a page: its title, a lead sentence, and its main actions on the right (under the title on a phone).",
+      "state": "generated"
+    },
+    {
+      "name": "Section",
+      "base": "section",
+      "title": "Section",
+      "what": "A titled part of a page: its heading, a hint, then its content.",
+      "state": "generated"
+    },
+    {
+      "name": "ImagePlaceholder",
+      "base": "",
+      "title": "ImagePlaceholder",
+      "what": "a campaign cover with no image shows half a card of grey caption text.",
+      "state": "generated"
+    },
+    {
+      "name": "DataTable",
+      "base": "",
+      "title": "DataTable",
+      "what": "with 40 campaigns a card grid becomes a wall: a list with search, sort, filters and pagination.",
+      "state": "generated"
+    },
+    {
+      "name": "EmptyState",
+      "base": "",
+      "title": "EmptyState",
+      "what": "lists with no rows need a first-use state with its action.",
       "state": "generated"
     }
   ]

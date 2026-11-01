@@ -1,0 +1,85 @@
+<!-- DataTable: a list with search, sort, a filter and pagination, for long lists. -->
+<style>
+.kit-datatable { display: grid; gap: var(--space-3, 16px); font-family: var(--font-family, system-ui, sans-serif); color: var(--color-text, #f5ecf7); }
+.kit-datatable .tools { display: flex; flex-wrap: wrap; gap: var(--space-2, 8px); }
+.kit-datatable .tools input, .kit-datatable .tools select { font: inherit; padding: var(--space-2, 8px) var(--space-3, 16px); color: var(--color-text, #f5ecf7); background: var(--color-surface-2, #1f1331); border: var(--border-width, 1px) solid var(--color-border, #3d2b57); border-radius: var(--radius-medium, 12px); }
+.kit-datatable .tools input { flex: 1 1 200px; }
+.kit-datatable .tools :focus-visible, .kit-datatable .pager button:focus-visible, .kit-datatable th button:focus-visible { outline: 2px solid var(--color-accent, #f5b83d); outline-offset: 2px; }
+.kit-datatable .scroll { overflow-x: auto; border: var(--border-width, 1px) solid var(--color-border, #3d2b57); border-radius: var(--radius-large, 20px); background: var(--color-surface, #120a1c); }
+.kit-datatable table { width: 100%; border-collapse: collapse; font-size: var(--font-size-base, 1rem); }
+.kit-datatable th, .kit-datatable td { text-align: left; padding: var(--space-2, 8px) var(--space-3, 16px); border-bottom: var(--border-width, 1px) solid var(--color-border, #3d2b57); white-space: nowrap; }
+.kit-datatable th { background: var(--color-surface-2, #1f1331); font-size: var(--font-size-small, 0.875rem); font-weight: var(--font-weight-heading, 700); color: var(--color-text-muted, #b9a6c9); }
+.kit-datatable th button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+.kit-datatable th button::after { content: ' ↕'; opacity: 0.5; }
+.kit-datatable th[aria-sort="ascending"] button::after { content: ' ↑'; opacity: 1; color: var(--color-primary, #e8702a); }
+.kit-datatable th[aria-sort="descending"] button::after { content: ' ↓'; opacity: 1; color: var(--color-primary, #e8702a); }
+.kit-datatable tbody tr:hover { background: var(--color-surface-2, #1f1331); }
+.kit-datatable tr:last-child td { border-bottom: 0; }
+.kit-datatable .num { text-align: right; font-variant-numeric: tabular-nums; }
+.kit-datatable .pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2, 8px); font-size: var(--font-size-small, 0.875rem); color: var(--color-text-muted, #b9a6c9); }
+.kit-datatable .pager button { font: inherit; padding: var(--space-1, 4px) var(--space-3, 16px); color: var(--color-text, #f5ecf7); background: transparent; border: var(--border-width, 1px) solid var(--color-border, #3d2b57); border-radius: var(--radius-pill, 999px); cursor: pointer; }
+.kit-datatable .pager button:disabled { opacity: 0.4; cursor: not-allowed; }
+.kit-datatable .none { padding: var(--space-4, 24px); text-align: center; color: var(--color-text-muted, #b9a6c9); }
+</style>
+<div class="kit-datatable">
+  <div class="tools">
+    <input type="search" placeholder="Rechercher une campagne" aria-label="Rechercher">
+    <select aria-label="Filtrer par état"><option value="">Tous les états</option><option>Active</option><option>Archivée</option></select>
+  </div>
+  <div class="scroll">
+    <table>
+      <thead><tr><th aria-sort="none"><button type="button" data-sort="0">Campagne</button></th><th aria-sort="none"><button type="button" data-sort="1">État</button></th><th class="num" aria-sort="none"><button type="button" data-sort="2">Séances</button></th></tr></thead>
+      <tbody>
+        <tr><td>Val-Maudit</td><td>Active</td><td class="num">12</td></tr>
+        <tr><td>Les Cendres d’Orme</td><td>Active</td><td class="num">7</td></tr>
+        <tr><td>Marais de Brume</td><td>Archivée</td><td class="num">23</td></tr>
+        <tr><td>Tour des Vents</td><td>Active</td><td class="num">3</td></tr>
+        <tr><td>Port-Écarlate</td><td>Archivée</td><td class="num">18</td></tr>
+        <tr><td>Forge des Mondes</td><td>Active</td><td class="num">9</td></tr>
+      </tbody>
+    </table>
+    <p class="none" hidden>Aucun résultat.</p>
+  </div>
+  <div class="pager"><span class="count"></span><span><button type="button" data-page="-1">Précédent</button> <button type="button" data-page="1">Suivant</button></span></div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.closest('[data-kit]') || document.currentScript.parentElement;
+  const box = root.querySelector('.kit-datatable') || root;
+  const body = box.querySelector('tbody');
+  const all = [...body.rows];
+  const search = box.querySelector('input');
+  const filter = box.querySelector('select');
+  const none = box.querySelector('.none');
+  const count = box.querySelector('.count');
+  const prev = box.querySelector('[data-page="-1"]');
+  const next = box.querySelector('[data-page="1"]');
+  const size = 5;
+  let page = 0, col = -1, dir = 1;
+  function render() {
+    const q = search.value.trim().toLowerCase();
+    let rows = all.filter((r) => r.textContent.toLowerCase().includes(q) && (!filter.value || r.cells[1].textContent === filter.value));
+    if (col >= 0) rows.sort((a, b) => dir * a.cells[col].textContent.localeCompare(b.cells[col].textContent, 'fr', { numeric: true }));
+    const pages = Math.max(1, Math.ceil(rows.length / size));
+    page = Math.min(page, pages - 1);
+    all.forEach((r) => { r.hidden = true; });
+    rows.slice(page * size, page * size + size).forEach((r) => { r.hidden = false; body.appendChild(r); });
+    none.hidden = rows.length > 0;
+    count.textContent = rows.length + ' résultat' + (rows.length > 1 ? 's' : '') + ' · page ' + (page + 1) + ' / ' + pages;
+    prev.disabled = page === 0;
+    next.disabled = page >= pages - 1;
+  }
+  search.addEventListener('input', () => { page = 0; render(); });
+  filter.addEventListener('change', () => { page = 0; render(); });
+  prev.addEventListener('click', () => { page--; render(); });
+  next.addEventListener('click', () => { page++; render(); });
+  box.querySelectorAll('[data-sort]').forEach((b) => b.addEventListener('click', () => {
+    const c = Number(b.dataset.sort);
+    dir = col === c ? -dir : 1; col = c;
+    box.querySelectorAll('th').forEach((th) => th.setAttribute('aria-sort', 'none'));
+    b.parentElement.setAttribute('aria-sort', dir === 1 ? 'ascending' : 'descending');
+    render();
+  }));
+  render();
+})();
+</script>

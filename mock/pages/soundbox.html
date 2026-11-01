@@ -4,28 +4,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Soundbox</title>
+  <link rel="stylesheet" href="../design/tokens.css">
+  <link rel="stylesheet" href="../kit/kit.css">
   <link rel="stylesheet" href="../mock.css">
 </head>
 <body>
   <nav data-el="site-menu" aria-label="Sections">
     <a data-el="menu-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a>
     <a data-el="menu-medias" data-link="medias" href="medias.html">Médias</a>
-    <a data-el="menu-soundbox" data-link="soundbox" href="soundbox.html">Soundbox</a>
+    <a data-el="menu-soundbox" data-link="soundbox" aria-current="page" href="soundbox.html">Soundbox</a>
     <a data-el="menu-parametres-ia" data-link="parametres-ia" href="parametres-ia.html">Paramètres IA</a>
   </nav>
   <main data-page="soundbox">
-    <h1>Soundbox</h1>
-    <section data-el="sound-library"><h2>La bibliothèque des effets sonores : téléversement, nom, tags et volume propre</h2>
-      <button type="button" data-el="sound-library-add-sound" data-action="soundbox.addSound">add sound</button>
-      <button type="button" data-el="sound-library-update-sound" data-action="soundbox.updateSound">update sound</button>
-      <button type="button" data-el="sound-library-remove-sound" data-action="soundbox.removeSound">remove sound</button>
+    <header class="kit-page-header" data-kit="PageHeader"><div class="titles"><h1>Soundbox</h1><p class="lead">Les effets sonores de la table.</p></div></header>
+    <div class="kit-card-grid" data-kit="CardGrid">
+    <section class="kit-section cell" data-kit="Section" data-el="sound-library">
+      <div class="head"><h2>Bibliothèque de sons</h2><p class="hint">La bibliothèque des effets sonores : téléversement, nom, tags et volume propre</p></div>
+      <div class="body">
+        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
+          <button type="button" class="primary" data-el="sound-library-add-sound" data-action="soundbox.addSound">add sound</button>
+          <button type="button" class="secondary" data-el="sound-library-update-sound" data-action="soundbox.updateSound">update sound</button>
+          <button type="button" class="secondary" data-el="sound-library-remove-sound" data-action="soundbox.removeSound">remove sound</button>
+        </div></div>
+      </div>
     </section>
-    <section data-el="live-soundbox"><h2>L’onglet Soundbox de la DM view : cases de sons, recherche, filtre par tags, volume global et par son, « Tout arrêter »</h2>
-      <button type="button" data-el="live-soundbox-play-sound" data-action="soundbox.playSound">play sound</button>
-      <button type="button" data-el="live-soundbox-stop-all" data-action="soundbox.stopAll">stop all</button>
-      <button type="button" data-el="live-soundbox-set-sound-volume" data-action="soundbox.setSoundVolume">set sound volume</button>
-      <button type="button" data-el="live-soundbox-set-master-volume" data-action="soundbox.setMasterVolume">set master volume</button>
+    <section class="kit-section cell" data-kit="Section" data-el="live-soundbox">
+      <div class="head"><h2>Soundbox en direct</h2><p class="hint">L’onglet Soundbox de la DM view : cases de sons, recherche, filtre par tags, volume global et par son, « Tout arrêter »</p></div>
+      <div class="body">
+        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
+          <button type="button" class="primary" data-el="live-soundbox-play-sound" data-action="soundbox.playSound">play sound</button>
+          <button type="button" class="secondary" data-el="live-soundbox-stop-all" data-action="soundbox.stopAll">stop all</button>
+          <button type="button" class="secondary" data-el="live-soundbox-set-sound-volume" data-action="soundbox.setSoundVolume">set sound volume</button>
+          <button type="button" class="secondary" data-el="live-soundbox-set-master-volume" data-action="soundbox.setMasterVolume">set master volume</button>
+        </div></div>
+      </div>
     </section>
+    </div>
   </main>
 </body>
 </html>

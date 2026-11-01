@@ -1,0 +1,36 @@
+<!-- Dialog: a centred modal on a dark veil, title, close button, scrolling body, footer actions. -->
+<style>
+.kit-dialog { font-family: var(--font-family, system-ui, sans-serif); color: var(--color-text, #f5ecf7); }
+.kit-dialog .veil { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: var(--space-3, 16px); background: color-mix(in srgb, var(--color-surface, #120a1c) 80%, transparent); }
+.kit-dialog .veil[hidden] { display: none; }
+.kit-dialog .window { width: min(100%, 520px); max-height: min(90vh, 640px); display: flex; flex-direction: column; background: var(--color-surface-2, #1f1331); border: var(--border-width, 1px) solid var(--color-border, #3d2b57); border-radius: var(--radius-large, 20px); box-shadow: var(--shadow-high, 0 12px 32px rgba(0, 0, 0, 0.6)); overflow: hidden; }
+.kit-dialog header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3, 16px); padding: var(--space-3, 16px) var(--space-4, 24px); border-bottom: var(--border-width, 1px) solid var(--color-border, #3d2b57); }
+.kit-dialog h2 { margin: 0; font-size: var(--font-size-large, 1.25rem); font-weight: var(--font-weight-heading, 700); }
+.kit-dialog .close { flex: none; width: 32px; height: 32px; border-radius: var(--radius-pill, 999px); border: 0; background: transparent; color: var(--color-text-muted, #b9a6c9); font: inherit; font-size: var(--font-size-large, 1.25rem); line-height: 1; cursor: pointer; }
+.kit-dialog .close:hover { background: var(--color-surface, #120a1c); color: var(--color-text, #f5ecf7); }
+.kit-dialog .close:focus-visible, .kit-dialog .foot button:focus-visible { outline: 2px solid var(--color-accent, #f5b83d); outline-offset: 2px; }
+.kit-dialog .content { padding: var(--space-4, 24px); overflow-y: auto; display: grid; gap: var(--space-3, 16px); font-size: var(--font-size-base, 1rem); }
+.kit-dialog .foot { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2, 8px); padding: var(--space-3, 16px) var(--space-4, 24px); border-top: var(--border-width, 1px) solid var(--color-border, #3d2b57); }
+.kit-dialog .foot button { font: inherit; font-weight: 600; padding: var(--space-2, 8px) var(--space-4, 24px); border-radius: var(--radius-pill, 999px); border: var(--border-width, 1px) solid var(--color-border, #3d2b57); background: transparent; color: var(--color-text, #f5ecf7); cursor: pointer; }
+.kit-dialog .foot button.primary { background: var(--color-primary, #e8702a); border-color: var(--color-primary, #e8702a); color: var(--color-primary-contrast, #14081f); }
+.kit-dialog .foot button.danger { background: var(--color-danger, #ff5a5f); border-color: var(--color-danger, #ff5a5f); color: var(--color-primary-contrast, #14081f); }
+</style>
+<div class="kit-dialog">
+  <div class="veil" role="dialog" aria-modal="true" aria-labelledby="kit-dialog-title" hidden>
+    <div class="window">
+      <header><h2 id="kit-dialog-title">Nouvelle campagne</h2><button type="button" class="close" aria-label="Fermer">×</button></header>
+      <div class="content"><p>Donnez un nom à votre campagne. Vous pourrez le changer plus tard.</p></div>
+      <div class="foot"><button type="button" data-close>Annuler</button><button type="button" class="primary">Créer</button></div>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.closest('[data-kit]') || document.currentScript.parentElement;
+  const veil = root.querySelector('.veil');
+  const close = () => { veil.hidden = true; };
+  root.querySelectorAll('.close, [data-close]').forEach((b) => b.addEventListener('click', close));
+  veil.addEventListener('click', (e) => { if (e.target === veil) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+})();
+</script>

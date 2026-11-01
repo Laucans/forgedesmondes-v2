@@ -1,0 +1,14 @@
+<!-- Columns: two panes side by side, the main one wider; "even" for equal panes, "aside-first" for a narrow pane on the left. One column on a phone. -->
+<style>
+.kit-columns { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--space-4, 24px); align-items: stretch; font-family: var(--font-family, system-ui, sans-serif); color: var(--color-text, #f5ecf7); }
+.kit-columns.even { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.kit-columns.aside-first { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+.kit-columns > .pane { min-width: 0; display: flex; flex-direction: column; gap: var(--space-3, 16px); }
+@media (max-width: 760px) { .kit-columns, .kit-columns.even, .kit-columns.aside-first { grid-template-columns: minmax(0, 1fr); } }
+.kit-columns > .side { position: sticky; top: var(--space-4, 24px); align-self: start; }
+@media (max-width: 760px) { .kit-columns > .side { position: static; } }
+</style>
+<div class="kit-columns">
+  <div class="pane main">The main pane: the page's subject.</div>
+  <aside class="pane side">The side pane: what goes with it.</aside>
+</div>
