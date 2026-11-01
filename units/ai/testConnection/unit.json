@@ -1,0 +1,14 @@
+{
+  "id": "ai.testConnection",
+  "kind": "data-capability",
+  "title": "Tester la connexion",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "AiSettings",
+  "touches": [
+    "ai_provider.detected_api_type",
+    "ai_provider.last_test_ok",
+    "ai_provider.last_test_at",
+    "ai_provider.last_test_message",
+    "ai_provider.last_test_latency_ms"
+  ]
+}

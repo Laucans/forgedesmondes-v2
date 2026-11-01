@@ -1,0 +1,14 @@
+{
+  "id": "campaign.getCampaign",
+  "kind": "capability",
+  "title": "Lire une campagne",
+  "description": "One campaign with its cover and its overview counts.",
+  "reads": [
+    "campaign",
+    "media",
+    "campaign_overview_view"
+  ],
+  "input": {
+    "id": "uuid"
+  }
+}

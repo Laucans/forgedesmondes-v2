@@ -1,0 +1,46 @@
+[
+  {
+    "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e01",
+    "player_count": 4,
+    "pc_count": 4,
+    "npc_count": 12,
+    "place_count": 7,
+    "event_count": 3,
+    "media_count": 9,
+    "sound_count": 14,
+    "session_count": 2
+  },
+  {
+    "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e02",
+    "player_count": 5,
+    "pc_count": 5,
+    "npc_count": 3,
+    "place_count": 2,
+    "event_count": 1,
+    "media_count": 1,
+    "sound_count": 0,
+    "session_count": 1
+  },
+  {
+    "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e03",
+    "player_count": 3,
+    "pc_count": 3,
+    "npc_count": 4,
+    "place_count": 2,
+    "event_count": 1,
+    "media_count": 0,
+    "sound_count": 2,
+    "session_count": 1
+  },
+  {
+    "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e04",
+    "player_count": 4,
+    "pc_count": 4,
+    "npc_count": 12,
+    "place_count": 7,
+    "event_count": 3,
+    "media_count": 9,
+    "sound_count": 14,
+    "session_count": 2
+  }
+]

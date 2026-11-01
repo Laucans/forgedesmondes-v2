@@ -18,19 +18,8 @@
   <main data-page="campagne">
     <nav class="kit-breadcrumb" data-kit="Breadcrumb" aria-label="Fil d’Ariane"><ol><li><a data-el="crumb-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a></li></ol></nav>
     <header class="kit-page-header" data-kit="PageHeader"><div class="titles"><h1>Campagne</h1><p class="lead">Le tableau de bord de la campagne.</p></div></header>
+    <div data-el="campaign-overview" data-component="campaign.campaignOverview" data-props='{"title":"En chiffres"}'></div>
     <div class="kit-card-grid" data-kit="CardGrid">
-    <section class="kit-section cell" data-kit="Section" data-el="campaign-overview">
-      <div class="head"><h2>Aperçu</h2><p class="hint">La couverture, le résumé chiffré de la campagne, l’accès à la prochaine séance et l’export en archive</p></div>
-      <div class="body">
-        <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="campaign-overview-export-campaign" data-action="campaign.exportCampaign">export campaign</button>
-        </div></div>
-        <div class="kit-stack row" data-kit="Stack">
-          <a data-el="campaign-overview-to-dm-view" data-link="dm-view" href="dm-view.html">Vers DM view</a>
-          <a data-el="campaign-overview-to-preparation-seance" data-link="preparation-seance" href="preparation-seance.html">Vers Préparation de séance</a>
-        </div>
-      </div>
-    </section>
     <section class="kit-section cell" data-kit="Section" data-el="session-list">
       <div class="head"><h2>Séances</h2><p class="hint">Les séances dans l’ordre avec leur résumé et leurs PJ présents ; création d’une séance avec choix des PJ</p></div>
       <div class="body">

@@ -1,0 +1,10 @@
+{
+  "id": "campaign.listCampaigns",
+  "kind": "capability",
+  "title": "Lister les campagnes",
+  "description": "Every campaign and oneshot, newest first, with its cover media.",
+  "reads": [
+    "campaign",
+    "media"
+  ]
+}

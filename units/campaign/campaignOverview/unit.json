@@ -1,0 +1,20 @@
+{
+  "id": "campaign.campaignOverview",
+  "kind": "micro-ui",
+  "title": "Aperçu de la campagne",
+  "description": "The campaign page's head: cover, counts, last export, the export button and the way to the next session.",
+  "reads": [
+    "campaign",
+    "media",
+    "campaign_overview_view"
+  ],
+  "needs": [
+    "campaign.getCampaign"
+  ],
+  "actions": [
+    "campaign.exportCampaign"
+  ],
+  "screens": [
+    "campagne"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "session.addPresentCharacter",
+  "kind": "data-capability",
+  "title": "Ajouter un PJ présent",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Session",
+  "touches": [
+    "session_present_character.character_id"
+  ]
+}

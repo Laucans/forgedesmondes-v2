@@ -1,0 +1,15 @@
+{
+  "id": "media.uploadMedia",
+  "kind": "data-capability",
+  "title": "Téléverser un média",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Media",
+  "touches": [
+    "media.kind",
+    "media.title",
+    "media.file_path",
+    "media.width_px",
+    "media.height_px",
+    "battlemap_grid.hex_size_px"
+  ]
+}

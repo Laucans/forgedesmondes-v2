@@ -1,0 +1,10 @@
+{
+  "id": "session.addPlaceToSession",
+  "kind": "data-capability",
+  "title": "Ajouter un lieu à la séance",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Session",
+  "touches": [
+    "scene_entity.entity_id"
+  ]
+}

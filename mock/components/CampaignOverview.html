@@ -1,0 +1,33 @@
+<div class="kit-stack" data-kit="Stack">
+  <div data-el="overview-campaign" data-list="campaign" data-where="id={{selected.campaign}}">
+    <template>
+      <article class="kit-card" data-kit="Card">
+        <div class="media"><div class="kit-imageplaceholder" data-kit="ImagePlaceholder" role="img" aria-label="Couverture de {{name}}"><span class="initials">{{glyph}}</span></div></div>
+        <div class="body">
+          <h3>{{name}}</h3>
+          <div class="kit-badge" data-kit="Badge"><span class="accent">{{kind}}</span></div>
+          <p>{{pitch}}</p>
+          <p data-el="overview-last-export">Dernier export : {{last_exported_at}}</p>
+        </div>
+        <div class="actions">
+          <button type="button" class="primary" data-el="overview-export" data-action="campaign.exportCampaign">Exporter l’archive</button>
+        </div>
+      </article>
+    </template>
+  </div>
+  <section class="kit-section" data-kit="Section">
+    <div class="head"><h2>{{title}}</h2><p class="hint">Ce que contient la campagne.</p></div>
+    <div class="body">
+      <table class="kit-table" data-kit="Table">
+        <thead><tr><th>Joueurs</th><th class="num">PJ</th><th class="num">PNJ</th><th class="num">Lieux</th><th class="num">Événements</th><th class="num">Médias</th><th class="num">Sons</th><th class="num">Séances</th></tr></thead>
+        <tbody data-el="overview-counts" data-list="campaign_overview_view" data-where="campaign_id={{selected.campaign}}">
+          <template><tr><td>{{player_count}}</td><td class="num">{{pc_count}}</td><td class="num">{{npc_count}}</td><td class="num">{{place_count}}</td><td class="num">{{event_count}}</td><td class="num">{{media_count}}</td><td class="num">{{sound_count}}</td><td class="num">{{session_count}}</td></tr></template>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <div class="kit-button" data-kit="Button">
+    <a class="ghost" data-el="overview-to-preparation" data-link="preparation-seance" href="preparation-seance.html">Préparer la prochaine séance</a>
+    <a class="ghost" data-el="overview-to-dm-view" data-link="dm-view" href="dm-view.html">Ouvrir la DM view</a>
+  </div>
+</div>

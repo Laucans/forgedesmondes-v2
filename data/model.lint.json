@@ -1,0 +1,14 @@
+{
+  "allow": [
+    {
+      "field": "ai_settings.id",
+      "rules": ["id-uuid"],
+      "reason": "Une seule ligne de réglages pour toute l'application, toujours la ligne 1."
+    },
+    {
+      "field": "character.dndbeyond_id",
+      "rules": ["id-uuid"],
+      "reason": "Identifiant donné par D&D Beyond, un nombre en texte, pas un uuid."
+    }
+  ]
+}

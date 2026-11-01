@@ -1,0 +1,12 @@
+{
+  "id": "table.createBattlemapInstance",
+  "kind": "data-capability",
+  "title": "Créer une instance de battlemap",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "battlemap_instance.battlemap_media_id",
+    "battlemap_instance.session_id",
+    "battlemap_instance.scene_id"
+  ]
+}

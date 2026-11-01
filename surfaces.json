@@ -2,20 +2,24 @@
   "roles": [
     {
       "id": "dm",
-      "title": "dm",
-      "permissions": ["*"]
+      "title": "Maître du jeu",
+      "permissions": [
+        "*"
+      ]
     },
     {
       "id": "player",
-      "title": "player",
-      "permissions": ["*"]
+      "title": "Joueur",
+      "permissions": []
     }
   ],
   "surfaces": [
     {
       "id": "dm",
-      "title": "The DM's screens: every gesture is the DM's, who approves a critical field's change.",
-      "roles": ["dm"],
+      "title": "Les écrans du maître du jeu : chaque geste est le sien, et il valide le changement d’un champ critique.",
+      "roles": [
+        "dm"
+      ],
       "screens": [
         "campagnes",
         "parametres-ia",
@@ -30,8 +34,10 @@
     },
     {
       "id": "player",
-      "title": "The players' view: no role, no permission; a critical field's change waits for a review.",
-      "roles": ["player"],
+      "title": "La vue des joueurs, sur l’écran de table : aucun geste, aucune permission ; le changement d’un champ critique attend une revue.",
+      "roles": [
+        "player"
+      ],
       "screens": []
     }
   ]

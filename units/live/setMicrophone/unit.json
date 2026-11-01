@@ -1,0 +1,10 @@
+{
+  "id": "live.setMicrophone",
+  "kind": "data-capability",
+  "title": "Allumer ou couper le micro",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Session",
+  "touches": [
+    "session.microphone_on"
+  ]
+}

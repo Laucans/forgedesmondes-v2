@@ -1,0 +1,15 @@
+{
+  "id": "media.saveGridSettings",
+  "kind": "data-capability",
+  "title": "Enregistrer la grille",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Media",
+  "touches": [
+    "battlemap_grid.hex_size_px",
+    "battlemap_grid.offset_x",
+    "battlemap_grid.offset_y",
+    "battlemap_grid.orientation",
+    "battlemap_grid.color",
+    "battlemap_grid.opacity"
+  ]
+}

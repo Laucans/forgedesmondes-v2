@@ -1,0 +1,13 @@
+{
+  "id": "soundbox.addSound",
+  "kind": "data-capability",
+  "title": "Ajouter un son",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Sound",
+  "touches": [
+    "sound.name",
+    "sound.file_path",
+    "sound.tags",
+    "sound.volume"
+  ]
+}

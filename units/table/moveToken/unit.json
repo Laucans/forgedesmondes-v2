@@ -1,0 +1,11 @@
+{
+  "id": "table.moveToken",
+  "kind": "data-capability",
+  "title": "Déplacer un token",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "token.q",
+    "token.r"
+  ]
+}

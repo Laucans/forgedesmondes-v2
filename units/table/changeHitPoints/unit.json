@@ -1,0 +1,11 @@
+{
+  "id": "table.changeHitPoints",
+  "kind": "data-capability",
+  "title": "Changer les PV",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "token.hp_current",
+    "token.dead"
+  ]
+}

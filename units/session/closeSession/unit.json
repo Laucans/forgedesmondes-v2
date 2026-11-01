@@ -1,0 +1,14 @@
+{
+  "id": "session.closeSession",
+  "kind": "data-capability",
+  "title": "Clore la séance",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Session",
+  "touches": [
+    "session.status",
+    "session.closed_at",
+    "session.microphone_on",
+    "session.summary",
+    "session.summary_model"
+  ]
+}

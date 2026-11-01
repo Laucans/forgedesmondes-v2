@@ -53,39 +53,7 @@
         {
           "id": "campaign-list",
           "kind": "component",
-          "label": "Les campagnes et oneshots avec leur couverture ; création, export et import d’archive",
-          "component": "campaign.campaignList",
-          "roles": []
-        },
-        {
-          "id": "campaign-list-create-campaign",
-          "kind": "action",
-          "label": "create campaign",
-          "action": "campaign.createCampaign",
-          "component": "campaign.campaignList",
-          "roles": []
-        },
-        {
-          "id": "campaign-list-export-campaign",
-          "kind": "action",
-          "label": "export campaign",
-          "action": "campaign.exportCampaign",
-          "component": "campaign.campaignList",
-          "roles": []
-        },
-        {
-          "id": "campaign-list-import-campaign",
-          "kind": "action",
-          "label": "import campaign",
-          "action": "campaign.importCampaign",
-          "component": "campaign.campaignList",
-          "roles": []
-        },
-        {
-          "id": "campaign-list-to-campagne",
-          "kind": "link",
-          "label": "Vers Campagne",
-          "to": "campagne",
+          "label": "Les campagnes et oneshots avec leur couverture, la création et l’import d’une archive",
           "component": "campaign.campaignList",
           "roles": []
         }
@@ -225,30 +193,6 @@
           "id": "campaign-overview",
           "kind": "component",
           "label": "La couverture, le résumé chiffré de la campagne, l’accès à la prochaine séance et l’export en archive",
-          "component": "campaign.campaignOverview",
-          "roles": []
-        },
-        {
-          "id": "campaign-overview-export-campaign",
-          "kind": "action",
-          "label": "export campaign",
-          "action": "campaign.exportCampaign",
-          "component": "campaign.campaignOverview",
-          "roles": []
-        },
-        {
-          "id": "campaign-overview-to-dm-view",
-          "kind": "link",
-          "label": "Vers DM view",
-          "to": "dm-view",
-          "component": "campaign.campaignOverview",
-          "roles": []
-        },
-        {
-          "id": "campaign-overview-to-preparation-seance",
-          "kind": "link",
-          "label": "Vers Préparation de séance",
-          "to": "preparation-seance",
           "component": "campaign.campaignOverview",
           "roles": []
         },
@@ -1610,5 +1554,135 @@
       ]
     }
   ],
-  "fixtures": []
+  "fixtures": [
+    "mock/fixtures/campaign.json",
+    "mock/fixtures/media.json",
+    "mock/fixtures/session.json",
+    "mock/fixtures/campaign_overview_view.json"
+  ],
+  "components": [
+    {
+      "unit": "campaign.campaignList",
+      "fragment": "components/CampaignList.html",
+      "props": {
+        "hint": "Les campagnes et oneshots, avec leur couverture."
+      },
+      "fixtures": [
+        "mock/fixtures/campaign.json"
+      ],
+      "elements": [
+        {
+          "id": "campaign-cards",
+          "kind": "list",
+          "label": "Les campagnes et oneshots",
+          "roles": []
+        },
+        {
+          "id": "campaign-open",
+          "kind": "link",
+          "label": "Ouvrir",
+          "to": "campagne",
+          "roles": []
+        },
+        {
+          "id": "campaign-export",
+          "kind": "action",
+          "label": "Exporter l’archive",
+          "action": "campaign.exportCampaign",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-name",
+          "kind": "field",
+          "label": "Nom de la nouvelle campagne",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-pitch",
+          "kind": "field",
+          "label": "Accroche",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-oneshot",
+          "kind": "field",
+          "label": "Oneshot (une seule séance)",
+          "roles": []
+        },
+        {
+          "id": "campaign-create",
+          "kind": "action",
+          "label": "Créer la campagne",
+          "action": "campaign.createCampaign",
+          "roles": []
+        },
+        {
+          "id": "campaign-archive",
+          "kind": "field",
+          "label": "Archive à importer",
+          "roles": []
+        },
+        {
+          "id": "campaign-import",
+          "kind": "action",
+          "label": "Importer en nouvelle campagne",
+          "action": "campaign.importCampaign",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "unit": "campaign.campaignOverview",
+      "fragment": "components/CampaignOverview.html",
+      "props": {
+        "title": "En chiffres"
+      },
+      "fixtures": [
+        "mock/fixtures/campaign.json",
+        "mock/fixtures/campaign_overview_view.json"
+      ],
+      "elements": [
+        {
+          "id": "overview-campaign",
+          "kind": "list",
+          "label": "La campagne ouverte, avec sa couverture",
+          "roles": []
+        },
+        {
+          "id": "overview-last-export",
+          "kind": "text",
+          "label": "Dernier export",
+          "roles": []
+        },
+        {
+          "id": "overview-export",
+          "kind": "action",
+          "label": "Exporter l’archive",
+          "action": "campaign.exportCampaign",
+          "roles": []
+        },
+        {
+          "id": "overview-counts",
+          "kind": "list",
+          "label": "Le résumé chiffré de la campagne",
+          "roles": []
+        },
+        {
+          "id": "overview-to-preparation",
+          "kind": "link",
+          "label": "Préparer la prochaine séance",
+          "to": "preparation-seance",
+          "roles": []
+        },
+        {
+          "id": "overview-to-dm-view",
+          "kind": "link",
+          "label": "Ouvrir la DM view",
+          "to": "dm-view",
+          "roles": []
+        }
+      ]
+    }
+  ],
+  "handlers": "mock/handlers.js"
 }

@@ -1,0 +1,15 @@
+{
+  "id": "ai.extractFromNotes",
+  "kind": "data-capability",
+  "title": "Extraire des notes",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "NoteImport",
+  "touches": [
+    "imported_note.raw_text",
+    "imported_note.analyzed_at",
+    "note_proposal.type",
+    "note_proposal.name",
+    "note_proposal.excerpt",
+    "note_proposal.existing_entity_id"
+  ]
+}
