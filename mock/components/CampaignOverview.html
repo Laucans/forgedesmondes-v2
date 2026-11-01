@@ -3,7 +3,7 @@
     <div class="kit-stack" data-kit="Stack">
       <header class="kit-page-header" data-kit="PageHeader">
         <div class="titles"><h1>{{name}}</h1><p class="lead">{{pitch}}</p></div>
-        <div class="actions"><span data-el="overview-last-export">Dernier export : {{last_export_label}}</span><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="overview-export" data-action="campaign.exportCampaign">Exporter l’archive</button></div></div>
+        <div class="actions"><span data-el="overview-last-export">Dernier export : {{last_export_label}}</span><div class="kit-button" data-kit="Button"><button type="button" class="secondary" data-el="overview-back" data-link="campagnes">Choisir une campagne</button><button type="button" class="primary" data-el="overview-export" data-action="campaign.exportCampaign">Exporter l’archive</button></div></div>
       </header>
       <div class="kit-imageplaceholder" data-kit="ImagePlaceholder" role="img" aria-label="Couverture de {{name}}"><span class="initials">{{glyph}}</span><img src="{{cover_url}}" alt=""></div>
       <section class="kit-section" data-kit="Section">
@@ -24,6 +24,6 @@
     </div>
   </template>
   <template data-empty>
-    <div class="kit-emptystate" data-kit="EmptyState" data-el="overview-campaign-empty"><div class="icon">✦</div><h3>Aucune campagne ouverte</h3><p>Choisissez-en une dans la liste pour voir son tableau de bord.</p><button type="button" data-el="overview-back" data-link="campagnes">Choisir une campagne</button></div>
+    <div class="kit-emptystate" data-kit="EmptyState" data-el="overview-campaign-empty"><div class="icon">✦</div><h3>Aucune campagne ouverte</h3><p>Choisissez-en une dans la liste pour voir son tableau de bord.</p><button type="button" data-el="overview-back-empty" data-link="campagnes">Choisir une campagne</button></div>
   </template>
 </div>

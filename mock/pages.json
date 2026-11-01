@@ -1729,6 +1729,13 @@
           "roles": []
         },
         {
+          "id": "overview-back-empty",
+          "kind": "link",
+          "label": "Choisir une campagne (aucune campagne ouverte)",
+          "to": "campagnes",
+          "roles": []
+        },
+        {
           "id": "overview-back",
           "kind": "link",
           "label": "Choisir une campagne",
