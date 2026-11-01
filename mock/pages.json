@@ -1564,6 +1564,19 @@
       ],
       "elements": [
         {
+          "id": "campaign-recent",
+          "kind": "list",
+          "label": "Ce qui vient d’être fait : campagne créée, importée ou exportée",
+          "roles": []
+        },
+        {
+          "id": "campaign-recent-open",
+          "kind": "link",
+          "label": "Ouvrir la campagne concernée",
+          "to": "campagne",
+          "roles": []
+        },
+        {
           "id": "campaign-cards",
           "kind": "list",
           "label": "Les campagnes et oneshots, triables et filtrables",

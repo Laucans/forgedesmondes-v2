@@ -672,6 +672,18 @@
           "critical": false
         },
         {
+          "name": "last_event_label",
+          "type": "text",
+          "nullable": true,
+          "critical": false
+        },
+        {
+          "name": "is_recent",
+          "type": "bool",
+          "nullable": false,
+          "critical": false
+        },
+        {
           "name": "player_count",
           "type": "int",
           "nullable": false,

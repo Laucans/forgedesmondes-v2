@@ -3,6 +3,14 @@
     <div class="titles"><h1>Vos campagnes</h1><p class="lead">Choisissez une campagne ou un oneshot pour le préparer ou le jouer.</p></div>
     <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="ghost" data-el="campaign-to-import" data-opens="campaign-import-dialog">Importer une archive</button><button type="button" class="primary" data-el="campaign-new" data-opens="campaign-new-dialog">Nouvelle campagne</button></div></div>
   </header>
+  <div class="kit-stack" data-kit="Stack" role="status" data-el="campaign-recent" data-list="campaign_overview_view" data-where="is_recent=true">
+    <template>
+      <article class="kit-card" data-kit="Card">
+        <div class="body"><h3>À l’instant</h3><p>{{last_event_label}}</p></div>
+        <div class="actions"><button type="button" class="secondary" data-el="campaign-recent-open" data-link="campagne">Ouvrir {{name}}</button></div>
+      </article>
+    </template>
+  </div>
   <section class="kit-section" data-kit="Section">
       <div class="head"><h2>Bibliothèque</h2><p class="hint">{{hint}}</p></div>
       <div class="body">

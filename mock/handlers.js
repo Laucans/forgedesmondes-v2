@@ -6,6 +6,12 @@ const now = () => new Date().toISOString();
 const shown = (at) =>
   new Date(at).toLocaleString("fr-FR", { dateStyle: "medium", timeStyle: "short" });
 
+// What the home's « À l’instant » banner shows: the last campaign created, imported or exported.
+const recent = (db, campaignId, label) => {
+  db.update("campaign_overview_view", { is_recent: true }, { is_recent: false });
+  db.update("campaign_overview_view", { campaign_id: campaignId }, { is_recent: true, last_event_label: label });
+};
+
 export default {
   "campaign.createCampaign": (db, ctx) => {
     const name = String(ctx.form["campaign-new-name"] ?? "").trim();
@@ -52,6 +58,8 @@ export default {
       glyph: campaign.glyph,
       cover_url: null,
       last_export_label: "Jamais exportée",
+      last_event_label: null,
+      is_recent: false,
       player_count: 0,
       pc_count: 0,
       npc_count: 0,
@@ -61,6 +69,7 @@ export default {
       sound_count: 0,
       session_count: oneshot ? 1 : 0,
     });
+    recent(db, campaign.id, oneshot ? `Oneshot « ${name} » créé, avec sa séance` : `Campagne « ${name} » créée`);
     return campaign;
   },
 
@@ -70,6 +79,7 @@ export default {
     if (!view) return db.refuse("Choisissez la campagne à exporter.");
     const at = now();
     db.update("campaign_overview_view", { campaign_id: view.campaign_id }, { last_export_label: shown(at) });
+    recent(db, view.campaign_id, `Archive de « ${view.name} » exportée le ${shown(at)}`);
     return db.update("campaign", { id: view.campaign_id }, { last_exported_at: at });
   },
 
@@ -106,6 +116,7 @@ export default {
       db.insert("session", { ...session, id: crypto.randomUUID(), campaign_id: copy.id });
     for (const view of db.find("campaign_overview_view", { campaign_id: source.id }))
       db.insert("campaign_overview_view", { ...view, campaign_id: copy.id, name, last_export_label: "Jamais exportée" });
+    recent(db, copy.id, `Archive importée en nouvelle campagne « ${name} »`);
     return copy;
   },
 

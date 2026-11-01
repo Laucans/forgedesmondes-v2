@@ -25,10 +25,10 @@
     "id": "a7d4e2b1-3c5f-4e8a-b6d9-2f1e0c9b8a03",
     "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e04",
     "kind": "illustration",
-    "title": "Couverture du Val Maudit",
-    "file_path": "medias/val-maudit-copie/couverture.svg",
-    "width_px": 1920,
-    "height_px": 1080,
+    "title": "Couverture des Cendres d’Arkhos",
+    "file_path": "medias/cendres-arkhos/couverture.svg",
+    "width_px": 1600,
+    "height_px": 900,
     "place_id": null,
     "uploaded_at": "2026-10-21T09:05:00Z"
   }
