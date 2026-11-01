@@ -1,6 +1,9 @@
-<div class="kit-columns" data-kit="Columns">
-  <div class="pane main">
-    <section class="kit-section" data-kit="Section">
+<div class="kit-stack" data-kit="Stack">
+  <header class="kit-page-header" data-kit="PageHeader">
+    <div class="titles"><h1>Vos campagnes</h1><p class="lead">Choisissez une campagne ou un oneshot pour le préparer ou le jouer.</p></div>
+    <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="ghost" data-el="campaign-to-import" data-link="nouvelle-campagne">Importer une archive</button><button type="button" class="primary" data-el="campaign-new" data-link="nouvelle-campagne">Nouvelle campagne</button></div></div>
+  </header>
+  <section class="kit-section" data-kit="Section">
       <div class="head"><h2>Bibliothèque</h2><p class="hint">{{hint}}</p></div>
       <div class="body">
         <div class="kit-datatable" data-kit="DataTable">
@@ -11,7 +14,7 @@
           <div class="scroll">
             <table>
               <thead><tr><th aria-sort="ascending"><button type="button">Nom</button></th><th aria-sort="none"><button type="button">Type</button></th><th class="num" aria-sort="none"><button type="button">Séances</button></th><th aria-sort="none"><button type="button">Dernier export</button></th><th>Actions</th></tr></thead>
-              <tbody data-el="campaign-cards" data-list="campaign_overview_view" data-empty="Aucune campagne pour l’instant. Créez la première avec le formulaire « Nouvelle campagne », ou importez une archive.">
+              <tbody data-el="campaign-cards" data-list="campaign_overview_view" data-empty="Aucune campagne pour l’instant : cliquez sur « Nouvelle campagne » en haut de la page pour créer la première, ou importez une archive.">
                 <template>
                   <tr>
                     <td><strong>{{name}}</strong></td>
@@ -28,27 +31,4 @@
         </div>
       </div>
     </section>
-  </div>
-  <aside class="pane side">
-    <div class="kit-stack" data-kit="Stack">
-      <article class="kit-card" data-kit="Card" data-form>
-        <div class="body">
-          <h3>Nouvelle campagne</h3>
-          <p>Un oneshot est une campagne d’une seule séance, créée avec elle.</p>
-          <div class="kit-input" data-kit="Input"><label>Nom<input type="text" data-el="campaign-new-name" name="campaign-new-name" placeholder="Le Val Maudit"><small>Obligatoire.</small></label></div>
-          <div class="kit-textarea" data-kit="TextArea"><label class="kit-textarea__label" for="campaign-new-pitch">Accroche</label><textarea class="kit-textarea__field" id="campaign-new-pitch" data-el="campaign-new-pitch"></textarea><div class="kit-textarea__footer"><p class="kit-textarea__hint">Une ou deux phrases, facultatives.</p></div></div>
-          <div class="kit-checkbox" data-kit="Checkbox"><fieldset><legend>Format</legend><label><input type="checkbox" data-el="campaign-new-oneshot" name="campaign-new-oneshot"><span>Oneshot (une seule séance)</span></label></fieldset></div>
-        </div>
-        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="campaign-create" data-action="campaign.createCampaign">Créer la campagne</button></div></div>
-      </article>
-      <article class="kit-card" data-kit="Card" data-form>
-        <div class="body">
-          <h3>Importer une archive</h3>
-          <p>Crée toujours une nouvelle copie ; la campagne d’origine n’est pas modifiée.</p>
-          <div class="kit-filedrop" data-kit="FileDrop"><label class="kit-filedrop__zone"><span class="kit-filedrop__title">Déposez l’archive ou <b>parcourez</b></span><span class="kit-filedrop__types"><span class="kit-filedrop__tag">.zip</span></span><input class="kit-filedrop__input" type="file" accept=".zip" data-el="campaign-archive" name="campaign-archive"></label></div>
-        </div>
-        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="ghost" data-el="campaign-import" data-action="campaign.importCampaign">Importer</button></div></div>
-      </article>
-    </div>
-  </aside>
 </div>

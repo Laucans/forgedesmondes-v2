@@ -1,0 +1,15 @@
+{
+  "id": "campaign.campaignForm",
+  "kind": "micro-ui",
+  "title": "Création et import de campagne",
+  "description": "Creates a campaign or a oneshot (with its only session), or imports an archive as a new copy; back to the home once done.",
+  "reads": [],
+  "needs": [],
+  "actions": [
+    "campaign.createCampaign",
+    "campaign.importCampaign"
+  ],
+  "screens": [
+    "nouvelle-campagne"
+  ]
+}

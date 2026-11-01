@@ -2,7 +2,7 @@
   "id": "campaign.campaignList",
   "kind": "micro-ui",
   "title": "Liste des campagnes",
-  "description": "The home: campaign and oneshot cards with their covers, the creation form and the archive import.",
+  "description": "The home: the searchable campaign and oneshot table, its export, and the way to create or import one.",
   "reads": [
     "campaign",
     "media",
@@ -12,9 +12,7 @@
     "campaign.listCampaigns"
   ],
   "actions": [
-    "campaign.createCampaign",
-    "campaign.exportCampaign",
-    "campaign.importCampaign"
+    "campaign.exportCampaign"
   ],
   "screens": [
     "campagnes"
