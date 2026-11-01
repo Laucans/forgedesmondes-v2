@@ -214,7 +214,7 @@
         {
           "id": "session-list-to-dm-view",
           "kind": "link",
-          "label": "Ouvrir la DM view",
+          "label": "Vue du MJ",
           "to": "dm-view",
           "component": "session.sessionList",
           "roles": []
@@ -222,7 +222,7 @@
         {
           "id": "session-list-to-preparation-seance",
           "kind": "link",
-          "label": "Préparer",
+          "label": "Préparer la prochaine séance",
           "to": "preparation-seance",
           "component": "session.sessionList",
           "roles": []
@@ -270,14 +270,6 @@
           "kind": "action",
           "label": "Créer depuis le brief",
           "action": "ai.createFromBrief",
-          "component": "ai.toCreateList",
-          "roles": []
-        },
-        {
-          "id": "to-create-list-to-fiche-entite",
-          "kind": "link",
-          "label": "Voir les fiches",
-          "to": "fiche-entite",
           "component": "ai.toCreateList",
           "roles": []
         },
@@ -1718,23 +1710,9 @@
           "roles": []
         },
         {
-          "id": "overview-to-preparation",
-          "kind": "link",
-          "label": "Préparer la prochaine séance",
-          "to": "preparation-seance",
-          "roles": []
-        },
-        {
-          "id": "overview-to-dm-view",
-          "kind": "link",
-          "label": "Ouvrir la DM view",
-          "to": "dm-view",
-          "roles": []
-        },
-        {
           "id": "overview-back",
           "kind": "link",
-          "label": "Retour aux campagnes",
+          "label": "Choisir une campagne",
           "to": "campagnes",
           "roles": []
         }

@@ -18,13 +18,15 @@
   <main data-page="campagne">
     <nav class="kit-breadcrumb" data-kit="Breadcrumb" aria-label="Fil d’Ariane"><ol><li><a data-el="crumb-campagnes" data-link="campagnes" href="campagnes.html">Campagnes</a></li></ol></nav>
     <div data-el="campaign-overview" data-component="campaign.campaignOverview" data-props='{"title":"En chiffres"}'></div>
+    <div class="kit-stack" data-kit="Stack" data-list="campaign_overview_view" data-where="campaign_id={{selected.campaign_overview_view}}">
+      <template>
     <section class="kit-section" data-kit="Section">
       <div class="head"><h2>Préparer et jouer</h2><p class="hint">Les séances, les éléments de la campagne et ce qui reste à créer.</p></div>
       <div class="body">
     <ul class="kit-card-grid" data-kit="CardGrid">
       <li class="cell"><article class="kit-card" data-kit="Card" data-el="session-list">
         <div class="body"><h3>Séances</h3><p>Vos séances dans l’ordre, avec leur résumé et les personnages présents. Un oneshot garde sa seule séance.</p></div>
-        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="session-list-create-session" data-action="session.createSession">Créer une séance</button><button type="button" class="ghost" data-el="session-list-to-preparation-seance" data-link="preparation-seance">Préparer</button><button type="button" class="ghost" data-el="session-list-to-dm-view" data-link="dm-view">Ouvrir la DM view</button></div></div>
+        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="session-list-create-session" data-action="session.createSession">Créer une séance</button><button type="button" class="ghost" data-el="session-list-to-preparation-seance" data-link="preparation-seance">Préparer la prochaine séance</button><button type="button" class="ghost" data-el="session-list-to-dm-view" data-link="dm-view">Vue du MJ</button></div></div>
       </article></li>
       <li class="cell"><article class="kit-card" data-kit="Card" data-el="campaign-elements">
         <div class="body"><h3>Éléments de la campagne</h3><p>Joueurs, personnages, lieux, événements, médias et sons, à portée de main.</p></div>
@@ -32,7 +34,7 @@
       </article></li>
       <li class="cell"><article class="kit-card" data-kit="Card" data-el="to-create-list">
         <div class="body"><h3>À créer</h3><p>Les PNJ, lieux et événements cités dans vos briefs, prêts à devenir des fiches.</p></div>
-        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="to-create-list-create-from-brief" data-action="ai.createFromBrief">Créer depuis le brief</button><button type="button" class="ghost" data-el="to-create-list-to-fiche-entite" data-link="fiche-entite">Voir les fiches</button></div></div>
+        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="to-create-list-create-from-brief" data-action="ai.createFromBrief">Créer depuis le brief</button></div></div>
       </article></li>
       <li class="cell"><article class="kit-card" data-kit="Card" data-el="note-import">
         <div class="body"><h3>Import de notes</h3><p>Collez ou dictez vos notes : l’IA en tire les éléments, vous validez en lot.</p></div>
@@ -41,6 +43,8 @@
     </ul>
       </div>
     </section>
+      </template>
+    </div>
   </main>
 </body>
 </html>
