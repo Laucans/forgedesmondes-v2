@@ -12,7 +12,9 @@
     "campaign.listCampaigns"
   ],
   "actions": [
-    "campaign.exportCampaign"
+    "campaign.createCampaign",
+    "campaign.exportCampaign",
+    "campaign.importCampaign"
   ],
   "screens": [
     "campagnes"

@@ -5,7 +5,6 @@
   "description": "The site menu on every page, the layout, routing and the error page.",
   "screens": [
     "campagnes",
-    "nouvelle-campagne",
     "parametres-ia",
     "campagne",
     "fiche-entite",

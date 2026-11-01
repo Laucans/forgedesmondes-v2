@@ -60,72 +60,6 @@
       ]
     },
     {
-      "id": "nouvelle-campagne",
-      "title": "Nouvelle campagne",
-      "file": "pages/nouvelle-campagne.html",
-      "path": [
-        "Campagnes",
-        "Nouvelle campagne"
-      ],
-      "screen": "nouvelle-campagne",
-      "elements": [
-        {
-          "id": "site-menu",
-          "kind": "component",
-          "label": "Sections",
-          "component": "shell",
-          "roles": []
-        },
-        {
-          "id": "menu-campagnes",
-          "kind": "link",
-          "label": "Campagnes",
-          "to": "campagnes",
-          "component": "shell",
-          "roles": []
-        },
-        {
-          "id": "menu-medias",
-          "kind": "link",
-          "label": "Médias",
-          "to": "medias",
-          "component": "shell",
-          "roles": []
-        },
-        {
-          "id": "menu-soundbox",
-          "kind": "link",
-          "label": "Soundbox",
-          "to": "soundbox",
-          "component": "shell",
-          "roles": []
-        },
-        {
-          "id": "menu-parametres-ia",
-          "kind": "link",
-          "label": "Paramètres IA",
-          "to": "parametres-ia",
-          "component": "shell",
-          "roles": []
-        },
-        {
-          "id": "crumb-campagnes",
-          "kind": "link",
-          "label": "Campagnes",
-          "to": "campagnes",
-          "component": "shell",
-          "roles": []
-        },
-        {
-          "id": "campaign-form",
-          "kind": "component",
-          "label": "La création d’une campagne ou d’un oneshot, et l’import d’une archive en nouvelle copie",
-          "component": "campaign.campaignForm",
-          "roles": []
-        }
-      ]
-    },
-    {
       "id": "parametres-ia",
       "title": "Paramètres IA",
       "file": "pages/parametres-ia.html",
@@ -1679,14 +1613,71 @@
           "id": "campaign-new",
           "kind": "link",
           "label": "Nouvelle campagne",
-          "to": "nouvelle-campagne",
-          "roles": []
+          "roles": [],
+          "opens": "campaign-new-dialog"
         },
         {
           "id": "campaign-to-import",
           "kind": "link",
           "label": "Importer une archive",
-          "to": "nouvelle-campagne",
+          "roles": [],
+          "opens": "campaign-import-dialog"
+        },
+        {
+          "id": "campaign-empty-new",
+          "kind": "link",
+          "label": "Créer une campagne",
+          "opens": "campaign-new-dialog",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-dialog",
+          "kind": "text",
+          "label": "Fenêtre « Nouvelle campagne »",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-name",
+          "kind": "field",
+          "label": "Nom de la nouvelle campagne",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-pitch",
+          "kind": "field",
+          "label": "Accroche",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-oneshot",
+          "kind": "field",
+          "label": "Oneshot (une seule séance)",
+          "roles": []
+        },
+        {
+          "id": "campaign-create",
+          "kind": "action",
+          "label": "Créer la campagne",
+          "action": "campaign.createCampaign",
+          "roles": []
+        },
+        {
+          "id": "campaign-import-dialog",
+          "kind": "text",
+          "label": "Fenêtre « Importer une archive »",
+          "roles": []
+        },
+        {
+          "id": "campaign-archive",
+          "kind": "field",
+          "label": "Archive à importer",
+          "roles": []
+        },
+        {
+          "id": "campaign-import",
+          "kind": "action",
+          "label": "Importer en nouvelle campagne",
+          "action": "campaign.importCampaign",
           "roles": []
         }
       ]
@@ -1739,54 +1730,13 @@
           "label": "Ouvrir la DM view",
           "to": "dm-view",
           "roles": []
-        }
-      ]
-    },
-    {
-      "unit": "campaign.campaignForm",
-      "fragment": "components/CampaignForm.html",
-      "props": {},
-      "fixtures": [],
-      "elements": [
+        },
         {
-          "id": "campaign-new-name",
-          "kind": "field",
-          "label": "Nom de la nouvelle campagne",
+          "id": "overview-back",
+          "kind": "link",
+          "label": "Retour aux campagnes",
+          "to": "campagnes",
           "roles": []
-        },
-        {
-          "id": "campaign-new-pitch",
-          "kind": "field",
-          "label": "Accroche",
-          "roles": []
-        },
-        {
-          "id": "campaign-new-oneshot",
-          "kind": "field",
-          "label": "Oneshot (une seule séance)",
-          "roles": []
-        },
-        {
-          "id": "campaign-create",
-          "kind": "action",
-          "label": "Créer la campagne",
-          "action": "campaign.createCampaign",
-          "roles": [],
-          "to": "campagnes"
-        },
-        {
-          "id": "campaign-archive",
-          "kind": "field",
-          "label": "Archive à importer",
-          "roles": []
-        },
-        {
-          "id": "campaign-import",
-          "kind": "action",
-          "label": "Importer en nouvelle campagne",
-          "action": "campaign.importCampaign",
-          "roles": [],
-          "to": "campagnes"
         }
       ]
     }

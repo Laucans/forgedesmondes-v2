@@ -1,4 +1,4 @@
-<div class="kit-stack" data-kit="Stack" data-el="overview-campaign" data-list="campaign_overview_view" data-where="campaign_id={{selected.campaign_overview_view}}" data-empty="Aucune campagne ouverte : revenez à « Campagnes » dans le fil d’Ariane pour en choisir une.">
+<div class="kit-stack" data-kit="Stack" data-el="overview-campaign" data-list="campaign_overview_view" data-where="campaign_id={{selected.campaign_overview_view}}">
   <template>
     <div class="kit-stack" data-kit="Stack">
       <header class="kit-page-header" data-kit="PageHeader">
@@ -35,5 +35,8 @@
         </aside>
       </div>
     </div>
+  </template>
+  <template data-empty>
+    <div class="kit-emptystate" data-kit="EmptyState"><div class="icon">✦</div><h3>Aucune campagne ouverte</h3><p>Aucune campagne ouverte.</p><button type="button" data-el="overview-back" data-link="campagnes">Retour aux campagnes</button></div>
   </template>
 </div>

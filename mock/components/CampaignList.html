@@ -1,7 +1,7 @@
 <div class="kit-stack" data-kit="Stack">
   <header class="kit-page-header" data-kit="PageHeader">
     <div class="titles"><h1>Vos campagnes</h1><p class="lead">Choisissez une campagne ou un oneshot pour le préparer ou le jouer.</p></div>
-    <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="ghost" data-el="campaign-to-import" data-link="nouvelle-campagne">Importer une archive</button><button type="button" class="primary" data-el="campaign-new" data-link="nouvelle-campagne">Nouvelle campagne</button></div></div>
+    <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="ghost" data-el="campaign-to-import" data-opens="campaign-import-dialog">Importer une archive</button><button type="button" class="primary" data-el="campaign-new" data-opens="campaign-new-dialog">Nouvelle campagne</button></div></div>
   </header>
   <section class="kit-section" data-kit="Section">
       <div class="head"><h2>Bibliothèque</h2><p class="hint">{{hint}}</p></div>
@@ -14,7 +14,7 @@
           <div class="scroll">
             <table>
               <thead><tr><th aria-sort="ascending"><button type="button">Nom</button></th><th aria-sort="none"><button type="button">Type</button></th><th class="num" aria-sort="none"><button type="button">Séances</button></th><th aria-sort="none"><button type="button">Dernier export</button></th><th>Actions</th></tr></thead>
-              <tbody data-el="campaign-cards" data-list="campaign_overview_view" data-empty="Aucune campagne pour l’instant : cliquez sur « Nouvelle campagne » en haut de la page pour créer la première, ou importez une archive.">
+              <tbody data-el="campaign-cards" data-list="campaign_overview_view">
                 <template>
                   <tr>
                     <td><strong>{{name}}</strong></td>
@@ -24,6 +24,9 @@
                     <td><div class="kit-button" data-kit="Button"><button type="button" class="ghost" data-el="campaign-open" data-link="campagne">Ouvrir</button><button type="button" class="ghost" data-el="campaign-export" data-action="campaign.exportCampaign">Exporter</button></div></td>
                   </tr>
                 </template>
+                <template data-empty>
+                  <tr><td colspan="5"><div class="kit-emptystate" data-kit="EmptyState"><div class="icon">✦</div><h3>Aucune campagne</h3><p>Aucune campagne pour l’instant : créez la première.</p><button type="button" data-el="campaign-empty-new" data-opens="campaign-new-dialog">Créer une campagne</button></div></td></tr>
+                </template>
               </tbody>
             </table>
           </div>
@@ -31,4 +34,31 @@
         </div>
       </div>
     </section>
+  <div class="kit-dialog" data-kit="Dialog" data-el="campaign-new-dialog">
+    <div class="veil" role="dialog" aria-labelledby="campaign-new-title">
+      <div class="window" data-form>
+        <header><h2 id="campaign-new-title">Nouvelle campagne</h2><button type="button" class="close" data-closes="campaign-new-dialog" aria-label="Fermer">×</button></header>
+        <div class="content">
+          <div class="kit-stack" data-kit="Stack">
+            <div class="kit-input" data-kit="Input"><label>Nom<input type="text" data-el="campaign-new-name" name="campaign-new-name" placeholder="Le Val Maudit"><small>Obligatoire, différent des campagnes existantes.</small></label></div>
+            <div class="kit-textarea" data-kit="TextArea"><label class="kit-textarea__label" for="campaign-new-pitch">Accroche</label><textarea class="kit-textarea__field" id="campaign-new-pitch" data-el="campaign-new-pitch" name="campaign-new-pitch"></textarea><div class="kit-textarea__footer"><p class="kit-textarea__hint">Une ou deux phrases, facultatives.</p></div></div>
+            <div class="kit-checkbox" data-kit="Checkbox"><fieldset><legend>Format</legend><label><input type="checkbox" data-el="campaign-new-oneshot" name="campaign-new-oneshot"><span>Oneshot : une seule séance, créée avec la campagne</span></label></fieldset></div>
+          </div>
+        </div>
+        <div class="foot"><button type="button" data-closes="campaign-new-dialog">Annuler</button><button type="button" class="primary" data-el="campaign-create" data-action="campaign.createCampaign">Créer la campagne</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="kit-dialog" data-kit="Dialog" data-el="campaign-import-dialog">
+    <div class="veil" role="dialog" aria-labelledby="campaign-import-title">
+      <div class="window" data-form>
+        <header><h2 id="campaign-import-title">Importer une archive</h2><button type="button" class="close" data-closes="campaign-import-dialog" aria-label="Fermer">×</button></header>
+        <div class="content">
+          <p>L’import crée toujours une nouvelle campagne ; la campagne d’origine n’est jamais modifiée.</p>
+          <div class="kit-filedrop" data-kit="FileDrop"><label class="kit-filedrop__zone"><span class="kit-filedrop__title">Déposez l’archive ou <b>parcourez</b></span><span class="kit-filedrop__hint">Une archive exportée depuis ForgeDesMondes</span><span class="kit-filedrop__types"><span class="kit-filedrop__tag">.zip</span></span><input class="kit-filedrop__input" type="file" accept=".zip" data-el="campaign-archive" name="campaign-archive"></label></div>
+        </div>
+        <div class="foot"><button type="button" data-closes="campaign-import-dialog">Annuler</button><button type="button" class="primary" data-el="campaign-import" data-action="campaign.importCampaign">Importer en nouvelle campagne</button></div>
+      </div>
+    </div>
+  </div>
 </div>

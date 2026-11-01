@@ -22,7 +22,6 @@
       ],
       "screens": [
         "campagnes",
-        "nouvelle-campagne",
         "parametres-ia",
         "campagne",
         "fiche-entite",
