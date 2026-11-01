@@ -1,6 +1,11 @@
 [
   {
     "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e01",
+    "name": "Le Val Maudit",
+    "kind_label": "Campagne",
+    "pitch": "Une vallée où les morts ne restent pas couchés, et un baron qui le sait.",
+    "glyph": "VM",
+    "last_export_label": "20 oct. 2026, 19:42",
     "player_count": 4,
     "pc_count": 4,
     "npc_count": 12,
@@ -12,6 +17,11 @@
   },
   {
     "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e02",
+    "name": "Les Cendres d’Arkhos",
+    "kind_label": "Campagne",
+    "pitch": "L’empire est tombé en une nuit. Les héros fouillent ses cendres.",
+    "glyph": "CA",
+    "last_export_label": "Jamais exportée",
     "player_count": 5,
     "pc_count": 5,
     "npc_count": 3,
@@ -23,6 +33,11 @@
   },
   {
     "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e03",
+    "name": "La Nuit du Phare",
+    "kind_label": "Oneshot",
+    "pitch": "Une tempête, un phare éteint, et quelqu’un qui ne veut pas qu’on le rallume.",
+    "glyph": "NP",
+    "last_export_label": "Jamais exportée",
     "player_count": 3,
     "pc_count": 3,
     "npc_count": 4,
@@ -34,6 +49,11 @@
   },
   {
     "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e04",
+    "name": "Le Val Maudit (copie importée)",
+    "kind_label": "Campagne",
+    "pitch": "Une vallée où les morts ne restent pas couchés, et un baron qui le sait.",
+    "glyph": "VM",
+    "last_export_label": "Jamais exportée",
     "player_count": 4,
     "pc_count": 4,
     "npc_count": 12,

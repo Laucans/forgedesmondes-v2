@@ -636,6 +636,36 @@
           "references": "campaign"
         },
         {
+          "name": "name",
+          "type": "text",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "kind_label",
+          "type": "text",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "pitch",
+          "type": "text",
+          "nullable": true,
+          "critical": false
+        },
+        {
+          "name": "glyph",
+          "type": "text",
+          "nullable": true,
+          "critical": false
+        },
+        {
+          "name": "last_export_label",
+          "type": "text",
+          "nullable": false,
+          "critical": false
+        },
+        {
           "name": "player_count",
           "type": "int",
           "nullable": false,

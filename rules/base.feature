@@ -67,3 +67,51 @@ Feature: Base pack
     And I am on "no-such-page"
     Then I see the page "error"
     And I see "site-menu"
+
+  @B-dm-on-dm-view
+  Scenario: DM view montre le menu à Maître du jeu
+    Given I am a "dm"
+    And I am on "dm-view"
+    Then I see "site-menu"
+
+  @B-dm-on-player-view
+  Scenario: Player view montre le menu à Maître du jeu
+    Given I am a "dm"
+    And I am on "player-view"
+    Then I see "site-menu"
+
+  @B-dm-on-error
+  Scenario: Page introuvable montre le menu à Maître du jeu
+    Given I am a "dm"
+    And I am on "error"
+    Then I see "site-menu"
+
+  @B-empty-campagnes.campaign-cards
+  Scenario: Les campagnes et oneshots vide sur Accueil des campagnes le dit
+    Given I am a "dm"
+    And there is no "campaign"
+    And I am on "campagnes"
+    Then I see "campaign-cards"
+    And I see the text "Aucune campagne pour l’instant : créez la première."
+
+  @B-empty-campagne.overview-campaign
+  Scenario: La campagne ouverte, avec sa couverture vide sur Campagne le dit
+    Given I am a "dm"
+    And there is no "campaign"
+    And I am on "campagne"
+    Then I see "overview-campaign"
+    And I see the text "Aucune campagne ouverte."
+
+  @B-empty-campagne.overview-counts
+  Scenario: Le résumé chiffré de la campagne vide sur Campagne le dit
+    Given I am a "dm"
+    And there is no "campaign_overview_view"
+    And I am on "campagne"
+    Then I see "overview-counts"
+    And I see the text "Aucun chiffre à afficher."
+
+  @B-player-on-error
+  Scenario: Page introuvable montre le menu à Joueur
+    Given I am a "player"
+    And I am on "error"
+    Then I see "site-menu"

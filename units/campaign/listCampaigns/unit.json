@@ -5,6 +5,7 @@
   "description": "Every campaign and oneshot, newest first, with its cover media.",
   "reads": [
     "campaign",
-    "media"
+    "media",
+    "campaign_overview_view"
   ]
 }

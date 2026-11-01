@@ -2,6 +2,10 @@
 
 const now = () => new Date().toISOString();
 
+// The date as the pages show it: « 20 oct. 2026, 19:42 ».
+const shown = (at) =>
+  new Date(at).toLocaleString("fr-FR", { dateStyle: "medium", timeStyle: "short" });
+
 // The rows a campaign owns, copied by an import (grows as later milestones add data).
 const OWNED = ["session", "media", "campaign_overview_view"];
 
@@ -45,6 +49,11 @@ export default {
     }
     db.insert("campaign_overview_view", {
       campaign_id: campaign.id,
+      name,
+      kind_label: oneshot ? "Oneshot" : "Campagne",
+      pitch: campaign.pitch,
+      glyph: campaign.glyph,
+      last_export_label: "Jamais exportée",
       player_count: 0,
       pc_count: 0,
       npc_count: 0,
@@ -59,9 +68,11 @@ export default {
 
   // export-stamps-date: the archive is downloaded, only last_exported_at changes.
   "campaign.exportCampaign": (db, ctx) => {
-    const campaign = ctx.row ?? ctx.selected.campaign;
-    if (!campaign) return db.refuse("Choisissez la campagne à exporter.");
-    return db.update("campaign", { id: campaign.id }, { last_exported_at: now() });
+    const view = ctx.row ?? ctx.selected.campaign_overview_view;
+    if (!view) return db.refuse("Choisissez la campagne à exporter.");
+    const at = now();
+    db.update("campaign_overview_view", { campaign_id: view.campaign_id }, { last_export_label: shown(at) });
+    return db.update("campaign", { id: view.campaign_id }, { last_exported_at: at });
   },
 
   // import-creates-copy: always a new campaign with new ids; the original is never touched.
@@ -84,7 +95,10 @@ export default {
     });
     for (const entity of OWNED) {
       for (const row of db.find(entity, { campaign_id: source.id })) {
-        const fresh = entity === "campaign_overview_view" ? {} : { id: crypto.randomUUID() };
+        const fresh =
+          entity === "campaign_overview_view"
+            ? { name: copy.name, last_export_label: "Jamais exportée" }
+            : { id: crypto.randomUUID() };
         db.insert(entity, { ...row, ...fresh, campaign_id: copy.id });
       }
     }

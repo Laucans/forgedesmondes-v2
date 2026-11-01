@@ -199,14 +199,14 @@
         {
           "id": "session-list",
           "kind": "component",
-          "label": "Les séances dans l’ordre avec leur résumé et leurs PJ présents ; création d’une séance avec choix des PJ",
+          "label": "Les séances dans l’ordre, avec leur résumé et les personnages présents",
           "component": "session.sessionList",
           "roles": []
         },
         {
           "id": "session-list-create-session",
           "kind": "action",
-          "label": "create session",
+          "label": "Créer une séance",
           "action": "session.createSession",
           "component": "session.sessionList",
           "roles": []
@@ -214,7 +214,7 @@
         {
           "id": "session-list-to-dm-view",
           "kind": "link",
-          "label": "Vers DM view",
+          "label": "Ouvrir la DM view",
           "to": "dm-view",
           "component": "session.sessionList",
           "roles": []
@@ -222,7 +222,7 @@
         {
           "id": "session-list-to-preparation-seance",
           "kind": "link",
-          "label": "Vers Préparation de séance",
+          "label": "Préparer",
           "to": "preparation-seance",
           "component": "session.sessionList",
           "roles": []
@@ -230,14 +230,14 @@
         {
           "id": "campaign-elements",
           "kind": "component",
-          "label": "Les éléments de la campagne : en grille à onglets (joueurs, personnages, lieux, événements, médias, sons) ou en rail collant à gauche d’une fiche (PJ, PNJ, lieux, événements ; recherche floue, repliable, tiroir sous 960 px)",
+          "label": "Les éléments de la campagne",
           "component": "campaign.campaignElements",
           "roles": []
         },
         {
           "id": "campaign-elements-to-fiche-entite",
           "kind": "link",
-          "label": "Vers Fiche d’entité",
+          "label": "Voir les fiches",
           "to": "fiche-entite",
           "component": "campaign.campaignElements",
           "roles": []
@@ -245,7 +245,7 @@
         {
           "id": "campaign-elements-to-medias",
           "kind": "link",
-          "label": "Vers Médias et réglage de battlemap",
+          "label": "Médias",
           "to": "medias",
           "component": "campaign.campaignElements",
           "roles": []
@@ -253,7 +253,7 @@
         {
           "id": "campaign-elements-to-soundbox",
           "kind": "link",
-          "label": "Vers Soundbox",
+          "label": "Sons",
           "to": "soundbox",
           "component": "campaign.campaignElements",
           "roles": []
@@ -261,14 +261,14 @@
         {
           "id": "to-create-list",
           "kind": "component",
-          "label": "Les PNJ, lieux et événements issus des briefs, à créer depuis le brief ou après une description affinée à l’oral ou à l’écrit ; la proposition de l’IA (background, comportement, fiche de stats) s’affiche une fois l’élément créé",
+          "label": "Les PNJ, lieux et événements cités dans les briefs, à créer",
           "component": "ai.toCreateList",
           "roles": []
         },
         {
           "id": "to-create-list-create-from-brief",
           "kind": "action",
-          "label": "create from brief",
+          "label": "Créer depuis le brief",
           "action": "ai.createFromBrief",
           "component": "ai.toCreateList",
           "roles": []
@@ -276,7 +276,7 @@
         {
           "id": "to-create-list-to-fiche-entite",
           "kind": "link",
-          "label": "Vers Fiche d’entité",
+          "label": "Voir les fiches",
           "to": "fiche-entite",
           "component": "ai.toCreateList",
           "roles": []
@@ -284,14 +284,14 @@
         {
           "id": "note-import",
           "kind": "component",
-          "label": "L’import de notes en texte libre, tapées, collées ou dictées ; extraction par l’IA puis validation en lot, la note brute conservée",
+          "label": "L’import de notes, extraites par l’IA puis validées en lot",
           "component": "ai.noteImport",
           "roles": []
         },
         {
           "id": "note-import-extract-from-notes",
           "kind": "action",
-          "label": "extract from notes",
+          "label": "Extraire des notes",
           "action": "ai.extractFromNotes",
           "component": "ai.noteImport",
           "roles": []
@@ -299,7 +299,7 @@
         {
           "id": "note-import-create-entities-from-note",
           "kind": "action",
-          "label": "create entities from note",
+          "label": "Créer les éléments cochés",
           "action": "campaign.createEntitiesFromNote",
           "component": "ai.noteImport",
           "roles": []
@@ -1565,16 +1565,34 @@
       "unit": "campaign.campaignList",
       "fragment": "components/CampaignList.html",
       "props": {
-        "hint": "Les campagnes et oneshots, avec leur couverture."
+        "hint": "Recherchez, filtrez et ouvrez vos campagnes et oneshots."
       },
       "fixtures": [
-        "mock/fixtures/campaign.json"
+        "mock/fixtures/campaign_overview_view.json"
       ],
       "elements": [
         {
           "id": "campaign-cards",
           "kind": "list",
-          "label": "Les campagnes et oneshots",
+          "label": "Les campagnes et oneshots, triables et filtrables",
+          "roles": []
+        },
+        {
+          "id": "campaign-search",
+          "kind": "field",
+          "label": "Rechercher par nom",
+          "roles": []
+        },
+        {
+          "id": "campaign-filter",
+          "kind": "field",
+          "label": "Filtrer par type",
+          "roles": []
+        },
+        {
+          "id": "campaign-count",
+          "kind": "text",
+          "label": "Tri et pagination",
           "roles": []
         },
         {
@@ -1587,7 +1605,7 @@
         {
           "id": "campaign-export",
           "kind": "action",
-          "label": "Exporter l’archive",
+          "label": "Exporter",
           "action": "campaign.exportCampaign",
           "roles": []
         },
@@ -1625,7 +1643,7 @@
         {
           "id": "campaign-import",
           "kind": "action",
-          "label": "Importer en nouvelle campagne",
+          "label": "Importer",
           "action": "campaign.importCampaign",
           "roles": []
         }
@@ -1638,7 +1656,6 @@
         "title": "En chiffres"
       },
       "fixtures": [
-        "mock/fixtures/campaign.json",
         "mock/fixtures/campaign_overview_view.json"
       ],
       "elements": [
@@ -1663,7 +1680,7 @@
         },
         {
           "id": "overview-counts",
-          "kind": "list",
+          "kind": "text",
           "label": "Le résumé chiffré de la campagne",
           "roles": []
         },
