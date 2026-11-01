@@ -25,12 +25,12 @@
       <div class="body">
     <ul class="kit-card-grid" data-kit="CardGrid">
       <li class="cell"><article class="kit-card" data-kit="Card" data-el="session-list">
-        <div class="body"><h3>Séances</h3><p>Vos séances dans l’ordre, avec leur résumé et les personnages présents. Un oneshot garde sa seule séance.</p></div>
-        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="session-list-create-session" data-action="session.createSession">Créer une séance</button><button type="button" class="ghost" data-el="session-list-to-preparation-seance" data-link="preparation-seance">Préparer la prochaine séance</button><button type="button" class="ghost" data-el="session-list-to-dm-view" data-link="dm-view">Vue du MJ</button></div></div>
+        <div class="body"><h3>Séances</h3><p>Préparez la prochaine séance ou lancez-la en direct.</p></div>
+        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="session-list-create-session" data-action="session.createSession">Créer une séance</button><button type="button" class="secondary" data-el="session-list-to-preparation-seance" data-link="preparation-seance">Préparer</button><button type="button" class="secondary" data-el="session-list-to-dm-view" data-link="dm-view">Jouer</button></div></div>
       </article></li>
       <li class="cell"><article class="kit-card" data-kit="Card" data-el="campaign-elements">
         <div class="body"><h3>Éléments de la campagne</h3><p>Joueurs, personnages, lieux, événements, médias et sons, à portée de main.</p></div>
-        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="ghost" data-el="campaign-elements-to-fiche-entite" data-link="fiche-entite">Voir les fiches</button><button type="button" class="ghost" data-el="campaign-elements-to-medias" data-link="medias">Médias</button><button type="button" class="ghost" data-el="campaign-elements-to-soundbox" data-link="soundbox">Sons</button></div></div>
+        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="secondary" data-el="campaign-elements-to-fiche-entite" data-link="fiche-entite">Fiches</button><button type="button" class="secondary" data-el="campaign-elements-to-medias" data-link="medias">Médias</button><button type="button" class="secondary" data-el="campaign-elements-to-soundbox" data-link="soundbox">Sons</button></div></div>
       </article></li>
       <li class="cell"><article class="kit-card" data-kit="Card" data-el="to-create-list">
         <div class="body"><h3>À créer</h3><p>Les PNJ, lieux et événements cités dans vos briefs, prêts à devenir des fiches.</p></div>
@@ -38,7 +38,7 @@
       </article></li>
       <li class="cell"><article class="kit-card" data-kit="Card" data-el="note-import">
         <div class="body"><h3>Import de notes</h3><p>Collez ou dictez vos notes : l’IA en tire les éléments, vous validez en lot.</p></div>
-        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="note-import-extract-from-notes" data-action="ai.extractFromNotes">Extraire des notes</button><button type="button" class="ghost" data-el="note-import-create-entities-from-note" data-action="campaign.createEntitiesFromNote">Créer les éléments cochés</button></div></div>
+        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="primary" data-el="note-import-extract-from-notes" data-action="ai.extractFromNotes">Extraire des notes</button><button type="button" class="secondary" data-el="note-import-create-entities-from-note" data-action="campaign.createEntitiesFromNote">Créer la sélection</button></div></div>
       </article></li>
     </ul>
       </div>

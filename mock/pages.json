@@ -214,7 +214,7 @@
         {
           "id": "session-list-to-dm-view",
           "kind": "link",
-          "label": "Vue du MJ",
+          "label": "Jouer",
           "to": "dm-view",
           "component": "session.sessionList",
           "roles": []
@@ -222,7 +222,7 @@
         {
           "id": "session-list-to-preparation-seance",
           "kind": "link",
-          "label": "Préparer la prochaine séance",
+          "label": "Préparer",
           "to": "preparation-seance",
           "component": "session.sessionList",
           "roles": []
@@ -237,7 +237,7 @@
         {
           "id": "campaign-elements-to-fiche-entite",
           "kind": "link",
-          "label": "Voir les fiches",
+          "label": "Fiches",
           "to": "fiche-entite",
           "component": "campaign.campaignElements",
           "roles": []
@@ -291,7 +291,7 @@
         {
           "id": "note-import-create-entities-from-note",
           "kind": "action",
-          "label": "Créer les éléments cochés",
+          "label": "Créer la sélection",
           "action": "campaign.createEntitiesFromNote",
           "component": "ai.noteImport",
           "roles": []
