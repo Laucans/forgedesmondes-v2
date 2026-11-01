@@ -1710,6 +1710,12 @@
           "roles": []
         },
         {
+          "id": "overview-campaign-empty",
+          "kind": "text",
+          "label": "Aucune campagne ouverte",
+          "roles": []
+        },
+        {
           "id": "overview-back",
           "kind": "link",
           "label": "Choisir une campagne",
