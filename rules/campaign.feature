@@ -82,7 +82,7 @@ Feature: Accueil des campagnes, création, export et import
     And I click "campaign-import"
     Then the command "campaign.importCampaign" is refused because "Choisissez une archive à importer."
 
-  @R9 @journey @role:dm @page:campagne @el:crumb-campagnes @el:campaign-overview @el:overview-campaign @el:overview-last-export @el:overview-export @el:overview-counts @el:overview-to-preparation @el:overview-to-dm-view @el:overview-back
+  @R9 @journey @role:dm @page:campagne @el:crumb-campagnes @el:campaign-overview @el:overview-campaign @el:overview-last-export @el:overview-export @el:overview-counts @el:overview-back
   Scenario: Le maître du jeu ouvre une campagne et voit son aperçu
     Given I am a "dm"
     And I am on "campagnes"
@@ -95,8 +95,6 @@ Feature: Accueil des campagnes, création, export et import
     And I see "overview-last-export"
     And I see "overview-export"
     And I see "overview-counts"
-    And I see "overview-to-preparation"
-    And I see "overview-to-dm-view"
     And I see "overview-back"
     And I see "crumb-campagnes"
 
@@ -138,3 +136,13 @@ Feature: Accueil des campagnes, création, export et import
     And I am on "campagnes"
     When I click "campaign-empty-new"
     Then I see "campaign-new-name"
+
+  @R15 @journey @role:dm @page:campagne @el:overview-campaign-empty @el:overview-back-empty
+  Scenario: Sans campagne ouverte, l'aperçu propose de choisir une campagne
+    Given I am a "dm"
+    And there is no "campaign_overview_view"
+    And I am on "campagne"
+    Then I see "overview-campaign-empty"
+    And I see the text "Aucune campagne ouverte"
+    When I click "overview-back-empty"
+    Then I see the page "campagnes"

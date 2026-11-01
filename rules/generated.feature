@@ -1,5 +1,5 @@
 Feature: Navigation of the mock-up
-  Written by the harness from the mock-up's links. Regenerated: never edit it.
+  Written by the harness from the mock-up's links and the values its elements show. Regenerated: never edit it.
 
   @G-campagnes.site-menu @generated @journey @page:campagnes @el:site-menu
   Scenario: Accueil des campagnes montre le menu du site
@@ -35,11 +35,39 @@ Feature: Navigation of the mock-up
     When I click "menu-parametres-ia"
     Then I see the page "parametres-ia"
 
+  @G-campagnes.campaign-recent-open @generated @journey
+  Scenario: Depuis Accueil des campagnes, « Ouvrir la campagne concernée » mène à Campagne
+    Given I am on "campagnes"
+    When I click "campaign-recent-open"
+    Then I see the page "campagne"
+
   @G-campagnes.campaign-open @generated @journey
   Scenario: Depuis Accueil des campagnes, « Ouvrir » mène à Campagne
     Given I am on "campagnes"
     When I click "campaign-open"
     Then I see the page "campagne"
+
+  @G-campagnes.campaign-recent.values @generated @journey @page:campagnes @el:campaign-recent
+  Scenario: Accueil des campagnes : « Ce qui vient d’être fait : campagne créée, importée ou exportée » affiche les valeurs de sa ligne
+    Given there is a "campaign_overview_view" with campaign_id "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e04" and last_event_label "Archive importée en nouvelle campagne « Les Cendres d’Arkhos (copie importée) »"
+    And I am on "campagnes"
+    Then I see "campaign-recent"
+    And I see the text "Archive importée en nouvelle campagne « Les Cendres d’Arkhos (copie importée) »"
+
+  @G-campagnes.campaign-recent-open.values @generated @journey @page:campagnes @el:campaign-recent-open
+  Scenario: Accueil des campagnes : « Ouvrir la campagne concernée » affiche les valeurs de sa ligne
+    Given there is a "campaign_overview_view" with campaign_id "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e04" and name "Les Cendres d’Arkhos (copie importée)"
+    And I am on "campagnes"
+    Then I see "campaign-recent-open"
+    And I see the text "Les Cendres d’Arkhos (copie importée)"
+
+  @G-campagnes.campaign-cards.values @generated @journey @page:campagnes @el:campaign-cards
+  Scenario: Accueil des campagnes : « Les campagnes et oneshots, triables et filtrables » affiche les valeurs de sa ligne
+    Given there is a "campaign_overview_view" with campaign_id "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e01" and glyph "VM" and last_export_label "20 oct. 2026, 19:42"
+    And I am on "campagnes"
+    Then I see "campaign-cards"
+    And I see the text "VM"
+    And I see the text "20 oct. 2026, 19:42"
 
   @G-parametres-ia.site-menu @generated @journey @page:parametres-ia @el:site-menu
   Scenario: Paramètres IA montre le menu du site
@@ -110,26 +138,21 @@ Feature: Navigation of the mock-up
     When I click "crumb-campagnes"
     Then I see the page "campagnes"
 
-  @G-campagne.overview-to-preparation @generated @journey
-  Scenario: Depuis Campagne, « Préparer la prochaine séance » mène à Préparation de séance
-    Given I am on "campagne"
-    When I click "overview-to-preparation"
-    Then I see the page "preparation-seance"
-
-  @G-campagne.overview-to-dm-view @generated @journey
-  Scenario: Depuis Campagne, « Ouvrir la DM view » mène à DM view
-    Given I am on "campagne"
-    When I click "overview-to-dm-view"
-    Then I see the page "dm-view"
+  @G-campagne.overview-back-empty @generated @journey
+  Scenario: Depuis Campagne, « Choisir une campagne (aucune campagne ouverte) » mène à Accueil des campagnes
+    Given there is no "campaign_overview_view"
+    And I am on "campagne"
+    When I click "overview-back-empty"
+    Then I see the page "campagnes"
 
   @G-campagne.overview-back @generated @journey
-  Scenario: Depuis Campagne, « Retour aux campagnes » mène à Accueil des campagnes
+  Scenario: Depuis Campagne, « Choisir une campagne » mène à Accueil des campagnes
     Given I am on "campagne"
     When I click "overview-back"
     Then I see the page "campagnes"
 
   @G-campagne.session-list-to-dm-view @generated @journey
-  Scenario: Depuis Campagne, « Ouvrir la DM view » mène à DM view
+  Scenario: Depuis Campagne, « Jouer » mène à DM view
     Given I am on "campagne"
     When I click "session-list-to-dm-view"
     Then I see the page "dm-view"
@@ -141,7 +164,7 @@ Feature: Navigation of the mock-up
     Then I see the page "preparation-seance"
 
   @G-campagne.campaign-elements-to-fiche-entite @generated @journey
-  Scenario: Depuis Campagne, « Voir les fiches » mène à Fiche d’entité
+  Scenario: Depuis Campagne, « Fiches » mène à Fiche d’entité
     Given I am on "campagne"
     When I click "campaign-elements-to-fiche-entite"
     Then I see the page "fiche-entite"
@@ -158,11 +181,31 @@ Feature: Navigation of the mock-up
     When I click "campaign-elements-to-soundbox"
     Then I see the page "soundbox"
 
-  @G-campagne.to-create-list-to-fiche-entite @generated @journey
-  Scenario: Depuis Campagne, « Voir les fiches » mène à Fiche d’entité
-    Given I am on "campagne"
-    When I click "to-create-list-to-fiche-entite"
-    Then I see the page "fiche-entite"
+  @G-campagne.overview-campaign.values @generated @journey @page:campagne @el:overview-campaign
+  Scenario: Campagne : « La campagne ouverte, avec sa couverture » affiche les valeurs de sa ligne
+    Given there is a "campaign_overview_view" with campaign_id "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e01" and name "Le Val Maudit" and pitch "Une vallée où les morts ne restent pas couchés, et un baron qui le sait." and glyph "VM"
+    And I am on "campagne"
+    Then I see "overview-campaign"
+    And I see the text "Le Val Maudit"
+    And I see the text "Une vallée où les morts ne restent pas couchés, et un baron qui le sait."
+    And I see the text "VM"
+
+  @G-campagne.overview-last-export.values @generated @journey @page:campagne @el:overview-last-export
+  Scenario: Campagne : « Dernier export » affiche les valeurs de sa ligne
+    Given there is a "campaign_overview_view" with campaign_id "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e01" and last_export_label "20 oct. 2026, 19:42"
+    And I am on "campagne"
+    Then I see "overview-last-export"
+    And I see the text "20 oct. 2026, 19:42"
+
+  @G-campagne.overview-counts.values @generated @journey @page:campagne @el:overview-counts
+  Scenario: Campagne : « Le résumé chiffré de la campagne » affiche les valeurs de sa ligne
+    Given there is a "campaign_overview_view" with campaign_id "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e01" and session_count "2" and npc_count "12" and place_count "7" and event_count "3"
+    And I am on "campagne"
+    Then I see "overview-counts"
+    And I see the text "2"
+    And I see the text "12"
+    And I see the text "7"
+    And I see the text "3"
 
   @G-fiche-entite.site-menu @generated @journey @page:fiche-entite @el:site-menu
   Scenario: Fiche d’entité montre le menu du site

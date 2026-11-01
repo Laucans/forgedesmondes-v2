@@ -100,18 +100,26 @@ Feature: Base pack
     And there is no "campaign_overview_view"
     And I am on "campagne"
     Then I see "overview-campaign"
-    And I see the text "Aucune campagne ouverte."
+    And I see the text "Aucune campagne ouverte"
 
   @B-empty-campagne.overview-counts
   Scenario: Le résumé chiffré de la campagne vide sur Campagne le dit
     Given I am a "dm"
     And there is no "campaign_overview_view"
     And I am on "campagne"
-    Then I see "overview-counts"
-    And I see the text "Aucun chiffre à afficher."
+    Then I see "overview-campaign-empty"
+    And I see the text "Aucune campagne ouverte"
 
   @B-player-on-error
   Scenario: Page introuvable montre le menu à Joueur
     Given I am a "player"
     And I am on "error"
     Then I see "site-menu"
+
+  @B-empty-campagnes.campaign-recent
+  Scenario: Ce qui vient d’être fait : campagne créée, importée ou exportée vide sur Accueil des campagnes le dit
+    Given I am a "dm"
+    And there is no "campaign_overview_view"
+    And I am on "campagnes"
+    Then I see "campaign-recent"
+    And I see the text "Rien de nouveau pour l’instant : créez, importez ou exportez une campagne."
