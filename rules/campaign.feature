@@ -2,54 +2,55 @@ Feature: Accueil des campagnes, création, export et import
   Le maître du jeu voit ses campagnes et oneshots avec leur couverture, en crée,
   exporte une archive et l'importe en nouvelle copie.
 
-  @R1 @journey @role:dm @page:campagnes @el:site-menu @el:campaign-list @el:campaign-cards @el:campaign-open @el:campaign-export @el:campaign-new-name @el:campaign-new-pitch @el:campaign-new-oneshot @el:campaign-create @el:campaign-archive @el:campaign-import
+  @R1 @journey @role:dm @page:campagnes @el:site-menu @el:campaign-list @el:campaign-cards @el:campaign-count @el:campaign-open @el:campaign-export @el:campaign-new @el:campaign-to-import
   Scenario: Le maître du jeu voit l'accueil avec ses campagnes et ses oneshots
     Given I am a "dm"
     And I am on "campagnes"
     Then I see "campaign-cards"
     And I see the text "Le Val Maudit"
     And I see the text "La Nuit du Phare"
+    And I see "campaign-count"
     And I see "campaign-open"
     And I see "campaign-export"
-    And I see "campaign-new-name"
-    And I see "campaign-new-pitch"
-    And I see "campaign-new-oneshot"
-    And I see "campaign-create"
-    And I see "campaign-archive"
-    And I see "campaign-import"
+    And I see "campaign-new"
+    And I see "campaign-to-import"
 
-  @R2 @business @role:dm @page:campagnes @el:campaign-new-name @el:campaign-new-pitch @el:campaign-create
+  @R2 @business @role:dm @page:campagnes @el:campaign-new @el:campaign-new-dialog @el:campaign-new-name @el:campaign-new-pitch @el:campaign-create
   Scenario: Le maître du jeu crée une campagne
     Given I am a "dm"
     And I am on "campagnes"
-    When I fill "campaign-new-name" with "Les Marais Gris"
+    When I click "campaign-new"
+    And I fill "campaign-new-name" with "Les Marais Gris"
     And I fill "campaign-new-pitch" with "Un marais qui avale les voyageurs."
     And I click "campaign-create"
     Then there is a "campaign" with name "Les Marais Gris" and kind "campagne"
     And I see the text "Les Marais Gris"
 
-  @R3 @business @role:dm @page:campagnes @el:campaign-new-name @el:campaign-new-oneshot @el:campaign-create
+  @R3 @business @role:dm @page:campagnes @el:campaign-new @el:campaign-new-name @el:campaign-new-oneshot @el:campaign-create
   Scenario: Un oneshot est créé avec sa séance unique
     Given I am a "dm"
     And I am on "campagnes"
-    When I fill "campaign-new-name" with "Le Banquet Truqué"
+    When I click "campaign-new"
+    And I fill "campaign-new-name" with "Le Banquet Truqué"
     And I click "campaign-new-oneshot"
     And I click "campaign-create"
     Then there is a "campaign" with name "Le Banquet Truqué" and kind "oneshot"
     And there is a "session" with title "Le Banquet Truqué" and position "1"
 
-  @R4 @business @role:dm @page:campagnes @el:campaign-new-name @el:campaign-create
+  @R4 @business @role:dm @page:campagnes @el:campaign-new @el:campaign-create
   Scenario: Une campagne sans nom est refusée
     Given I am a "dm"
     And I am on "campagnes"
-    When I click "campaign-create"
+    When I click "campaign-new"
+    And I click "campaign-create"
     Then the command "campaign.createCampaign" is refused because "Donnez un nom à la campagne."
 
-  @R5 @business @role:dm @page:campagnes @el:campaign-new-name @el:campaign-create
+  @R5 @business @role:dm @page:campagnes @el:campaign-new @el:campaign-new-name @el:campaign-create
   Scenario: Une campagne au nom déjà pris est refusée
     Given I am a "dm"
     And I am on "campagnes"
-    When I fill "campaign-new-name" with "Le Val Maudit"
+    When I click "campaign-new"
+    And I fill "campaign-new-name" with "Le Val Maudit"
     And I click "campaign-create"
     Then the command "campaign.createCampaign" is refused because "Une campagne porte déjà ce nom."
 
@@ -62,24 +63,26 @@ Feature: Accueil des campagnes, création, export et import
     Then the "campaign" with name "La Nuit du Phare" has kind "oneshot"
     And the "campaign" with name "La Nuit du Phare" has pitch "Une tempête, un phare éteint, et quelqu’un qui ne veut pas qu’on le rallume."
 
-  @R7 @business @role:dm @page:campagnes @el:campaign-archive @el:campaign-import
+  @R7 @business @role:dm @page:campagnes @el:campaign-to-import @el:campaign-import-dialog @el:campaign-archive @el:campaign-import
   Scenario: L'import crée toujours une nouvelle copie sans toucher l'originale
     Given I am a "dm"
     And I am on "campagnes"
-    When I fill "campaign-archive" with "archive.zip"
+    When I click "campaign-to-import"
+    And I fill "campaign-archive" with "archive.zip"
     And I click "campaign-import"
     Then there is a "campaign" with name "Le Val Maudit (copie importée)"
     And the "campaign" with name "Le Val Maudit" has kind "campagne"
     And the "campaign" with name "Le Val Maudit" has glyph "VM"
 
-  @R8 @business @role:dm @page:campagnes @el:campaign-import
+  @R8 @business @role:dm @page:campagnes @el:campaign-to-import @el:campaign-import
   Scenario: Un import sans archive est refusé
     Given I am a "dm"
     And I am on "campagnes"
-    When I click "campaign-import"
+    When I click "campaign-to-import"
+    And I click "campaign-import"
     Then the command "campaign.importCampaign" is refused because "Choisissez une archive à importer."
 
-  @R9 @journey @role:dm @page:campagne @el:crumb-campagnes @el:campaign-overview @el:overview-campaign @el:overview-last-export @el:overview-export @el:overview-counts @el:overview-to-preparation @el:overview-to-dm-view
+  @R9 @journey @role:dm @page:campagne @el:crumb-campagnes @el:campaign-overview @el:overview-campaign @el:overview-last-export @el:overview-export @el:overview-counts @el:overview-to-preparation @el:overview-to-dm-view @el:overview-back
   Scenario: Le maître du jeu ouvre une campagne et voit son aperçu
     Given I am a "dm"
     And I am on "campagnes"
@@ -94,6 +97,7 @@ Feature: Accueil des campagnes, création, export et import
     And I see "overview-counts"
     And I see "overview-to-preparation"
     And I see "overview-to-dm-view"
+    And I see "overview-back"
     And I see "crumb-campagnes"
 
   @R10 @business @role:dm @page:campagne @el:overview-export
@@ -112,3 +116,25 @@ Feature: Accueil des campagnes, création, export et import
     And I am on "no-such-page"
     Then I see the page "error"
     And I see "error-back"
+
+  @R12 @journey @role:dm @page:campagnes @el:campaign-search
+  Scenario: Le maître du jeu recherche une campagne par son nom
+    Given I am a "dm"
+    And I am on "campagnes"
+    When I fill "campaign-search" with "Phare"
+    Then I see the text "La Nuit du Phare"
+
+  @R13 @journey @role:dm @page:campagnes @el:campaign-filter
+  Scenario: Le maître du jeu filtre les campagnes par type
+    Given I am a "dm"
+    And I am on "campagnes"
+    When I select "Oneshot" in "campaign-filter"
+    Then I see the text "La Nuit du Phare"
+
+  @R14 @journey @role:dm @page:campagnes @el:campaign-empty-new @el:campaign-new-dialog @el:campaign-new-name
+  Scenario: Sans campagne, l'accueil propose d'en créer une
+    Given I am a "dm"
+    And there is no "campaign_overview_view"
+    And I am on "campagnes"
+    When I click "campaign-empty-new"
+    Then I see "campaign-new-name"

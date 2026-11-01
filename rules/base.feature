@@ -89,7 +89,7 @@ Feature: Base pack
   @B-empty-campagnes.campaign-cards
   Scenario: Les campagnes et oneshots vide sur Accueil des campagnes le dit
     Given I am a "dm"
-    And there is no "campaign"
+    And there is no "campaign_overview_view"
     And I am on "campagnes"
     Then I see "campaign-cards"
     And I see the text "Aucune campagne pour l’instant : créez la première."
@@ -97,7 +97,7 @@ Feature: Base pack
   @B-empty-campagne.overview-campaign
   Scenario: La campagne ouverte, avec sa couverture vide sur Campagne le dit
     Given I am a "dm"
-    And there is no "campaign"
+    And there is no "campaign_overview_view"
     And I am on "campagne"
     Then I see "overview-campaign"
     And I see the text "Aucune campagne ouverte."

@@ -7,7 +7,7 @@ Feature: Navigation of the mock-up
     Then I see "site-menu"
 
   @G-campagnes.campaign-list @generated @journey @page:campagnes @el:campaign-list
-  Scenario: Accueil des campagnes montre « Les campagnes et oneshots avec leur couverture, la création et l’import d’une archive »
+  Scenario: Accueil des campagnes montre « Les campagnes et oneshots, à rechercher, filtrer, ouvrir et exporter »
     Given I am on "campagnes"
     Then I see "campaign-list"
 
@@ -122,38 +122,44 @@ Feature: Navigation of the mock-up
     When I click "overview-to-dm-view"
     Then I see the page "dm-view"
 
+  @G-campagne.overview-back @generated @journey
+  Scenario: Depuis Campagne, « Retour aux campagnes » mène à Accueil des campagnes
+    Given I am on "campagne"
+    When I click "overview-back"
+    Then I see the page "campagnes"
+
   @G-campagne.session-list-to-dm-view @generated @journey
-  Scenario: Depuis Campagne, « Vers DM view » mène à DM view
+  Scenario: Depuis Campagne, « Ouvrir la DM view » mène à DM view
     Given I am on "campagne"
     When I click "session-list-to-dm-view"
     Then I see the page "dm-view"
 
   @G-campagne.session-list-to-preparation-seance @generated @journey
-  Scenario: Depuis Campagne, « Vers Préparation de séance » mène à Préparation de séance
+  Scenario: Depuis Campagne, « Préparer » mène à Préparation de séance
     Given I am on "campagne"
     When I click "session-list-to-preparation-seance"
     Then I see the page "preparation-seance"
 
   @G-campagne.campaign-elements-to-fiche-entite @generated @journey
-  Scenario: Depuis Campagne, « Vers Fiche d’entité » mène à Fiche d’entité
+  Scenario: Depuis Campagne, « Voir les fiches » mène à Fiche d’entité
     Given I am on "campagne"
     When I click "campaign-elements-to-fiche-entite"
     Then I see the page "fiche-entite"
 
   @G-campagne.campaign-elements-to-medias @generated @journey
-  Scenario: Depuis Campagne, « Vers Médias et réglage de battlemap » mène à Médias et réglage de battlemap
+  Scenario: Depuis Campagne, « Médias » mène à Médias et réglage de battlemap
     Given I am on "campagne"
     When I click "campaign-elements-to-medias"
     Then I see the page "medias"
 
   @G-campagne.campaign-elements-to-soundbox @generated @journey
-  Scenario: Depuis Campagne, « Vers Soundbox » mène à Soundbox
+  Scenario: Depuis Campagne, « Sons » mène à Soundbox
     Given I am on "campagne"
     When I click "campaign-elements-to-soundbox"
     Then I see the page "soundbox"
 
   @G-campagne.to-create-list-to-fiche-entite @generated @journey
-  Scenario: Depuis Campagne, « Vers Fiche d’entité » mène à Fiche d’entité
+  Scenario: Depuis Campagne, « Voir les fiches » mène à Fiche d’entité
     Given I am on "campagne"
     When I click "to-create-list-to-fiche-entite"
     Then I see the page "fiche-entite"
