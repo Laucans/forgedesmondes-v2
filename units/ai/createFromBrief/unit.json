@@ -1,0 +1,12 @@
+{
+  "id": "ai.createFromBrief",
+  "kind": "data-capability",
+  "title": "Créer depuis le brief",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Session",
+  "touches": [
+    "entity_to_create.refinement_text",
+    "entity_to_create.status",
+    "entity_to_create.created_entity_id"
+  ]
+}

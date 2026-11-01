@@ -1,0 +1,13 @@
+{
+  "id": "live.showWindowOnPlayerView",
+  "kind": "data-capability",
+  "title": "Envoyer en fenêtre",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Diffusion",
+  "touches": [
+    "diffusion.window_media_id",
+    "diffusion.window_x",
+    "diffusion.window_y",
+    "diffusion.window_width"
+  ]
+}

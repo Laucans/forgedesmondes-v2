@@ -1,0 +1,10 @@
+{
+  "id": "table.removeParticipant",
+  "kind": "data-capability",
+  "title": "Retirer un participant",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "initiative_entry.id"
+  ]
+}

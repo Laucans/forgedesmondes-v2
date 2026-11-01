@@ -1,0 +1,12 @@
+{
+  "id": "soundbox.updateSound",
+  "kind": "data-capability",
+  "title": "Modifier un son",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Sound",
+  "touches": [
+    "sound.name",
+    "sound.tags",
+    "sound.volume"
+  ]
+}

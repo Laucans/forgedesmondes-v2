@@ -1,0 +1,18 @@
+{
+  "id": "dndbeyond.resyncCharacter",
+  "kind": "data-capability",
+  "title": "Resynchroniser depuis D&D Beyond",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Entity",
+  "touches": [
+    "character.strength",
+    "character.dexterity",
+    "character.constitution",
+    "character.intelligence",
+    "character.wisdom",
+    "character.charisma",
+    "character.armor_class",
+    "character.hp_max",
+    "character.dndbeyond_synced_at"
+  ]
+}

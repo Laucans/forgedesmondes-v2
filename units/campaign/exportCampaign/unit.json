@@ -1,0 +1,13 @@
+{
+  "id": "campaign.exportCampaign",
+  "kind": "data-capability",
+  "title": "Exporter une campagne",
+  "description": "Builds the archive of every row the campaign owns and stamps last_exported_at, nothing else (export-stamps-date).",
+  "aggregate": "Campaign",
+  "touches": [
+    "campaign.last_exported_at"
+  ],
+  "input": {
+    "id": "uuid"
+  }
+}

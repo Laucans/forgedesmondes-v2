@@ -1,0 +1,16 @@
+{
+  "id": "ai.saveSettings",
+  "kind": "data-capability",
+  "title": "Enregistrer les paramètres IA",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "AiSettings",
+  "touches": [
+    "ai_settings.active_provider_id",
+    "ai_provider.mode",
+    "ai_provider.url",
+    "ai_provider.api_key",
+    "ai_provider.binary",
+    "ai_provider.generation_model",
+    "ai_provider.summary_model"
+  ]
+}

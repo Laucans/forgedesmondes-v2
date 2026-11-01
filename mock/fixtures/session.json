@@ -1,0 +1,72 @@
+[
+  {
+    "id": "c3e9b7a2-5d4f-4a1b-8c6e-9d0f1e2a3b01",
+    "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e01",
+    "position": 1,
+    "title": "La messe des pendus",
+    "planned_on": "2026-09-26",
+    "status": "closed",
+    "started_at": "2026-09-26T19:00:00Z",
+    "closed_at": "2026-09-26T23:10:00Z",
+    "microphone_on": false,
+    "summary": "Les héros ont interrompu la messe et découvert que le prêtre servait le baron.",
+    "summary_model": "claude-sonnet-5-5",
+    "summary_edited_at": null
+  },
+  {
+    "id": "c3e9b7a2-5d4f-4a1b-8c6e-9d0f1e2a3b02",
+    "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e01",
+    "position": 2,
+    "title": "Le moulin sous la lune",
+    "planned_on": "2026-11-07",
+    "status": "prep",
+    "started_at": null,
+    "closed_at": null,
+    "microphone_on": false,
+    "summary": null,
+    "summary_model": null,
+    "summary_edited_at": null
+  },
+  {
+    "id": "c3e9b7a2-5d4f-4a1b-8c6e-9d0f1e2a3b03",
+    "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e02",
+    "position": 1,
+    "title": "Les portes de cendre",
+    "planned_on": "2026-11-14",
+    "status": "prep",
+    "started_at": null,
+    "closed_at": null,
+    "microphone_on": false,
+    "summary": null,
+    "summary_model": null,
+    "summary_edited_at": null
+  },
+  {
+    "id": "c3e9b7a2-5d4f-4a1b-8c6e-9d0f1e2a3b04",
+    "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e03",
+    "position": 1,
+    "title": "La Nuit du Phare",
+    "planned_on": "2026-11-21",
+    "status": "prep",
+    "started_at": null,
+    "closed_at": null,
+    "microphone_on": false,
+    "summary": null,
+    "summary_model": null,
+    "summary_edited_at": null
+  },
+  {
+    "id": "c3e9b7a2-5d4f-4a1b-8c6e-9d0f1e2a3b05",
+    "campaign_id": "6f1c2a4e-8b3d-4c7a-9e21-1a2b3c4d5e04",
+    "position": 1,
+    "title": "Les portes de cendre",
+    "planned_on": "2026-11-14",
+    "status": "prep",
+    "started_at": null,
+    "closed_at": null,
+    "microphone_on": false,
+    "summary": null,
+    "summary_model": null,
+    "summary_edited_at": null
+  }
+]

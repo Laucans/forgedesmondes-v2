@@ -24,7 +24,7 @@
       <div class="head"><h2>Brief oral</h2><p class="hint">Le brief raconté au micro, transcrit en local, puis découpé en scènes avec les entités reconnues, mises à jour ou manquantes</p></div>
       <div class="body">
         <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="oral-brief-analyze-brief" data-action="ai.analyzeBrief">analyze brief</button>
+          <button type="button" class="primary" data-el="oral-brief-analyze-brief" data-action="ai.analyzeBrief">Analyser le brief</button>
         </div></div>
         <div class="kit-stack row" data-kit="Stack">
           <a data-el="oral-brief-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>
@@ -35,12 +35,12 @@
       <div class="head"><h2>Scènes</h2><p class="hint">Les PJ présents et les scènes ordonnées de la séance, avec leurs lieux, PNJ, événements, médias, notes et instance de battlemap</p></div>
       <div class="body">
         <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="scene-board-add-present-character" data-action="session.addPresentCharacter">add present character</button>
-          <button type="button" class="secondary" data-el="scene-board-remove-present-character" data-action="session.removePresentCharacter">remove present character</button>
-          <button type="button" class="secondary" data-el="scene-board-add-scene" data-action="session.addScene">add scene</button>
-          <button type="button" class="secondary" data-el="scene-board-reorder-scenes" data-action="session.reorderScenes">reorder scenes</button>
-          <button type="button" class="secondary" data-el="scene-board-update-scene-notes" data-action="session.updateSceneNotes">update scene notes</button>
-          <button type="button" class="secondary" data-el="scene-board-create-battlemap-instance" data-action="table.createBattlemapInstance">create battlemap instance</button>
+          <button type="button" class="primary" data-el="scene-board-add-present-character" data-action="session.addPresentCharacter">Ajouter un PJ présent</button>
+          <button type="button" class="secondary" data-el="scene-board-remove-present-character" data-action="session.removePresentCharacter">Retirer un PJ présent</button>
+          <button type="button" class="secondary" data-el="scene-board-add-scene" data-action="session.addScene">Ajouter une scène</button>
+          <button type="button" class="secondary" data-el="scene-board-reorder-scenes" data-action="session.reorderScenes">Réordonner les scènes</button>
+          <button type="button" class="secondary" data-el="scene-board-update-scene-notes" data-action="session.updateSceneNotes">Enregistrer les notes de scène</button>
+          <button type="button" class="secondary" data-el="scene-board-create-battlemap-instance" data-action="table.createBattlemapInstance">Poser une battlemap dans la scène</button>
         </div></div>
         <div class="kit-stack row" data-kit="Stack">
           <a data-el="scene-board-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>
@@ -52,21 +52,21 @@
       <div class="head"><h2>Battlemap</h2><p class="hint">Une instance de battlemap : grille hexagonale, tokens glissés avec le compteur « hex · pi », personnages déposés × N, fiche du token (renommer, cacher, état, PV, retirer), combat avec son carrousel d’initiative (Suivant, réordonner, ajouter, retirer, terminer), réinitialisation de la carte et envoi aux joueurs ; en player view, seulement ce que les joueurs peuvent voir</p></div>
       <div class="body">
         <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="battlemap-move-token" data-action="table.moveToken">move token</button>
-          <button type="button" class="secondary" data-el="battlemap-place-tokens" data-action="table.placeTokens">place tokens</button>
-          <button type="button" class="secondary" data-el="battlemap-remove-token" data-action="table.removeToken">remove token</button>
-          <button type="button" class="secondary" data-el="battlemap-rename-token" data-action="table.renameToken">rename token</button>
-          <button type="button" class="secondary" data-el="battlemap-set-token-visibility" data-action="table.setTokenVisibility">set token visibility</button>
-          <button type="button" class="secondary" data-el="battlemap-set-token-condition" data-action="table.setTokenCondition">set token condition</button>
-          <button type="button" class="secondary" data-el="battlemap-show-on-player-view" data-action="live.showOnPlayerView">show on player view</button>
-          <button type="button" class="secondary" data-el="battlemap-change-hit-points" data-action="table.changeHitPoints">change hit points</button>
-          <button type="button" class="secondary" data-el="battlemap-start-combat" data-action="table.startCombat">start combat</button>
-          <button type="button" class="secondary" data-el="battlemap-next-turn" data-action="table.nextTurn">next turn</button>
-          <button type="button" class="secondary" data-el="battlemap-reorder-initiative" data-action="table.reorderInitiative">reorder initiative</button>
-          <button type="button" class="secondary" data-el="battlemap-add-participant" data-action="table.addParticipant">add participant</button>
-          <button type="button" class="secondary" data-el="battlemap-remove-participant" data-action="table.removeParticipant">remove participant</button>
-          <button type="button" class="secondary" data-el="battlemap-end-combat" data-action="table.endCombat">end combat</button>
-          <button type="button" class="secondary" data-el="battlemap-reset-battlemap" data-action="table.resetBattlemap">reset battlemap</button>
+          <button type="button" class="primary" data-el="battlemap-move-token" data-action="table.moveToken">Déplacer le token</button>
+          <button type="button" class="secondary" data-el="battlemap-place-tokens" data-action="table.placeTokens">Poser des tokens</button>
+          <button type="button" class="secondary" data-el="battlemap-remove-token" data-action="table.removeToken">Retirer le token</button>
+          <button type="button" class="secondary" data-el="battlemap-rename-token" data-action="table.renameToken">Renommer le token</button>
+          <button type="button" class="secondary" data-el="battlemap-set-token-visibility" data-action="table.setTokenVisibility">Montrer ou cacher le token</button>
+          <button type="button" class="secondary" data-el="battlemap-set-token-condition" data-action="table.setTokenCondition">Changer l’état du token</button>
+          <button type="button" class="secondary" data-el="battlemap-show-on-player-view" data-action="live.showOnPlayerView">Envoyer aux joueurs</button>
+          <button type="button" class="secondary" data-el="battlemap-change-hit-points" data-action="table.changeHitPoints">Changer les PV</button>
+          <button type="button" class="secondary" data-el="battlemap-start-combat" data-action="table.startCombat">Lancer le combat</button>
+          <button type="button" class="secondary" data-el="battlemap-next-turn" data-action="table.nextTurn">Tour suivant</button>
+          <button type="button" class="secondary" data-el="battlemap-reorder-initiative" data-action="table.reorderInitiative">Réordonner l’initiative</button>
+          <button type="button" class="secondary" data-el="battlemap-add-participant" data-action="table.addParticipant">Ajouter un participant</button>
+          <button type="button" class="secondary" data-el="battlemap-remove-participant" data-action="table.removeParticipant">Retirer un participant</button>
+          <button type="button" class="secondary" data-el="battlemap-end-combat" data-action="table.endCombat">Terminer le combat</button>
+          <button type="button" class="secondary" data-el="battlemap-reset-battlemap" data-action="table.resetBattlemap">Réinitialiser la carte</button>
         </div></div>
       </div>
     </section>
@@ -84,7 +84,7 @@
       <div class="head"><h2>Historique des versions</h2><p class="hint">Le bouton « Mis à jour » d’une fiche modifiée par l’IA, son diff champ par champ et l’historique des versions avec retour à une version antérieure</p></div>
       <div class="body">
         <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="version-history-restore-entity-version" data-action="campaign.restoreEntityVersion">restore entity version</button>
+          <button type="button" class="primary" data-el="version-history-restore-entity-version" data-action="campaign.restoreEntityVersion">Restaurer cette version</button>
         </div></div>
       </div>
     </section>
@@ -92,7 +92,7 @@
       <div class="head"><h2>À créer</h2><p class="hint">Les PNJ, lieux et événements issus des briefs, à créer depuis le brief ou après une description affinée à l’oral ou à l’écrit ; la proposition de l’IA (background, comportement, fiche de stats) s’affiche une fois l’élément créé</p></div>
       <div class="body">
         <div class="kit-stack row" data-kit="Stack"><div class="kit-button" data-kit="Button">
-          <button type="button" class="primary" data-el="to-create-list-create-from-brief" data-action="ai.createFromBrief">create from brief</button>
+          <button type="button" class="primary" data-el="to-create-list-create-from-brief" data-action="ai.createFromBrief">Créer depuis le brief</button>
         </div></div>
         <div class="kit-stack row" data-kit="Stack">
           <a data-el="to-create-list-to-fiche-entite" data-link="fiche-entite" href="fiche-entite.html">Vers Fiche d’entité</a>

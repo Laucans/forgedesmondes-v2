@@ -1,0 +1,18 @@
+{
+  "id": "shell.frame",
+  "kind": "shell",
+  "title": "Cadre de l’application",
+  "description": "The site menu on every page, the layout, routing and the error page.",
+  "screens": [
+    "campagnes",
+    "parametres-ia",
+    "campagne",
+    "fiche-entite",
+    "preparation-seance",
+    "medias",
+    "soundbox",
+    "dm-view",
+    "player-view",
+    "error"
+  ]
+}

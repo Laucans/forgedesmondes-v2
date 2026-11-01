@@ -1,0 +1,15 @@
+{
+  "id": "ai.analyzeBrief",
+  "kind": "data-capability",
+  "title": "Analyser le brief oral",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Session",
+  "touches": [
+    "oral_brief.transcript",
+    "oral_brief.analyzed_at",
+    "scene_entity.entity_id",
+    "entity_to_create.type",
+    "entity_to_create.name",
+    "entity_to_create.excerpt"
+  ]
+}

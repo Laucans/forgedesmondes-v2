@@ -1,0 +1,10 @@
+{
+  "id": "table.resetBattlemap",
+  "kind": "data-capability",
+  "title": "Réinitialiser la carte",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "battlemap_instance.reset_at"
+  ]
+}

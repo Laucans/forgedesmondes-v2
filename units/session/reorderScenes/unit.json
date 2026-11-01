@@ -1,0 +1,10 @@
+{
+  "id": "session.reorderScenes",
+  "kind": "data-capability",
+  "title": "Réordonner les scènes",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Session",
+  "touches": [
+    "scene.position"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "campaign.campaignList",
+  "kind": "micro-ui",
+  "title": "Liste des campagnes",
+  "description": "The home: the searchable campaign and oneshot table, its export, and the way to create or import one.",
+  "reads": [
+    "campaign",
+    "media",
+    "campaign_overview_view"
+  ],
+  "needs": [
+    "campaign.listCampaigns"
+  ],
+  "actions": [
+    "campaign.createCampaign",
+    "campaign.exportCampaign",
+    "campaign.importCampaign"
+  ],
+  "screens": [
+    "campagnes"
+  ]
+}

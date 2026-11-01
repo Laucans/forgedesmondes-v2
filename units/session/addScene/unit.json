@@ -1,0 +1,11 @@
+{
+  "id": "session.addScene",
+  "kind": "data-capability",
+  "title": "Ajouter une scène",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Session",
+  "touches": [
+    "scene.position",
+    "scene.title"
+  ]
+}

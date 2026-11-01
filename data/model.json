@@ -20,9 +20,13 @@
         },
         {
           "name": "mode",
-          "type": "text",
+          "type": "enum",
           "nullable": false,
-          "critical": true
+          "critical": true,
+          "values": [
+            "api",
+            "binaire"
+          ]
         },
         {
           "name": "label",
@@ -37,9 +41,14 @@
         },
         {
           "name": "detected_api_type",
-          "type": "text",
+          "type": "enum",
           "nullable": true,
-          "critical": true
+          "critical": true,
+          "values": [
+            "anthropic",
+            "openai",
+            "opencode"
+          ]
         },
         {
           "name": "api_key",
@@ -128,9 +137,13 @@
         },
         {
           "name": "kind",
-          "type": "text",
+          "type": "enum",
           "nullable": false,
-          "critical": true
+          "critical": true,
+          "values": [
+            "campagne",
+            "oneshot"
+          ]
         },
         {
           "name": "pitch",
@@ -235,9 +248,16 @@
         },
         {
           "name": "type",
-          "type": "text",
+          "type": "enum",
           "nullable": false,
-          "critical": true
+          "critical": true,
+          "values": [
+            "pj",
+            "pnj",
+            "monstre",
+            "lieu",
+            "evenement"
+          ]
         },
         {
           "name": "name",
@@ -480,9 +500,14 @@
         },
         {
           "name": "kind",
-          "type": "text",
+          "type": "enum",
           "nullable": false,
-          "critical": true
+          "critical": true,
+          "values": [
+            "battlemap",
+            "illustration",
+            "token"
+          ]
         },
         {
           "name": "title",
@@ -606,12 +631,105 @@
         {
           "name": "campaign_id",
           "type": "uuid",
-          "nullable": false
+          "nullable": false,
+          "critical": false,
+          "references": "campaign"
         },
         {
-          "name": "entity_counts",
-          "type": "json",
-          "nullable": false
+          "name": "name",
+          "type": "text",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "kind_label",
+          "type": "text",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "pitch",
+          "type": "text",
+          "nullable": true,
+          "critical": false
+        },
+        {
+          "name": "glyph",
+          "type": "text",
+          "nullable": true,
+          "critical": false
+        },
+        {
+          "name": "cover_url",
+          "type": "text",
+          "nullable": true,
+          "critical": false
+        },
+        {
+          "name": "last_export_label",
+          "type": "text",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "last_event_label",
+          "type": "text",
+          "nullable": true,
+          "critical": false
+        },
+        {
+          "name": "is_recent",
+          "type": "bool",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "player_count",
+          "type": "int",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "pc_count",
+          "type": "int",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "npc_count",
+          "type": "int",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "place_count",
+          "type": "int",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "event_count",
+          "type": "int",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "media_count",
+          "type": "int",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "sound_count",
+          "type": "int",
+          "nullable": false,
+          "critical": false
+        },
+        {
+          "name": "session_count",
+          "type": "int",
+          "nullable": false,
+          "critical": false
         }
       ]
     },
@@ -650,9 +768,14 @@
         },
         {
           "name": "status",
-          "type": "text",
+          "type": "enum",
           "nullable": false,
-          "critical": true
+          "critical": true,
+          "values": [
+            "prep",
+            "live",
+            "closed"
+          ]
         },
         {
           "name": "started_at",
@@ -915,8 +1038,13 @@
         },
         {
           "name": "type",
-          "type": "text",
-          "nullable": false
+          "type": "enum",
+          "nullable": false,
+          "values": [
+            "pnj",
+            "lieu",
+            "evenement"
+          ]
         },
         {
           "name": "name",
@@ -935,9 +1063,13 @@
         },
         {
           "name": "status",
-          "type": "text",
+          "type": "enum",
           "nullable": false,
-          "critical": true
+          "critical": true,
+          "values": [
+            "a_creer",
+            "creee"
+          ]
         },
         {
           "name": "created_entity_id",
@@ -1087,8 +1219,15 @@
         },
         {
           "name": "type",
-          "type": "text",
-          "nullable": false
+          "type": "enum",
+          "nullable": false,
+          "values": [
+            "pj",
+            "pnj",
+            "monstre",
+            "lieu",
+            "evenement"
+          ]
         },
         {
           "name": "name",
@@ -1477,9 +1616,14 @@
         },
         {
           "name": "base_kind",
-          "type": "text",
+          "type": "enum",
           "nullable": false,
-          "critical": true
+          "critical": true,
+          "values": [
+            "couverture",
+            "battlemap",
+            "illustration"
+          ]
         },
         {
           "name": "base_media_id",
@@ -1541,7 +1685,9 @@
     {
       "name": "AiSettings",
       "root": "ai_settings",
-      "entities": ["ai_provider"],
+      "entities": [
+        "ai_provider"
+      ],
       "invariants": [
         {
           "id": "mode-fields",
@@ -1569,7 +1715,12 @@
     {
       "name": "BattlemapInstance",
       "root": "battlemap_instance",
-      "entities": ["token", "combat", "initiative_entry", "initiative_order_view"],
+      "entities": [
+        "token",
+        "combat",
+        "initiative_entry",
+        "initiative_order_view"
+      ],
       "invariants": [
         {
           "id": "instance-isolated",
@@ -1645,7 +1796,7 @@
         },
         {
           "id": "import-creates-copy",
-          "description": "Un import crée toujours une nouvelle campagne avec de nouveaux identifiants, même si origin_campaign_id correspond à une campagne existante. L'originale n'est jamais modifiée."
+          "description": "Un import crée toujours une nouvelle campagne avec de nouveaux identifiants, même si origin_campaign_id correspond à une campagne existante. Son nom reçoit le suffixe « (copie importée) », puis « (copie importée 2) », « (copie importée 3) »… pour rester unique : un second import de la même archive crée une seconde copie. L’originale n’est jamais modifiée."
         },
         {
           "id": "export-stamps-date",
@@ -1654,6 +1805,14 @@
         {
           "id": "master-volume-range",
           "description": "Le volume global reste entre 0 et 1, et il multiplie le volume propre de chaque son."
+        },
+        {
+          "id": "name-required",
+          "description": "Une campagne a toujours un nom non vide."
+        },
+        {
+          "id": "name-unique",
+          "description": "Deux campagnes ne portent jamais le même nom : la création d’une campagne au nom déjà pris est refusée (« Une campagne porte déjà ce nom. »), l’import numérote le nom de sa copie."
         }
       ],
       "criticality": "high"
@@ -1685,7 +1844,12 @@
     {
       "name": "Entity",
       "root": "entity",
-      "entities": ["character", "entity_alias", "entity_version", "detection_vocabulary_view"],
+      "entities": [
+        "character",
+        "entity_alias",
+        "entity_version",
+        "detection_vocabulary_view"
+      ],
       "invariants": [
         {
           "id": "character-is-pj-or-pnj",
@@ -1753,7 +1917,9 @@
     {
       "name": "NoteImport",
       "root": "note_proposal",
-      "entities": ["imported_note"],
+      "entities": [
+        "imported_note"
+      ],
       "invariants": [
         {
           "id": "no-creation-before-validation",

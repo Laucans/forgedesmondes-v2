@@ -1,0 +1,12 @@
+{
+  "id": "live.showCover",
+  "kind": "data-capability",
+  "title": "Montrer la couverture",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Diffusion",
+  "touches": [
+    "diffusion.base_kind",
+    "diffusion.base_media_id",
+    "diffusion.base_instance_id"
+  ]
+}

@@ -53,39 +53,7 @@
         {
           "id": "campaign-list",
           "kind": "component",
-          "label": "Les campagnes et oneshots avec leur couverture ; création, export et import d’archive",
-          "component": "campaign.campaignList",
-          "roles": []
-        },
-        {
-          "id": "campaign-list-create-campaign",
-          "kind": "action",
-          "label": "create campaign",
-          "action": "campaign.createCampaign",
-          "component": "campaign.campaignList",
-          "roles": []
-        },
-        {
-          "id": "campaign-list-export-campaign",
-          "kind": "action",
-          "label": "export campaign",
-          "action": "campaign.exportCampaign",
-          "component": "campaign.campaignList",
-          "roles": []
-        },
-        {
-          "id": "campaign-list-import-campaign",
-          "kind": "action",
-          "label": "import campaign",
-          "action": "campaign.importCampaign",
-          "component": "campaign.campaignList",
-          "roles": []
-        },
-        {
-          "id": "campaign-list-to-campagne",
-          "kind": "link",
-          "label": "Vers Campagne",
-          "to": "campagne",
+          "label": "Les campagnes et oneshots, à rechercher, filtrer, ouvrir et exporter",
           "component": "campaign.campaignList",
           "roles": []
         }
@@ -149,7 +117,7 @@
         {
           "id": "ai-settings-save-settings",
           "kind": "action",
-          "label": "save settings",
+          "label": "Enregistrer les réglages",
           "action": "ai.saveSettings",
           "component": "ai.aiSettings",
           "roles": []
@@ -157,7 +125,7 @@
         {
           "id": "ai-settings-test-connection",
           "kind": "action",
-          "label": "test connection",
+          "label": "Tester la connexion",
           "action": "ai.testConnection",
           "component": "ai.aiSettings",
           "roles": []
@@ -229,40 +197,16 @@
           "roles": []
         },
         {
-          "id": "campaign-overview-export-campaign",
-          "kind": "action",
-          "label": "export campaign",
-          "action": "campaign.exportCampaign",
-          "component": "campaign.campaignOverview",
-          "roles": []
-        },
-        {
-          "id": "campaign-overview-to-dm-view",
-          "kind": "link",
-          "label": "Vers DM view",
-          "to": "dm-view",
-          "component": "campaign.campaignOverview",
-          "roles": []
-        },
-        {
-          "id": "campaign-overview-to-preparation-seance",
-          "kind": "link",
-          "label": "Vers Préparation de séance",
-          "to": "preparation-seance",
-          "component": "campaign.campaignOverview",
-          "roles": []
-        },
-        {
           "id": "session-list",
           "kind": "component",
-          "label": "Les séances dans l’ordre avec leur résumé et leurs PJ présents ; création d’une séance avec choix des PJ",
+          "label": "Les séances dans l’ordre, avec leur résumé et les personnages présents",
           "component": "session.sessionList",
           "roles": []
         },
         {
           "id": "session-list-create-session",
           "kind": "action",
-          "label": "create session",
+          "label": "Créer une séance",
           "action": "session.createSession",
           "component": "session.sessionList",
           "roles": []
@@ -270,7 +214,7 @@
         {
           "id": "session-list-to-dm-view",
           "kind": "link",
-          "label": "Vers DM view",
+          "label": "Jouer",
           "to": "dm-view",
           "component": "session.sessionList",
           "roles": []
@@ -278,7 +222,7 @@
         {
           "id": "session-list-to-preparation-seance",
           "kind": "link",
-          "label": "Vers Préparation de séance",
+          "label": "Préparer",
           "to": "preparation-seance",
           "component": "session.sessionList",
           "roles": []
@@ -286,14 +230,14 @@
         {
           "id": "campaign-elements",
           "kind": "component",
-          "label": "Les éléments de la campagne : en grille à onglets (joueurs, personnages, lieux, événements, médias, sons) ou en rail collant à gauche d’une fiche (PJ, PNJ, lieux, événements ; recherche floue, repliable, tiroir sous 960 px)",
+          "label": "Les éléments de la campagne",
           "component": "campaign.campaignElements",
           "roles": []
         },
         {
           "id": "campaign-elements-to-fiche-entite",
           "kind": "link",
-          "label": "Vers Fiche d’entité",
+          "label": "Fiches",
           "to": "fiche-entite",
           "component": "campaign.campaignElements",
           "roles": []
@@ -301,7 +245,7 @@
         {
           "id": "campaign-elements-to-medias",
           "kind": "link",
-          "label": "Vers Médias et réglage de battlemap",
+          "label": "Médias",
           "to": "medias",
           "component": "campaign.campaignElements",
           "roles": []
@@ -309,7 +253,7 @@
         {
           "id": "campaign-elements-to-soundbox",
           "kind": "link",
-          "label": "Vers Soundbox",
+          "label": "Sons",
           "to": "soundbox",
           "component": "campaign.campaignElements",
           "roles": []
@@ -317,37 +261,29 @@
         {
           "id": "to-create-list",
           "kind": "component",
-          "label": "Les PNJ, lieux et événements issus des briefs, à créer depuis le brief ou après une description affinée à l’oral ou à l’écrit ; la proposition de l’IA (background, comportement, fiche de stats) s’affiche une fois l’élément créé",
+          "label": "Les PNJ, lieux et événements cités dans les briefs, à créer",
           "component": "ai.toCreateList",
           "roles": []
         },
         {
           "id": "to-create-list-create-from-brief",
           "kind": "action",
-          "label": "create from brief",
+          "label": "Créer depuis le brief",
           "action": "ai.createFromBrief",
-          "component": "ai.toCreateList",
-          "roles": []
-        },
-        {
-          "id": "to-create-list-to-fiche-entite",
-          "kind": "link",
-          "label": "Vers Fiche d’entité",
-          "to": "fiche-entite",
           "component": "ai.toCreateList",
           "roles": []
         },
         {
           "id": "note-import",
           "kind": "component",
-          "label": "L’import de notes en texte libre, tapées, collées ou dictées ; extraction par l’IA puis validation en lot, la note brute conservée",
+          "label": "L’import de notes, extraites par l’IA puis validées en lot",
           "component": "ai.noteImport",
           "roles": []
         },
         {
           "id": "note-import-extract-from-notes",
           "kind": "action",
-          "label": "extract from notes",
+          "label": "Extraire des notes",
           "action": "ai.extractFromNotes",
           "component": "ai.noteImport",
           "roles": []
@@ -355,7 +291,7 @@
         {
           "id": "note-import-create-entities-from-note",
           "kind": "action",
-          "label": "create entities from note",
+          "label": "Créer la sélection",
           "action": "campaign.createEntitiesFromNote",
           "component": "ai.noteImport",
           "roles": []
@@ -461,7 +397,7 @@
         {
           "id": "version-history-restore-entity-version",
           "kind": "action",
-          "label": "restore entity version",
+          "label": "Restaurer cette version",
           "action": "campaign.restoreEntityVersion",
           "component": "campaign.versionHistory",
           "roles": []
@@ -476,7 +412,7 @@
         {
           "id": "entity-editor-save-entity",
           "kind": "action",
-          "label": "save entity",
+          "label": "Enregistrer la fiche",
           "action": "campaign.saveEntity",
           "component": "campaign.entityEditor",
           "roles": []
@@ -484,7 +420,7 @@
         {
           "id": "entity-editor-propose-character",
           "kind": "action",
-          "label": "propose character",
+          "label": "Proposer avec l’IA",
           "action": "ai.proposeCharacter",
           "component": "campaign.entityEditor",
           "roles": []
@@ -492,7 +428,7 @@
         {
           "id": "entity-editor-import-character",
           "kind": "action",
-          "label": "import character",
+          "label": "Importer depuis D&D Beyond",
           "action": "dndbeyond.importCharacter",
           "component": "campaign.entityEditor",
           "roles": []
@@ -500,7 +436,7 @@
         {
           "id": "entity-editor-resync-character",
           "kind": "action",
-          "label": "resync character",
+          "label": "Resynchroniser D&D Beyond",
           "action": "dndbeyond.resyncCharacter",
           "component": "campaign.entityEditor",
           "roles": []
@@ -606,7 +542,7 @@
         {
           "id": "oral-brief-analyze-brief",
           "kind": "action",
-          "label": "analyze brief",
+          "label": "Analyser le brief",
           "action": "ai.analyzeBrief",
           "component": "ai.oralBrief",
           "roles": []
@@ -629,7 +565,7 @@
         {
           "id": "scene-board-add-present-character",
           "kind": "action",
-          "label": "add present character",
+          "label": "Ajouter un PJ présent",
           "action": "session.addPresentCharacter",
           "component": "session.sceneBoard",
           "roles": []
@@ -637,7 +573,7 @@
         {
           "id": "scene-board-remove-present-character",
           "kind": "action",
-          "label": "remove present character",
+          "label": "Retirer un PJ présent",
           "action": "session.removePresentCharacter",
           "component": "session.sceneBoard",
           "roles": []
@@ -645,7 +581,7 @@
         {
           "id": "scene-board-add-scene",
           "kind": "action",
-          "label": "add scene",
+          "label": "Ajouter une scène",
           "action": "session.addScene",
           "component": "session.sceneBoard",
           "roles": []
@@ -653,7 +589,7 @@
         {
           "id": "scene-board-reorder-scenes",
           "kind": "action",
-          "label": "reorder scenes",
+          "label": "Réordonner les scènes",
           "action": "session.reorderScenes",
           "component": "session.sceneBoard",
           "roles": []
@@ -661,7 +597,7 @@
         {
           "id": "scene-board-update-scene-notes",
           "kind": "action",
-          "label": "update scene notes",
+          "label": "Enregistrer les notes de scène",
           "action": "session.updateSceneNotes",
           "component": "session.sceneBoard",
           "roles": []
@@ -669,7 +605,7 @@
         {
           "id": "scene-board-create-battlemap-instance",
           "kind": "action",
-          "label": "create battlemap instance",
+          "label": "Poser une battlemap dans la scène",
           "action": "table.createBattlemapInstance",
           "component": "session.sceneBoard",
           "roles": []
@@ -700,7 +636,7 @@
         {
           "id": "version-history-restore-entity-version",
           "kind": "action",
-          "label": "restore entity version",
+          "label": "Restaurer cette version",
           "action": "campaign.restoreEntityVersion",
           "component": "campaign.versionHistory",
           "roles": []
@@ -715,7 +651,7 @@
         {
           "id": "to-create-list-create-from-brief",
           "kind": "action",
-          "label": "create from brief",
+          "label": "Créer depuis le brief",
           "action": "ai.createFromBrief",
           "component": "ai.toCreateList",
           "roles": []
@@ -738,7 +674,7 @@
         {
           "id": "battlemap-move-token",
           "kind": "action",
-          "label": "move token",
+          "label": "Déplacer le token",
           "action": "table.moveToken",
           "component": "table.battlemap",
           "roles": []
@@ -746,7 +682,7 @@
         {
           "id": "battlemap-place-tokens",
           "kind": "action",
-          "label": "place tokens",
+          "label": "Poser des tokens",
           "action": "table.placeTokens",
           "component": "table.battlemap",
           "roles": []
@@ -754,7 +690,7 @@
         {
           "id": "battlemap-remove-token",
           "kind": "action",
-          "label": "remove token",
+          "label": "Retirer le token",
           "action": "table.removeToken",
           "component": "table.battlemap",
           "roles": []
@@ -762,7 +698,7 @@
         {
           "id": "battlemap-rename-token",
           "kind": "action",
-          "label": "rename token",
+          "label": "Renommer le token",
           "action": "table.renameToken",
           "component": "table.battlemap",
           "roles": []
@@ -770,7 +706,7 @@
         {
           "id": "battlemap-set-token-visibility",
           "kind": "action",
-          "label": "set token visibility",
+          "label": "Montrer ou cacher le token",
           "action": "table.setTokenVisibility",
           "component": "table.battlemap",
           "roles": []
@@ -778,7 +714,7 @@
         {
           "id": "battlemap-set-token-condition",
           "kind": "action",
-          "label": "set token condition",
+          "label": "Changer l’état du token",
           "action": "table.setTokenCondition",
           "component": "table.battlemap",
           "roles": []
@@ -786,7 +722,7 @@
         {
           "id": "battlemap-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "table.battlemap",
           "roles": []
@@ -794,7 +730,7 @@
         {
           "id": "battlemap-change-hit-points",
           "kind": "action",
-          "label": "change hit points",
+          "label": "Changer les PV",
           "action": "table.changeHitPoints",
           "component": "table.battlemap",
           "roles": []
@@ -802,7 +738,7 @@
         {
           "id": "battlemap-start-combat",
           "kind": "action",
-          "label": "start combat",
+          "label": "Lancer le combat",
           "action": "table.startCombat",
           "component": "table.battlemap",
           "roles": []
@@ -810,7 +746,7 @@
         {
           "id": "battlemap-next-turn",
           "kind": "action",
-          "label": "next turn",
+          "label": "Tour suivant",
           "action": "table.nextTurn",
           "component": "table.battlemap",
           "roles": []
@@ -818,7 +754,7 @@
         {
           "id": "battlemap-reorder-initiative",
           "kind": "action",
-          "label": "reorder initiative",
+          "label": "Réordonner l’initiative",
           "action": "table.reorderInitiative",
           "component": "table.battlemap",
           "roles": []
@@ -826,7 +762,7 @@
         {
           "id": "battlemap-add-participant",
           "kind": "action",
-          "label": "add participant",
+          "label": "Ajouter un participant",
           "action": "table.addParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -834,7 +770,7 @@
         {
           "id": "battlemap-remove-participant",
           "kind": "action",
-          "label": "remove participant",
+          "label": "Retirer un participant",
           "action": "table.removeParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -842,7 +778,7 @@
         {
           "id": "battlemap-end-combat",
           "kind": "action",
-          "label": "end combat",
+          "label": "Terminer le combat",
           "action": "table.endCombat",
           "component": "table.battlemap",
           "roles": []
@@ -850,7 +786,7 @@
         {
           "id": "battlemap-reset-battlemap",
           "kind": "action",
-          "label": "reset battlemap",
+          "label": "Réinitialiser la carte",
           "action": "table.resetBattlemap",
           "component": "table.battlemap",
           "roles": []
@@ -915,7 +851,7 @@
         {
           "id": "media-library-upload-media",
           "kind": "action",
-          "label": "upload media",
+          "label": "Téléverser un média",
           "action": "media.uploadMedia",
           "component": "media.mediaLibrary",
           "roles": []
@@ -923,7 +859,7 @@
         {
           "id": "media-library-set-media-place",
           "kind": "action",
-          "label": "set media place",
+          "label": "Changer le lieu",
           "action": "media.setMediaPlace",
           "component": "media.mediaLibrary",
           "roles": []
@@ -931,7 +867,7 @@
         {
           "id": "media-library-add-place-to-session",
           "kind": "action",
-          "label": "add place to session",
+          "label": "Ajouter le lieu à la séance",
           "action": "session.addPlaceToSession",
           "component": "media.mediaLibrary",
           "roles": []
@@ -946,7 +882,7 @@
         {
           "id": "grid-settings-save-grid-settings",
           "kind": "action",
-          "label": "save grid settings",
+          "label": "Enregistrer la grille",
           "action": "media.saveGridSettings",
           "component": "media.gridSettings",
           "roles": []
@@ -1011,7 +947,7 @@
         {
           "id": "sound-library-add-sound",
           "kind": "action",
-          "label": "add sound",
+          "label": "Ajouter un son",
           "action": "soundbox.addSound",
           "component": "soundbox.soundLibrary",
           "roles": []
@@ -1019,7 +955,7 @@
         {
           "id": "sound-library-update-sound",
           "kind": "action",
-          "label": "update sound",
+          "label": "Modifier le son",
           "action": "soundbox.updateSound",
           "component": "soundbox.soundLibrary",
           "roles": []
@@ -1027,7 +963,7 @@
         {
           "id": "sound-library-remove-sound",
           "kind": "action",
-          "label": "remove sound",
+          "label": "Retirer le son",
           "action": "soundbox.removeSound",
           "component": "soundbox.soundLibrary",
           "roles": []
@@ -1042,7 +978,7 @@
         {
           "id": "live-soundbox-play-sound",
           "kind": "action",
-          "label": "play sound",
+          "label": "Jouer le son",
           "action": "soundbox.playSound",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1050,7 +986,7 @@
         {
           "id": "live-soundbox-stop-all",
           "kind": "action",
-          "label": "stop all",
+          "label": "Tout arrêter",
           "action": "soundbox.stopAll",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1058,7 +994,7 @@
         {
           "id": "live-soundbox-set-sound-volume",
           "kind": "action",
-          "label": "set sound volume",
+          "label": "Régler le volume du son",
           "action": "soundbox.setSoundVolume",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1066,7 +1002,7 @@
         {
           "id": "live-soundbox-set-master-volume",
           "kind": "action",
-          "label": "set master volume",
+          "label": "Régler le volume global",
           "action": "soundbox.setMasterVolume",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1133,7 +1069,7 @@
         {
           "id": "live-session-bar-show-cover",
           "kind": "action",
-          "label": "show cover",
+          "label": "Montrer la couverture",
           "action": "live.showCover",
           "component": "session.liveSessionBar",
           "roles": []
@@ -1141,7 +1077,7 @@
         {
           "id": "live-session-bar-close-window",
           "kind": "action",
-          "label": "close window",
+          "label": "Fermer la fenêtre",
           "action": "live.closeWindow",
           "component": "session.liveSessionBar",
           "roles": []
@@ -1149,7 +1085,7 @@
         {
           "id": "live-session-bar-close-session",
           "kind": "action",
-          "label": "close session",
+          "label": "Clore la séance",
           "action": "session.closeSession",
           "component": "session.liveSessionBar",
           "roles": []
@@ -1180,7 +1116,7 @@
         {
           "id": "elements-panel-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "live.elementsPanel",
           "roles": []
@@ -1188,7 +1124,7 @@
         {
           "id": "elements-panel-show-window-on-player-view",
           "kind": "action",
-          "label": "show window on player view",
+          "label": "Envoyer en fenêtre aux joueurs",
           "action": "live.showWindowOnPlayerView",
           "component": "live.elementsPanel",
           "roles": []
@@ -1203,7 +1139,7 @@
         {
           "id": "table-sheet-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "live.tableSheet",
           "roles": []
@@ -1211,7 +1147,7 @@
         {
           "id": "table-sheet-show-window-on-player-view",
           "kind": "action",
-          "label": "show window on player view",
+          "label": "Envoyer en fenêtre aux joueurs",
           "action": "live.showWindowOnPlayerView",
           "component": "live.tableSheet",
           "roles": []
@@ -1234,7 +1170,7 @@
         {
           "id": "battlemap-move-token",
           "kind": "action",
-          "label": "move token",
+          "label": "Déplacer le token",
           "action": "table.moveToken",
           "component": "table.battlemap",
           "roles": []
@@ -1242,7 +1178,7 @@
         {
           "id": "battlemap-place-tokens",
           "kind": "action",
-          "label": "place tokens",
+          "label": "Poser des tokens",
           "action": "table.placeTokens",
           "component": "table.battlemap",
           "roles": []
@@ -1250,7 +1186,7 @@
         {
           "id": "battlemap-remove-token",
           "kind": "action",
-          "label": "remove token",
+          "label": "Retirer le token",
           "action": "table.removeToken",
           "component": "table.battlemap",
           "roles": []
@@ -1258,7 +1194,7 @@
         {
           "id": "battlemap-rename-token",
           "kind": "action",
-          "label": "rename token",
+          "label": "Renommer le token",
           "action": "table.renameToken",
           "component": "table.battlemap",
           "roles": []
@@ -1266,7 +1202,7 @@
         {
           "id": "battlemap-set-token-visibility",
           "kind": "action",
-          "label": "set token visibility",
+          "label": "Montrer ou cacher le token",
           "action": "table.setTokenVisibility",
           "component": "table.battlemap",
           "roles": []
@@ -1274,7 +1210,7 @@
         {
           "id": "battlemap-set-token-condition",
           "kind": "action",
-          "label": "set token condition",
+          "label": "Changer l’état du token",
           "action": "table.setTokenCondition",
           "component": "table.battlemap",
           "roles": []
@@ -1282,7 +1218,7 @@
         {
           "id": "battlemap-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "table.battlemap",
           "roles": []
@@ -1290,7 +1226,7 @@
         {
           "id": "battlemap-change-hit-points",
           "kind": "action",
-          "label": "change hit points",
+          "label": "Changer les PV",
           "action": "table.changeHitPoints",
           "component": "table.battlemap",
           "roles": []
@@ -1298,7 +1234,7 @@
         {
           "id": "battlemap-start-combat",
           "kind": "action",
-          "label": "start combat",
+          "label": "Lancer le combat",
           "action": "table.startCombat",
           "component": "table.battlemap",
           "roles": []
@@ -1306,7 +1242,7 @@
         {
           "id": "battlemap-next-turn",
           "kind": "action",
-          "label": "next turn",
+          "label": "Tour suivant",
           "action": "table.nextTurn",
           "component": "table.battlemap",
           "roles": []
@@ -1314,7 +1250,7 @@
         {
           "id": "battlemap-reorder-initiative",
           "kind": "action",
-          "label": "reorder initiative",
+          "label": "Réordonner l’initiative",
           "action": "table.reorderInitiative",
           "component": "table.battlemap",
           "roles": []
@@ -1322,7 +1258,7 @@
         {
           "id": "battlemap-add-participant",
           "kind": "action",
-          "label": "add participant",
+          "label": "Ajouter un participant",
           "action": "table.addParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -1330,7 +1266,7 @@
         {
           "id": "battlemap-remove-participant",
           "kind": "action",
-          "label": "remove participant",
+          "label": "Retirer un participant",
           "action": "table.removeParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -1338,7 +1274,7 @@
         {
           "id": "battlemap-end-combat",
           "kind": "action",
-          "label": "end combat",
+          "label": "Terminer le combat",
           "action": "table.endCombat",
           "component": "table.battlemap",
           "roles": []
@@ -1346,7 +1282,7 @@
         {
           "id": "battlemap-reset-battlemap",
           "kind": "action",
-          "label": "reset battlemap",
+          "label": "Réinitialiser la carte",
           "action": "table.resetBattlemap",
           "component": "table.battlemap",
           "roles": []
@@ -1361,7 +1297,7 @@
         {
           "id": "live-soundbox-play-sound",
           "kind": "action",
-          "label": "play sound",
+          "label": "Jouer le son",
           "action": "soundbox.playSound",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1369,7 +1305,7 @@
         {
           "id": "live-soundbox-stop-all",
           "kind": "action",
-          "label": "stop all",
+          "label": "Tout arrêter",
           "action": "soundbox.stopAll",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1377,7 +1313,7 @@
         {
           "id": "live-soundbox-set-sound-volume",
           "kind": "action",
-          "label": "set sound volume",
+          "label": "Régler le volume du son",
           "action": "soundbox.setSoundVolume",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1385,7 +1321,7 @@
         {
           "id": "live-soundbox-set-master-volume",
           "kind": "action",
-          "label": "set master volume",
+          "label": "Régler le volume global",
           "action": "soundbox.setMasterVolume",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1400,7 +1336,7 @@
         {
           "id": "suggestion-pill-set-microphone",
           "kind": "action",
-          "label": "set microphone",
+          "label": "Allumer ou couper le micro",
           "action": "live.setMicrophone",
           "component": "live.suggestionPill",
           "roles": []
@@ -1408,7 +1344,7 @@
         {
           "id": "suggestion-pill-play-sound",
           "kind": "action",
-          "label": "play sound",
+          "label": "Jouer le son",
           "action": "soundbox.playSound",
           "component": "live.suggestionPill",
           "roles": []
@@ -1442,7 +1378,7 @@
         {
           "id": "player-stage-move-window",
           "kind": "action",
-          "label": "move window",
+          "label": "Déplacer la fenêtre",
           "action": "live.moveWindow",
           "component": "live.playerStage",
           "roles": []
@@ -1450,7 +1386,7 @@
         {
           "id": "player-stage-resize-window",
           "kind": "action",
-          "label": "resize window",
+          "label": "Redimensionner la fenêtre",
           "action": "live.resizeWindow",
           "component": "live.playerStage",
           "roles": []
@@ -1465,7 +1401,7 @@
         {
           "id": "battlemap-move-token",
           "kind": "action",
-          "label": "move token",
+          "label": "Déplacer le token",
           "action": "table.moveToken",
           "component": "table.battlemap",
           "roles": []
@@ -1473,7 +1409,7 @@
         {
           "id": "battlemap-place-tokens",
           "kind": "action",
-          "label": "place tokens",
+          "label": "Poser des tokens",
           "action": "table.placeTokens",
           "component": "table.battlemap",
           "roles": []
@@ -1481,7 +1417,7 @@
         {
           "id": "battlemap-remove-token",
           "kind": "action",
-          "label": "remove token",
+          "label": "Retirer le token",
           "action": "table.removeToken",
           "component": "table.battlemap",
           "roles": []
@@ -1489,7 +1425,7 @@
         {
           "id": "battlemap-rename-token",
           "kind": "action",
-          "label": "rename token",
+          "label": "Renommer le token",
           "action": "table.renameToken",
           "component": "table.battlemap",
           "roles": []
@@ -1497,7 +1433,7 @@
         {
           "id": "battlemap-set-token-visibility",
           "kind": "action",
-          "label": "set token visibility",
+          "label": "Montrer ou cacher le token",
           "action": "table.setTokenVisibility",
           "component": "table.battlemap",
           "roles": []
@@ -1505,7 +1441,7 @@
         {
           "id": "battlemap-set-token-condition",
           "kind": "action",
-          "label": "set token condition",
+          "label": "Changer l’état du token",
           "action": "table.setTokenCondition",
           "component": "table.battlemap",
           "roles": []
@@ -1513,7 +1449,7 @@
         {
           "id": "battlemap-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "table.battlemap",
           "roles": []
@@ -1521,7 +1457,7 @@
         {
           "id": "battlemap-change-hit-points",
           "kind": "action",
-          "label": "change hit points",
+          "label": "Changer les PV",
           "action": "table.changeHitPoints",
           "component": "table.battlemap",
           "roles": []
@@ -1529,7 +1465,7 @@
         {
           "id": "battlemap-start-combat",
           "kind": "action",
-          "label": "start combat",
+          "label": "Lancer le combat",
           "action": "table.startCombat",
           "component": "table.battlemap",
           "roles": []
@@ -1537,7 +1473,7 @@
         {
           "id": "battlemap-next-turn",
           "kind": "action",
-          "label": "next turn",
+          "label": "Tour suivant",
           "action": "table.nextTurn",
           "component": "table.battlemap",
           "roles": []
@@ -1545,7 +1481,7 @@
         {
           "id": "battlemap-reorder-initiative",
           "kind": "action",
-          "label": "reorder initiative",
+          "label": "Réordonner l’initiative",
           "action": "table.reorderInitiative",
           "component": "table.battlemap",
           "roles": []
@@ -1553,7 +1489,7 @@
         {
           "id": "battlemap-add-participant",
           "kind": "action",
-          "label": "add participant",
+          "label": "Ajouter un participant",
           "action": "table.addParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -1561,7 +1497,7 @@
         {
           "id": "battlemap-remove-participant",
           "kind": "action",
-          "label": "remove participant",
+          "label": "Retirer un participant",
           "action": "table.removeParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -1569,7 +1505,7 @@
         {
           "id": "battlemap-end-combat",
           "kind": "action",
-          "label": "end combat",
+          "label": "Terminer le combat",
           "action": "table.endCombat",
           "component": "table.battlemap",
           "roles": []
@@ -1577,7 +1513,7 @@
         {
           "id": "battlemap-reset-battlemap",
           "kind": "action",
-          "label": "reset battlemap",
+          "label": "Réinitialiser la carte",
           "action": "table.resetBattlemap",
           "component": "table.battlemap",
           "roles": []
@@ -1610,5 +1546,204 @@
       ]
     }
   ],
-  "fixtures": []
+  "fixtures": [
+    "mock/fixtures/campaign.json",
+    "mock/fixtures/media.json",
+    "mock/fixtures/session.json",
+    "mock/fixtures/campaign_overview_view.json"
+  ],
+  "components": [
+    {
+      "unit": "campaign.campaignList",
+      "fragment": "components/CampaignList.html",
+      "props": {
+        "hint": "Recherchez, filtrez et ouvrez vos campagnes et oneshots."
+      },
+      "fixtures": [
+        "mock/fixtures/campaign_overview_view.json"
+      ],
+      "elements": [
+        {
+          "id": "campaign-recent",
+          "kind": "list",
+          "label": "Ce qui vient d’être fait : campagne créée, importée ou exportée",
+          "roles": []
+        },
+        {
+          "id": "campaign-recent-open",
+          "kind": "link",
+          "label": "Ouvrir la campagne concernée",
+          "to": "campagne",
+          "roles": []
+        },
+        {
+          "id": "campaign-cards",
+          "kind": "list",
+          "label": "Les campagnes et oneshots, triables et filtrables",
+          "roles": []
+        },
+        {
+          "id": "campaign-search",
+          "kind": "field",
+          "label": "Rechercher par nom",
+          "roles": []
+        },
+        {
+          "id": "campaign-filter",
+          "kind": "field",
+          "label": "Filtrer par type",
+          "roles": []
+        },
+        {
+          "id": "campaign-count",
+          "kind": "text",
+          "label": "Tri et pagination",
+          "roles": []
+        },
+        {
+          "id": "campaign-open",
+          "kind": "link",
+          "label": "Ouvrir",
+          "to": "campagne",
+          "roles": []
+        },
+        {
+          "id": "campaign-export",
+          "kind": "action",
+          "label": "Exporter",
+          "action": "campaign.exportCampaign",
+          "roles": []
+        },
+        {
+          "id": "campaign-new",
+          "kind": "link",
+          "label": "Nouvelle campagne",
+          "roles": [],
+          "opens": "campaign-new-dialog"
+        },
+        {
+          "id": "campaign-to-import",
+          "kind": "link",
+          "label": "Importer une archive",
+          "roles": [],
+          "opens": "campaign-import-dialog"
+        },
+        {
+          "id": "campaign-empty-new",
+          "kind": "link",
+          "label": "Créer une campagne",
+          "opens": "campaign-new-dialog",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-dialog",
+          "kind": "text",
+          "label": "Fenêtre « Nouvelle campagne »",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-name",
+          "kind": "field",
+          "label": "Nom de la nouvelle campagne",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-pitch",
+          "kind": "field",
+          "label": "Accroche",
+          "roles": []
+        },
+        {
+          "id": "campaign-new-oneshot",
+          "kind": "field",
+          "label": "Oneshot (une seule séance)",
+          "roles": []
+        },
+        {
+          "id": "campaign-create",
+          "kind": "action",
+          "label": "Créer la campagne",
+          "action": "campaign.createCampaign",
+          "roles": []
+        },
+        {
+          "id": "campaign-import-dialog",
+          "kind": "text",
+          "label": "Fenêtre « Importer une archive »",
+          "roles": []
+        },
+        {
+          "id": "campaign-archive",
+          "kind": "field",
+          "label": "Archive à importer",
+          "roles": []
+        },
+        {
+          "id": "campaign-import",
+          "kind": "action",
+          "label": "Importer en nouvelle campagne",
+          "action": "campaign.importCampaign",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "unit": "campaign.campaignOverview",
+      "fragment": "components/CampaignOverview.html",
+      "props": {
+        "title": "En chiffres"
+      },
+      "fixtures": [
+        "mock/fixtures/campaign_overview_view.json"
+      ],
+      "elements": [
+        {
+          "id": "overview-campaign",
+          "kind": "list",
+          "label": "La campagne ouverte, avec sa couverture",
+          "roles": []
+        },
+        {
+          "id": "overview-last-export",
+          "kind": "text",
+          "label": "Dernier export",
+          "roles": []
+        },
+        {
+          "id": "overview-export",
+          "kind": "action",
+          "label": "Exporter l’archive",
+          "action": "campaign.exportCampaign",
+          "roles": []
+        },
+        {
+          "id": "overview-counts",
+          "kind": "text",
+          "label": "Le résumé chiffré de la campagne",
+          "roles": []
+        },
+        {
+          "id": "overview-campaign-empty",
+          "kind": "text",
+          "label": "Aucune campagne ouverte",
+          "roles": []
+        },
+        {
+          "id": "overview-back-empty",
+          "kind": "link",
+          "label": "Choisir une campagne (aucune campagne ouverte)",
+          "to": "campagnes",
+          "roles": []
+        },
+        {
+          "id": "overview-back",
+          "kind": "link",
+          "label": "Choisir une campagne",
+          "to": "campagnes",
+          "roles": []
+        }
+      ]
+    }
+  ],
+  "handlers": "mock/handlers.js"
 }

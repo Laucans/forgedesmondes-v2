@@ -1,0 +1,10 @@
+{
+  "id": "soundbox.setSoundVolume",
+  "kind": "data-capability",
+  "title": "Régler le volume d’un son",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Sound",
+  "touches": [
+    "sound.volume"
+  ]
+}

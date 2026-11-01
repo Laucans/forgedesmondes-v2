@@ -1,0 +1,12 @@
+{
+  "id": "soundbox.playSound",
+  "kind": "data-capability",
+  "title": "Jouer un son",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "SoundPlayback",
+  "touches": [
+    "sound_playback.sound_id",
+    "sound_playback.origin",
+    "sound_playback.started_at"
+  ]
+}

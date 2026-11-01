@@ -1,0 +1,20 @@
+{
+  "id": "campaign.createCampaign",
+  "kind": "data-capability",
+  "title": "Créer une campagne",
+  "description": "Adds a campaign or a oneshot; a oneshot is created with its only session (oneshot-single-session).",
+  "aggregate": "Campaign",
+  "touches": [
+    "campaign.name",
+    "campaign.kind",
+    "campaign.pitch",
+    "campaign.glyph",
+    "campaign.created_at",
+    "campaign.sound_master_volume"
+  ],
+  "input": {
+    "name": "text",
+    "pitch": "text",
+    "oneshot": "bool"
+  }
+}

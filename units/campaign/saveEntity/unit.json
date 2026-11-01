@@ -1,0 +1,14 @@
+{
+  "id": "campaign.saveEntity",
+  "kind": "data-capability",
+  "title": "Enregistrer une fiche",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Entity",
+  "touches": [
+    "entity.name",
+    "entity.type",
+    "entity.description",
+    "entity.notes",
+    "entity.updated_at"
+  ]
+}

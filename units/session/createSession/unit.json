@@ -1,0 +1,15 @@
+{
+  "id": "session.createSession",
+  "kind": "data-capability",
+  "title": "Créer une séance",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "Session",
+  "touches": [
+    "session.campaign_id",
+    "session.position",
+    "session.title",
+    "session.planned_on",
+    "session.status",
+    "session_present_character.character_id"
+  ]
+}

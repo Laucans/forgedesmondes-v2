@@ -1,0 +1,29 @@
+<div class="kit-stack" data-kit="Stack" data-el="overview-campaign" data-list="campaign_overview_view" data-where="campaign_id={{selected.campaign_overview_view}}">
+  <template>
+    <div class="kit-stack" data-kit="Stack">
+      <header class="kit-page-header" data-kit="PageHeader">
+        <div class="titles"><h1>{{name}}</h1><p class="lead">{{pitch}}</p><small data-el="overview-last-export">Dernier export : {{last_export_label}}</small></div>
+        <div class="actions"><div class="kit-button" data-kit="Button"><button type="button" class="secondary" data-el="overview-back" data-link="campagnes">Choisir une campagne</button><button type="button" class="primary" data-el="overview-export" data-action="campaign.exportCampaign">Exporter l’archive</button></div></div>
+      </header>
+      <div class="kit-imageplaceholder" data-kit="ImagePlaceholder" role="img" aria-label="Couverture de {{name}}"><span class="initials">{{glyph}}</span><img src="{{cover_url}}" alt=""></div>
+      <section class="kit-section" data-kit="Section">
+        <div class="head"><h2>{{title}}</h2><p class="hint">Ce que contient la campagne.</p></div>
+        <div class="body">
+          <ul class="kit-card-grid" data-kit="CardGrid" data-el="overview-counts">
+            <li class="cell"><article class="kit-card" data-kit="Card"><div class="body"><h3>{{session_count}}</h3><p>Séances</p></div></article></li>
+            <li class="cell"><article class="kit-card" data-kit="Card"><div class="body"><h3>{{player_count}}</h3><p>Joueurs</p></div></article></li>
+            <li class="cell"><article class="kit-card" data-kit="Card"><div class="body"><h3>{{pc_count}}</h3><p>Personnages joueurs</p></div></article></li>
+            <li class="cell"><article class="kit-card" data-kit="Card"><div class="body"><h3>{{npc_count}}</h3><p>PNJ</p></div></article></li>
+            <li class="cell"><article class="kit-card" data-kit="Card"><div class="body"><h3>{{place_count}}</h3><p>Lieux</p></div></article></li>
+            <li class="cell"><article class="kit-card" data-kit="Card"><div class="body"><h3>{{event_count}}</h3><p>Événements</p></div></article></li>
+            <li class="cell"><article class="kit-card" data-kit="Card"><div class="body"><h3>{{media_count}}</h3><p>Médias</p></div></article></li>
+            <li class="cell"><article class="kit-card" data-kit="Card"><div class="body"><h3>{{sound_count}}</h3><p>Sons</p></div></article></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </template>
+  <template data-empty>
+    <div class="kit-emptystate" data-kit="EmptyState" data-el="overview-campaign-empty"><div class="icon">✦</div><h3>Aucune campagne ouverte</h3><p>Choisissez une campagne dans la liste pour la préparer ou la jouer.</p><button type="button" data-el="overview-back-empty" data-link="campagnes">Choisir une campagne</button></div>
+  </template>
+</div>

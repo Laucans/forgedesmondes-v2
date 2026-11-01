@@ -1,0 +1,10 @@
+{
+  "id": "table.endCombat",
+  "kind": "data-capability",
+  "title": "Terminer le combat",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "combat.ended_at"
+  ]
+}

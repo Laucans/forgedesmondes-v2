@@ -1,0 +1,11 @@
+{
+  "id": "table.nextTurn",
+  "kind": "data-capability",
+  "title": "Tour suivant",
+  "description": "Sketched by M1's design so the mock-up's action is wired; its own milestone's design refines it.",
+  "aggregate": "BattlemapInstance",
+  "touches": [
+    "combat.round",
+    "combat.current_entry_id"
+  ]
+}
