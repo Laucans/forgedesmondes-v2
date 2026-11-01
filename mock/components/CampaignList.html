@@ -13,10 +13,11 @@
           </div>
           <div class="scroll">
             <table>
-              <thead><tr><th aria-sort="ascending"><button type="button">Nom</button></th><th aria-sort="none"><button type="button">Type</button></th><th class="num" aria-sort="none"><button type="button">Séances</button></th><th aria-sort="none"><button type="button">Dernier export</button></th><th>Actions</th></tr></thead>
+              <thead><tr><th>Couverture</th><th aria-sort="ascending"><button type="button">Nom</button></th><th aria-sort="none"><button type="button">Type</button></th><th class="num" aria-sort="none"><button type="button">Séances</button></th><th aria-sort="none"><button type="button">Dernier export</button></th><th>Actions</th></tr></thead>
               <tbody data-el="campaign-cards" data-list="campaign_overview_view">
                 <template>
                   <tr>
+                    <td><div class="kit-imageplaceholder" data-kit="ImagePlaceholder" role="img" aria-label="Couverture de {{name}}"><span class="initials">{{glyph}}</span><img src="{{cover_url}}" alt=""></div></td>
                     <td><strong>{{name}}</strong></td>
                     <td><div class="kit-badge" data-kit="Badge"><span class="accent">{{kind_label}}</span></div></td>
                     <td class="num">{{session_count}}</td>
@@ -25,7 +26,7 @@
                   </tr>
                 </template>
                 <template data-empty>
-                  <tr><td colspan="5"><div class="kit-emptystate" data-kit="EmptyState"><div class="icon">✦</div><h3>Aucune campagne</h3><p>Aucune campagne pour l’instant : créez la première.</p><button type="button" data-el="campaign-empty-new" data-opens="campaign-new-dialog">Créer une campagne</button></div></td></tr>
+                  <tr><td colspan="6"><div class="kit-emptystate" data-kit="EmptyState"><div class="icon">✦</div><h3>Aucune campagne</h3><p>Aucune campagne pour l’instant : créez la première.</p><button type="button" data-el="campaign-empty-new" data-opens="campaign-new-dialog">Créer une campagne</button></div></td></tr>
                 </template>
               </tbody>
             </table>

@@ -117,7 +117,7 @@
         {
           "id": "ai-settings-save-settings",
           "kind": "action",
-          "label": "save settings",
+          "label": "Enregistrer les réglages",
           "action": "ai.saveSettings",
           "component": "ai.aiSettings",
           "roles": []
@@ -125,7 +125,7 @@
         {
           "id": "ai-settings-test-connection",
           "kind": "action",
-          "label": "test connection",
+          "label": "Tester la connexion",
           "action": "ai.testConnection",
           "component": "ai.aiSettings",
           "roles": []
@@ -405,7 +405,7 @@
         {
           "id": "version-history-restore-entity-version",
           "kind": "action",
-          "label": "restore entity version",
+          "label": "Restaurer cette version",
           "action": "campaign.restoreEntityVersion",
           "component": "campaign.versionHistory",
           "roles": []
@@ -420,7 +420,7 @@
         {
           "id": "entity-editor-save-entity",
           "kind": "action",
-          "label": "save entity",
+          "label": "Enregistrer la fiche",
           "action": "campaign.saveEntity",
           "component": "campaign.entityEditor",
           "roles": []
@@ -428,7 +428,7 @@
         {
           "id": "entity-editor-propose-character",
           "kind": "action",
-          "label": "propose character",
+          "label": "Proposer avec l’IA",
           "action": "ai.proposeCharacter",
           "component": "campaign.entityEditor",
           "roles": []
@@ -436,7 +436,7 @@
         {
           "id": "entity-editor-import-character",
           "kind": "action",
-          "label": "import character",
+          "label": "Importer depuis D&D Beyond",
           "action": "dndbeyond.importCharacter",
           "component": "campaign.entityEditor",
           "roles": []
@@ -444,7 +444,7 @@
         {
           "id": "entity-editor-resync-character",
           "kind": "action",
-          "label": "resync character",
+          "label": "Resynchroniser D&D Beyond",
           "action": "dndbeyond.resyncCharacter",
           "component": "campaign.entityEditor",
           "roles": []
@@ -550,7 +550,7 @@
         {
           "id": "oral-brief-analyze-brief",
           "kind": "action",
-          "label": "analyze brief",
+          "label": "Analyser le brief",
           "action": "ai.analyzeBrief",
           "component": "ai.oralBrief",
           "roles": []
@@ -573,7 +573,7 @@
         {
           "id": "scene-board-add-present-character",
           "kind": "action",
-          "label": "add present character",
+          "label": "Ajouter un PJ présent",
           "action": "session.addPresentCharacter",
           "component": "session.sceneBoard",
           "roles": []
@@ -581,7 +581,7 @@
         {
           "id": "scene-board-remove-present-character",
           "kind": "action",
-          "label": "remove present character",
+          "label": "Retirer un PJ présent",
           "action": "session.removePresentCharacter",
           "component": "session.sceneBoard",
           "roles": []
@@ -589,7 +589,7 @@
         {
           "id": "scene-board-add-scene",
           "kind": "action",
-          "label": "add scene",
+          "label": "Ajouter une scène",
           "action": "session.addScene",
           "component": "session.sceneBoard",
           "roles": []
@@ -597,7 +597,7 @@
         {
           "id": "scene-board-reorder-scenes",
           "kind": "action",
-          "label": "reorder scenes",
+          "label": "Réordonner les scènes",
           "action": "session.reorderScenes",
           "component": "session.sceneBoard",
           "roles": []
@@ -605,7 +605,7 @@
         {
           "id": "scene-board-update-scene-notes",
           "kind": "action",
-          "label": "update scene notes",
+          "label": "Enregistrer les notes de scène",
           "action": "session.updateSceneNotes",
           "component": "session.sceneBoard",
           "roles": []
@@ -613,7 +613,7 @@
         {
           "id": "scene-board-create-battlemap-instance",
           "kind": "action",
-          "label": "create battlemap instance",
+          "label": "Poser une battlemap dans la scène",
           "action": "table.createBattlemapInstance",
           "component": "session.sceneBoard",
           "roles": []
@@ -644,7 +644,7 @@
         {
           "id": "version-history-restore-entity-version",
           "kind": "action",
-          "label": "restore entity version",
+          "label": "Restaurer cette version",
           "action": "campaign.restoreEntityVersion",
           "component": "campaign.versionHistory",
           "roles": []
@@ -659,7 +659,7 @@
         {
           "id": "to-create-list-create-from-brief",
           "kind": "action",
-          "label": "create from brief",
+          "label": "Créer depuis le brief",
           "action": "ai.createFromBrief",
           "component": "ai.toCreateList",
           "roles": []
@@ -682,7 +682,7 @@
         {
           "id": "battlemap-move-token",
           "kind": "action",
-          "label": "move token",
+          "label": "Déplacer le token",
           "action": "table.moveToken",
           "component": "table.battlemap",
           "roles": []
@@ -690,7 +690,7 @@
         {
           "id": "battlemap-place-tokens",
           "kind": "action",
-          "label": "place tokens",
+          "label": "Poser des tokens",
           "action": "table.placeTokens",
           "component": "table.battlemap",
           "roles": []
@@ -698,7 +698,7 @@
         {
           "id": "battlemap-remove-token",
           "kind": "action",
-          "label": "remove token",
+          "label": "Retirer le token",
           "action": "table.removeToken",
           "component": "table.battlemap",
           "roles": []
@@ -706,7 +706,7 @@
         {
           "id": "battlemap-rename-token",
           "kind": "action",
-          "label": "rename token",
+          "label": "Renommer le token",
           "action": "table.renameToken",
           "component": "table.battlemap",
           "roles": []
@@ -714,7 +714,7 @@
         {
           "id": "battlemap-set-token-visibility",
           "kind": "action",
-          "label": "set token visibility",
+          "label": "Montrer ou cacher le token",
           "action": "table.setTokenVisibility",
           "component": "table.battlemap",
           "roles": []
@@ -722,7 +722,7 @@
         {
           "id": "battlemap-set-token-condition",
           "kind": "action",
-          "label": "set token condition",
+          "label": "Changer l’état du token",
           "action": "table.setTokenCondition",
           "component": "table.battlemap",
           "roles": []
@@ -730,7 +730,7 @@
         {
           "id": "battlemap-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "table.battlemap",
           "roles": []
@@ -738,7 +738,7 @@
         {
           "id": "battlemap-change-hit-points",
           "kind": "action",
-          "label": "change hit points",
+          "label": "Changer les PV",
           "action": "table.changeHitPoints",
           "component": "table.battlemap",
           "roles": []
@@ -746,7 +746,7 @@
         {
           "id": "battlemap-start-combat",
           "kind": "action",
-          "label": "start combat",
+          "label": "Lancer le combat",
           "action": "table.startCombat",
           "component": "table.battlemap",
           "roles": []
@@ -754,7 +754,7 @@
         {
           "id": "battlemap-next-turn",
           "kind": "action",
-          "label": "next turn",
+          "label": "Tour suivant",
           "action": "table.nextTurn",
           "component": "table.battlemap",
           "roles": []
@@ -762,7 +762,7 @@
         {
           "id": "battlemap-reorder-initiative",
           "kind": "action",
-          "label": "reorder initiative",
+          "label": "Réordonner l’initiative",
           "action": "table.reorderInitiative",
           "component": "table.battlemap",
           "roles": []
@@ -770,7 +770,7 @@
         {
           "id": "battlemap-add-participant",
           "kind": "action",
-          "label": "add participant",
+          "label": "Ajouter un participant",
           "action": "table.addParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -778,7 +778,7 @@
         {
           "id": "battlemap-remove-participant",
           "kind": "action",
-          "label": "remove participant",
+          "label": "Retirer un participant",
           "action": "table.removeParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -786,7 +786,7 @@
         {
           "id": "battlemap-end-combat",
           "kind": "action",
-          "label": "end combat",
+          "label": "Terminer le combat",
           "action": "table.endCombat",
           "component": "table.battlemap",
           "roles": []
@@ -794,7 +794,7 @@
         {
           "id": "battlemap-reset-battlemap",
           "kind": "action",
-          "label": "reset battlemap",
+          "label": "Réinitialiser la carte",
           "action": "table.resetBattlemap",
           "component": "table.battlemap",
           "roles": []
@@ -859,7 +859,7 @@
         {
           "id": "media-library-upload-media",
           "kind": "action",
-          "label": "upload media",
+          "label": "Téléverser un média",
           "action": "media.uploadMedia",
           "component": "media.mediaLibrary",
           "roles": []
@@ -867,7 +867,7 @@
         {
           "id": "media-library-set-media-place",
           "kind": "action",
-          "label": "set media place",
+          "label": "Changer le lieu",
           "action": "media.setMediaPlace",
           "component": "media.mediaLibrary",
           "roles": []
@@ -875,7 +875,7 @@
         {
           "id": "media-library-add-place-to-session",
           "kind": "action",
-          "label": "add place to session",
+          "label": "Ajouter le lieu à la séance",
           "action": "session.addPlaceToSession",
           "component": "media.mediaLibrary",
           "roles": []
@@ -890,7 +890,7 @@
         {
           "id": "grid-settings-save-grid-settings",
           "kind": "action",
-          "label": "save grid settings",
+          "label": "Enregistrer la grille",
           "action": "media.saveGridSettings",
           "component": "media.gridSettings",
           "roles": []
@@ -955,7 +955,7 @@
         {
           "id": "sound-library-add-sound",
           "kind": "action",
-          "label": "add sound",
+          "label": "Ajouter un son",
           "action": "soundbox.addSound",
           "component": "soundbox.soundLibrary",
           "roles": []
@@ -963,7 +963,7 @@
         {
           "id": "sound-library-update-sound",
           "kind": "action",
-          "label": "update sound",
+          "label": "Modifier le son",
           "action": "soundbox.updateSound",
           "component": "soundbox.soundLibrary",
           "roles": []
@@ -971,7 +971,7 @@
         {
           "id": "sound-library-remove-sound",
           "kind": "action",
-          "label": "remove sound",
+          "label": "Retirer le son",
           "action": "soundbox.removeSound",
           "component": "soundbox.soundLibrary",
           "roles": []
@@ -986,7 +986,7 @@
         {
           "id": "live-soundbox-play-sound",
           "kind": "action",
-          "label": "play sound",
+          "label": "Jouer le son",
           "action": "soundbox.playSound",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -994,7 +994,7 @@
         {
           "id": "live-soundbox-stop-all",
           "kind": "action",
-          "label": "stop all",
+          "label": "Tout arrêter",
           "action": "soundbox.stopAll",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1002,7 +1002,7 @@
         {
           "id": "live-soundbox-set-sound-volume",
           "kind": "action",
-          "label": "set sound volume",
+          "label": "Régler le volume du son",
           "action": "soundbox.setSoundVolume",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1010,7 +1010,7 @@
         {
           "id": "live-soundbox-set-master-volume",
           "kind": "action",
-          "label": "set master volume",
+          "label": "Régler le volume global",
           "action": "soundbox.setMasterVolume",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1077,7 +1077,7 @@
         {
           "id": "live-session-bar-show-cover",
           "kind": "action",
-          "label": "show cover",
+          "label": "Montrer la couverture",
           "action": "live.showCover",
           "component": "session.liveSessionBar",
           "roles": []
@@ -1085,7 +1085,7 @@
         {
           "id": "live-session-bar-close-window",
           "kind": "action",
-          "label": "close window",
+          "label": "Fermer la fenêtre",
           "action": "live.closeWindow",
           "component": "session.liveSessionBar",
           "roles": []
@@ -1093,7 +1093,7 @@
         {
           "id": "live-session-bar-close-session",
           "kind": "action",
-          "label": "close session",
+          "label": "Clore la séance",
           "action": "session.closeSession",
           "component": "session.liveSessionBar",
           "roles": []
@@ -1124,7 +1124,7 @@
         {
           "id": "elements-panel-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "live.elementsPanel",
           "roles": []
@@ -1132,7 +1132,7 @@
         {
           "id": "elements-panel-show-window-on-player-view",
           "kind": "action",
-          "label": "show window on player view",
+          "label": "Envoyer en fenêtre aux joueurs",
           "action": "live.showWindowOnPlayerView",
           "component": "live.elementsPanel",
           "roles": []
@@ -1147,7 +1147,7 @@
         {
           "id": "table-sheet-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "live.tableSheet",
           "roles": []
@@ -1155,7 +1155,7 @@
         {
           "id": "table-sheet-show-window-on-player-view",
           "kind": "action",
-          "label": "show window on player view",
+          "label": "Envoyer en fenêtre aux joueurs",
           "action": "live.showWindowOnPlayerView",
           "component": "live.tableSheet",
           "roles": []
@@ -1178,7 +1178,7 @@
         {
           "id": "battlemap-move-token",
           "kind": "action",
-          "label": "move token",
+          "label": "Déplacer le token",
           "action": "table.moveToken",
           "component": "table.battlemap",
           "roles": []
@@ -1186,7 +1186,7 @@
         {
           "id": "battlemap-place-tokens",
           "kind": "action",
-          "label": "place tokens",
+          "label": "Poser des tokens",
           "action": "table.placeTokens",
           "component": "table.battlemap",
           "roles": []
@@ -1194,7 +1194,7 @@
         {
           "id": "battlemap-remove-token",
           "kind": "action",
-          "label": "remove token",
+          "label": "Retirer le token",
           "action": "table.removeToken",
           "component": "table.battlemap",
           "roles": []
@@ -1202,7 +1202,7 @@
         {
           "id": "battlemap-rename-token",
           "kind": "action",
-          "label": "rename token",
+          "label": "Renommer le token",
           "action": "table.renameToken",
           "component": "table.battlemap",
           "roles": []
@@ -1210,7 +1210,7 @@
         {
           "id": "battlemap-set-token-visibility",
           "kind": "action",
-          "label": "set token visibility",
+          "label": "Montrer ou cacher le token",
           "action": "table.setTokenVisibility",
           "component": "table.battlemap",
           "roles": []
@@ -1218,7 +1218,7 @@
         {
           "id": "battlemap-set-token-condition",
           "kind": "action",
-          "label": "set token condition",
+          "label": "Changer l’état du token",
           "action": "table.setTokenCondition",
           "component": "table.battlemap",
           "roles": []
@@ -1226,7 +1226,7 @@
         {
           "id": "battlemap-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "table.battlemap",
           "roles": []
@@ -1234,7 +1234,7 @@
         {
           "id": "battlemap-change-hit-points",
           "kind": "action",
-          "label": "change hit points",
+          "label": "Changer les PV",
           "action": "table.changeHitPoints",
           "component": "table.battlemap",
           "roles": []
@@ -1242,7 +1242,7 @@
         {
           "id": "battlemap-start-combat",
           "kind": "action",
-          "label": "start combat",
+          "label": "Lancer le combat",
           "action": "table.startCombat",
           "component": "table.battlemap",
           "roles": []
@@ -1250,7 +1250,7 @@
         {
           "id": "battlemap-next-turn",
           "kind": "action",
-          "label": "next turn",
+          "label": "Tour suivant",
           "action": "table.nextTurn",
           "component": "table.battlemap",
           "roles": []
@@ -1258,7 +1258,7 @@
         {
           "id": "battlemap-reorder-initiative",
           "kind": "action",
-          "label": "reorder initiative",
+          "label": "Réordonner l’initiative",
           "action": "table.reorderInitiative",
           "component": "table.battlemap",
           "roles": []
@@ -1266,7 +1266,7 @@
         {
           "id": "battlemap-add-participant",
           "kind": "action",
-          "label": "add participant",
+          "label": "Ajouter un participant",
           "action": "table.addParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -1274,7 +1274,7 @@
         {
           "id": "battlemap-remove-participant",
           "kind": "action",
-          "label": "remove participant",
+          "label": "Retirer un participant",
           "action": "table.removeParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -1282,7 +1282,7 @@
         {
           "id": "battlemap-end-combat",
           "kind": "action",
-          "label": "end combat",
+          "label": "Terminer le combat",
           "action": "table.endCombat",
           "component": "table.battlemap",
           "roles": []
@@ -1290,7 +1290,7 @@
         {
           "id": "battlemap-reset-battlemap",
           "kind": "action",
-          "label": "reset battlemap",
+          "label": "Réinitialiser la carte",
           "action": "table.resetBattlemap",
           "component": "table.battlemap",
           "roles": []
@@ -1305,7 +1305,7 @@
         {
           "id": "live-soundbox-play-sound",
           "kind": "action",
-          "label": "play sound",
+          "label": "Jouer le son",
           "action": "soundbox.playSound",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1313,7 +1313,7 @@
         {
           "id": "live-soundbox-stop-all",
           "kind": "action",
-          "label": "stop all",
+          "label": "Tout arrêter",
           "action": "soundbox.stopAll",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1321,7 +1321,7 @@
         {
           "id": "live-soundbox-set-sound-volume",
           "kind": "action",
-          "label": "set sound volume",
+          "label": "Régler le volume du son",
           "action": "soundbox.setSoundVolume",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1329,7 +1329,7 @@
         {
           "id": "live-soundbox-set-master-volume",
           "kind": "action",
-          "label": "set master volume",
+          "label": "Régler le volume global",
           "action": "soundbox.setMasterVolume",
           "component": "soundbox.liveSoundbox",
           "roles": []
@@ -1344,7 +1344,7 @@
         {
           "id": "suggestion-pill-set-microphone",
           "kind": "action",
-          "label": "set microphone",
+          "label": "Allumer ou couper le micro",
           "action": "live.setMicrophone",
           "component": "live.suggestionPill",
           "roles": []
@@ -1352,7 +1352,7 @@
         {
           "id": "suggestion-pill-play-sound",
           "kind": "action",
-          "label": "play sound",
+          "label": "Jouer le son",
           "action": "soundbox.playSound",
           "component": "live.suggestionPill",
           "roles": []
@@ -1386,7 +1386,7 @@
         {
           "id": "player-stage-move-window",
           "kind": "action",
-          "label": "move window",
+          "label": "Déplacer la fenêtre",
           "action": "live.moveWindow",
           "component": "live.playerStage",
           "roles": []
@@ -1394,7 +1394,7 @@
         {
           "id": "player-stage-resize-window",
           "kind": "action",
-          "label": "resize window",
+          "label": "Redimensionner la fenêtre",
           "action": "live.resizeWindow",
           "component": "live.playerStage",
           "roles": []
@@ -1409,7 +1409,7 @@
         {
           "id": "battlemap-move-token",
           "kind": "action",
-          "label": "move token",
+          "label": "Déplacer le token",
           "action": "table.moveToken",
           "component": "table.battlemap",
           "roles": []
@@ -1417,7 +1417,7 @@
         {
           "id": "battlemap-place-tokens",
           "kind": "action",
-          "label": "place tokens",
+          "label": "Poser des tokens",
           "action": "table.placeTokens",
           "component": "table.battlemap",
           "roles": []
@@ -1425,7 +1425,7 @@
         {
           "id": "battlemap-remove-token",
           "kind": "action",
-          "label": "remove token",
+          "label": "Retirer le token",
           "action": "table.removeToken",
           "component": "table.battlemap",
           "roles": []
@@ -1433,7 +1433,7 @@
         {
           "id": "battlemap-rename-token",
           "kind": "action",
-          "label": "rename token",
+          "label": "Renommer le token",
           "action": "table.renameToken",
           "component": "table.battlemap",
           "roles": []
@@ -1441,7 +1441,7 @@
         {
           "id": "battlemap-set-token-visibility",
           "kind": "action",
-          "label": "set token visibility",
+          "label": "Montrer ou cacher le token",
           "action": "table.setTokenVisibility",
           "component": "table.battlemap",
           "roles": []
@@ -1449,7 +1449,7 @@
         {
           "id": "battlemap-set-token-condition",
           "kind": "action",
-          "label": "set token condition",
+          "label": "Changer l’état du token",
           "action": "table.setTokenCondition",
           "component": "table.battlemap",
           "roles": []
@@ -1457,7 +1457,7 @@
         {
           "id": "battlemap-show-on-player-view",
           "kind": "action",
-          "label": "show on player view",
+          "label": "Envoyer aux joueurs",
           "action": "live.showOnPlayerView",
           "component": "table.battlemap",
           "roles": []
@@ -1465,7 +1465,7 @@
         {
           "id": "battlemap-change-hit-points",
           "kind": "action",
-          "label": "change hit points",
+          "label": "Changer les PV",
           "action": "table.changeHitPoints",
           "component": "table.battlemap",
           "roles": []
@@ -1473,7 +1473,7 @@
         {
           "id": "battlemap-start-combat",
           "kind": "action",
-          "label": "start combat",
+          "label": "Lancer le combat",
           "action": "table.startCombat",
           "component": "table.battlemap",
           "roles": []
@@ -1481,7 +1481,7 @@
         {
           "id": "battlemap-next-turn",
           "kind": "action",
-          "label": "next turn",
+          "label": "Tour suivant",
           "action": "table.nextTurn",
           "component": "table.battlemap",
           "roles": []
@@ -1489,7 +1489,7 @@
         {
           "id": "battlemap-reorder-initiative",
           "kind": "action",
-          "label": "reorder initiative",
+          "label": "Réordonner l’initiative",
           "action": "table.reorderInitiative",
           "component": "table.battlemap",
           "roles": []
@@ -1497,7 +1497,7 @@
         {
           "id": "battlemap-add-participant",
           "kind": "action",
-          "label": "add participant",
+          "label": "Ajouter un participant",
           "action": "table.addParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -1505,7 +1505,7 @@
         {
           "id": "battlemap-remove-participant",
           "kind": "action",
-          "label": "remove participant",
+          "label": "Retirer un participant",
           "action": "table.removeParticipant",
           "component": "table.battlemap",
           "roles": []
@@ -1513,7 +1513,7 @@
         {
           "id": "battlemap-end-combat",
           "kind": "action",
-          "label": "end combat",
+          "label": "Terminer le combat",
           "action": "table.endCombat",
           "component": "table.battlemap",
           "roles": []
@@ -1521,7 +1521,7 @@
         {
           "id": "battlemap-reset-battlemap",
           "kind": "action",
-          "label": "reset battlemap",
+          "label": "Réinitialiser la carte",
           "action": "table.resetBattlemap",
           "component": "table.battlemap",
           "roles": []

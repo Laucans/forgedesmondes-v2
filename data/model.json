@@ -660,6 +660,12 @@
           "critical": false
         },
         {
+          "name": "cover_url",
+          "type": "text",
+          "nullable": true,
+          "critical": false
+        },
+        {
           "name": "last_export_label",
           "type": "text",
           "nullable": false,
@@ -1778,7 +1784,7 @@
         },
         {
           "id": "import-creates-copy",
-          "description": "Un import crée toujours une nouvelle campagne avec de nouveaux identifiants, même si origin_campaign_id correspond à une campagne existante. L'originale n'est jamais modifiée."
+          "description": "Un import crée toujours une nouvelle campagne avec de nouveaux identifiants, même si origin_campaign_id correspond à une campagne existante. Son nom reçoit le suffixe « (copie importée) », puis « (copie importée 2) », « (copie importée 3) »… pour rester unique : un second import de la même archive crée une seconde copie. L’originale n’est jamais modifiée."
         },
         {
           "id": "export-stamps-date",
@@ -1787,6 +1793,14 @@
         {
           "id": "master-volume-range",
           "description": "Le volume global reste entre 0 et 1, et il multiplie le volume propre de chaque son."
+        },
+        {
+          "id": "name-required",
+          "description": "Une campagne a toujours un nom non vide."
+        },
+        {
+          "id": "name-unique",
+          "description": "Deux campagnes ne portent jamais le même nom : la création d’une campagne au nom déjà pris est refusée (« Une campagne porte déjà ce nom. »), l’import numérote le nom de sa copie."
         }
       ],
       "criticality": "high"

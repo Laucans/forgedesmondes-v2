@@ -6,9 +6,6 @@ const now = () => new Date().toISOString();
 const shown = (at) =>
   new Date(at).toLocaleString("fr-FR", { dateStyle: "medium", timeStyle: "short" });
 
-// The rows a campaign owns, copied by an import (grows as later milestones add data).
-const OWNED = ["session", "media", "campaign_overview_view"];
-
 export default {
   "campaign.createCampaign": (db, ctx) => {
     const name = String(ctx.form["campaign-new-name"] ?? "").trim();
@@ -53,6 +50,7 @@ export default {
       kind_label: oneshot ? "Oneshot" : "Campagne",
       pitch: campaign.pitch,
       glyph: campaign.glyph,
+      cover_url: null,
       last_export_label: "Jamais exportée",
       player_count: 0,
       pc_count: 0,
@@ -83,25 +81,56 @@ export default {
     const source = db.find("campaign")[0];
     if (!source) return db.refuse("Cette archive ne contient aucune campagne.");
     const at = now();
+    // name-unique: a second import of the same archive gets the next number.
+    let name = `${source.name} (copie importée)`;
+    for (let n = 2; db.find("campaign", { name }).length > 0; n++) name = `${source.name} (copie importée ${n})`;
     const copy = db.insert("campaign", {
       ...source,
       id: crypto.randomUUID(),
-      name: `${source.name} (copie importée)`,
+      name,
       cover_media_id: null,
       created_at: at,
       last_exported_at: null,
       imported_at: at,
       origin_campaign_id: source.id,
     });
-    for (const entity of OWNED) {
-      for (const row of db.find(entity, { campaign_id: source.id })) {
-        const fresh =
-          entity === "campaign_overview_view"
-            ? { name: copy.name, last_export_label: "Jamais exportée" }
-            : { id: crypto.randomUUID() };
-        db.insert(entity, { ...row, ...fresh, campaign_id: copy.id });
-      }
+    // Every owned row gets a new id; the cover follows its media's copy.
+    const mediaIds = new Map();
+    for (const media of db.find("media", { campaign_id: source.id })) {
+      const fresh = db.insert("media", { ...media, id: crypto.randomUUID(), campaign_id: copy.id });
+      mediaIds.set(media.id, fresh.id);
     }
+    if (source.cover_media_id && mediaIds.has(source.cover_media_id))
+      db.update("campaign", { id: copy.id }, { cover_media_id: mediaIds.get(source.cover_media_id) });
+    for (const session of db.find("session", { campaign_id: source.id }))
+      db.insert("session", { ...session, id: crypto.randomUUID(), campaign_id: copy.id });
+    for (const view of db.find("campaign_overview_view", { campaign_id: source.id }))
+      db.insert("campaign_overview_view", { ...view, campaign_id: copy.id, name, last_export_label: "Jamais exportée" });
     return copy;
+  },
+
+  // oneshot-single-session: a oneshot keeps its only session.
+  "session.createSession": (db, ctx) => {
+    const view = ctx.selected.campaign_overview_view;
+    const campaign = view && db.find("campaign", { id: view.campaign_id })[0];
+    if (!campaign) return db.refuse("Ouvrez d’abord une campagne.");
+    if (campaign.kind === "oneshot") return db.refuse("Un oneshot n’a qu’une seule séance.");
+    const sessions = db.find("session", { campaign_id: campaign.id });
+    const session = db.insert("session", {
+      id: crypto.randomUUID(),
+      campaign_id: campaign.id,
+      position: sessions.length + 1,
+      title: `Séance ${sessions.length + 1}`,
+      planned_on: null,
+      status: "prep",
+      started_at: null,
+      closed_at: null,
+      microphone_on: false,
+      summary: null,
+      summary_model: null,
+      summary_edited_at: null,
+    });
+    db.update("campaign_overview_view", { campaign_id: campaign.id }, { session_count: sessions.length + 1 });
+    return session;
   },
 };
